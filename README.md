@@ -74,3 +74,31 @@ npm install
 # Run development server
 npm run dev
 ```
+
+The application will be available at:
+
+```bash
+http://localhost:5173
+```
+
+## 📦 Production Build
+
+```bash
+npm run build
+```
+
+Build artifacts will be generated in the dist/ folder.
+
+## 📬 Contact
+
+If you’d like to get in touch:
+
+📧 Email: valenzuelacastrojuanpablo@gmail.com
+
+💼 LinkedIn: https://www.linkedin.com/in/itztorero/
+💻 GitHub: https://github.com/iTzTorero
+
+## 📄 License
+
+This project is intended for personal portfolio use.
+Feel free to draw inspiration from the structure, but please do not copy content or branding directly.
