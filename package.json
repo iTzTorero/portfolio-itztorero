@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "build": "npx ng build",
+    "build": "node_modules/.bin/ng build",
     "start": "npx ng serve",
     "watch": "npx ng build --watch --configuration development",
     "test": "npx ng test",
