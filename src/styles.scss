@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+/* ===== Design tokens (similar al Next/Tailwind) ===== */
+:root {
+  --bg: hsl(0 0% 98%);
+  --fg: hsl(220 15% 15%);
+  --muted: hsl(220 10% 46%);
+  --card: hsl(0 0% 100%);
+  --border: hsl(220 13% 89%);
+  --primary: hsl(162 63% 41%);
+  --radius: 14px;
+
+  --shadow-sm: 0 6px 18px rgba(0,0,0,.06);
+  --shadow-md: 0 10px 25px rgba(0,0,0,.08);
+
+  --container: 1024px; /* max-w-5xl aprox */
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  line-height: 1.5;
+}
+
+a { color: inherit; }
+a:hover { color: var(--primary); }
+
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 70%, white);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+/* Light (default) */
+:root {
+  color-scheme: light;
+}
+
+/* Dark */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: hsl(220 15% 10%);
+  --fg: hsl(0 0% 98%);
+  --muted: hsl(220 10% 70%);
+  --card: hsl(220 15% 14%);
+  --border: hsl(220 12% 22%);
+  --shadow-sm: 0 8px 20px rgba(0,0,0,.35);
+  --shadow-md: 0 14px 34px rgba(0,0,0,.45);
+}

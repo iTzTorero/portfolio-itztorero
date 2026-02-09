@@ -1,0 +1,66 @@
+<section class="head">
+  <p class="kicker">Work</p>
+  <h1 class="title">Projects</h1>
+  <p class="subtitle">
+    Selected projects focused on cloud-native systems, data pipelines, and
+    applied ML.
+  </p>
+
+  <div class="controls">
+    <input
+      class="search"
+      type="text"
+      [value]="query()"
+      (input)="query.set($any($event.target).value || '')"
+      placeholder="Search projects (name, tags, stack)…"
+      aria-label="Search projects"
+    />
+
+    <button class="btn" type="button" (click)="clear()">Clear</button>
+  </div>
+
+  <div class="filters" aria-label="Project filters">
+    <button
+      class="pill"
+      type="button"
+      [class.active]="activeTag() === null"
+      (click)="setTag(null)"
+    >
+      All
+    </button>
+
+    <button
+      class="pill"
+      type="button"
+      *ngFor="let t of tags()"
+      [class.active]="activeTag() === t"
+      (click)="setTag(t)"
+    >
+      {{ t }}
+    </button>
+  </div>
+</section>
+
+<section class="grid" aria-label="Project list">
+  <a
+    class="card"
+    *ngFor="let p of filtered()"
+    [routerLink]="['/projects', p.slug]"
+  >
+    <div class="card-top">
+      <h3>{{ p.name }}</h3>
+      <span class="arrow">→</span>
+    </div>
+
+    <p class="summary">{{ p.summary }}</p>
+
+    <div class="meta">
+      <span class="chip" *ngFor="let s of p.stack">{{ s }}</span>
+    </div>
+
+    <div class="links">
+      <span class="link" *ngIf="p.github">GitHub</span>
+      <span class="link" *ngIf="p.demo">Demo</span>
+    </div>
+  </a>
+</section>

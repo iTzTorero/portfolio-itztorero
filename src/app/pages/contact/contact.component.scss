@@ -1,0 +1,102 @@
+.head {
+  .kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .title {
+    margin: 16px 0 0;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 900;
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    max-width: 40rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+}
+
+.card {
+  margin-top: 28px;
+  max-width: 520px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+
+  label {
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--fg);
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+      box-shadow: var(--shadow-sm);
+    }
+  }
+
+  small {
+    font-size: 11px;
+    color: #d45c5c;
+  }
+}
+
+.btn {
+  margin-top: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  cursor: pointer;
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+    box-shadow: var(--shadow-sm);
+    color: var(--primary);
+  }
+}
+
+.success {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 800;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.contact-inner {
+  width: 100%;
+  max-width: 640px; // 🔑 controla el “peso” visual
+}

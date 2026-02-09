@@ -1,0 +1,89 @@
+[
+  {
+    "slug": "data-platform",
+    "name": "Data Platform (ETL + Products)",
+    "summary": "Core data platform responsible for ingesting, normalizing, and serving datasets consumed by multiple products and enterprise clients.",
+    "ownership": "professional",
+    "role": "Software Engineer (Contributor)",
+    "confidentiality": "Proprietary",
+    "disclaimer": "Professional work (proprietary). I am a contributor, not the owner. Description focuses on architecture and technical responsibilities.",
+    "stack": [
+      "Node.js",
+      "Python",
+      "GCP",
+      "Cloud Run",
+      "Pub/Sub",
+      "Docker",
+      "Firestore",
+      "Cloud Storage"
+    ],
+    "products": [
+      {
+        "name": "CattleWiz",
+        "type": "SaaS Product",
+        "description": "Cattle & beef market intelligence platform built on top of the Data Platform."
+      },
+      {
+        "name": "EconWiz",
+        "type": "SaaS Product (in progress)",
+        "description": "Economic data product extending the platform to macro and market indicators."
+      },
+      {
+        "name": "Custom Client Pipelines",
+        "type": "Enterprise Integrations",
+        "description": "Custom ingestion and transformation pipelines for enterprise clients (anonymized)."
+      }
+    ],
+    "impact": [
+      "Enabled multiple products and clients from a shared, reliable data foundation.",
+      "Improved ingestion reliability with event-driven execution and monitoring.",
+      "Standardized normalization contracts to support new products faster."
+    ],
+    "highlights": [
+      "Designed ingestion adapters and normalization workflows.",
+      "Implemented event-driven pipelines using Pub/Sub.",
+      "Improved production stability via retries, idempotency, and monitoring."
+    ],
+    "architecture": [
+      "Sources → ingestion workers (Cloud Run / Functions)",
+      "Pub/Sub for decoupled stages and buffering",
+      "Transformation and normalization services",
+      "Curated datasets consumed by downstream products"
+    ]
+  },
+  {
+    "slug": "agrilumens",
+    "name": "AgriLumens",
+    "summary": "Personal R&D project: precision agriculture platform to process multispectral drone imagery and generate soil insights using ML pipelines.",
+    "ownership": "personal",
+    "role": "Built end-to-end (Architecture + Backend + ML pipeline)",
+    "confidentiality": "Public summary",
+    "disclaimer": "Personal project. Implementation details are summarized at a high level.",
+    "stack": [
+      "FastAPI",
+      "Python",
+      "GCP",
+      "Docker",
+      "NodeODM",
+      "ML",
+      "OpenDroneMap"
+    ],
+    "tags": ["ML", "GCP", "Computer Vision", "Microservices", "Agritech"],
+    "impact": [
+      "Automates the workflow from drone capture → processing → inference → outputs.",
+      "Designed modular services to support multiple models/datasets over time."
+    ],
+    "highlights": [
+      "Designed cloud-native architecture for imagery ingestion, processing and inference.",
+      "Integrated photogrammetry processing (ODM/NodeODM) into an automated workflow.",
+      "Built service boundaries to support future scaling and maintainability."
+    ],
+    "architecture": [
+      "Job creation → processing service (ODM/NodeODM) → inference service",
+      "Artifacts in Cloud Storage; metadata tracked for traceability",
+      "Optional event-driven orchestration for long-running jobs"
+    ],
+    "github": "https://github.com/iTzTorero",
+    "demo": ""
+  }
+]

@@ -1,0 +1,126 @@
+.hero {
+  .kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .title {
+    margin: 16px 0 0;
+    font-size: clamp(36px, 5vw, 64px); /* 4xl->6xl */
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    margin-top: 16px;
+    max-width: 42rem; /* max-w-2xl */
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  .meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--muted);
+
+    a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
+
+.section {
+  margin-top: 64px;
+
+  h2 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .bar {
+    margin-top: 16px;
+    height: 1px;
+    width: 48px;
+    background: var(--primary);
+  }
+
+  .text {
+    margin-top: 24px;
+    max-width: 42rem;
+    line-height: 1.9;
+  }
+}
+
+.pills {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--border) 35%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.quick {
+  margin-top: 64px;
+  display: grid;
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--card);
+    padding: 24px;
+    text-decoration: none;
+    transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 10px 0 0;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .cta {
+      margin-top: 16px;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+  }
+}

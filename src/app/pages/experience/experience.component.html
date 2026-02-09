@@ -1,0 +1,45 @@
+<section class="head">
+  <p class="kicker">Career</p>
+  <h1 class="title">Experience</h1>
+  <p class="subtitle">
+    Production backend and data-platform work on GCP, plus applied ML research
+    in precision agriculture.
+  </p>
+</section>
+
+<section class="timeline" aria-label="Experience timeline">
+  <div class="item" *ngFor="let e of items(); let i = index">
+    <div class="dot"></div>
+
+    <div class="card">
+      <div class="top">
+        <div>
+          <h2 class="role">{{ e.title }}</h2>
+          <div class="meta">
+            <span class="company">{{ e.company }}</span>
+            <span class="sep">•</span>
+            <span>{{ formatRange(e.start, e.end) }}</span>
+            <span class="sep" *ngIf="e.location">•</span>
+            <span *ngIf="e.location">{{ e.location }}</span>
+            <span class="sep" *ngIf="e.type">•</span>
+            <span *ngIf="e.type">{{ e.type }}</span>
+          </div>
+        </div>
+
+        <button class="btn" type="button" (click)="toggle(i)">
+          {{ isExpanded(i) ? "Less" : "More" }}
+        </button>
+      </div>
+
+      <p class="summary">{{ e.summary }}</p>
+
+      <ul class="list" *ngIf="isExpanded(i) && e.highlights?.length">
+        <li *ngFor="let h of e.highlights">{{ h }}</li>
+      </ul>
+
+      <div class="pills" *ngIf="e.tech?.length">
+        <span class="pill" *ngFor="let t of e.tech">{{ t }}</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+[
+  {
+    "company": "Monteli LLC",
+    "title": "Software Engineer (Full Stack)",
+    "type": "Remote",
+    "location": "Mexico",
+    "start": "2023-01",
+    "end": "",
+    "summary": "Cloud-native backend and data platform work on Google Cloud, building production services and pipelines with a focus on reliability and delivery.",
+    "highlights": [
+      "Built and operated production backend services on GCP (Cloud Run / Functions / Pub/Sub) supporting daily workloads.",
+      "Designed ETL/ingestion workflows and standardized transformations to improve maintainability and reduce manual ops.",
+      "Delivered features end-to-end: API design, implementation, deployment, monitoring, and incident-driven improvements."
+    ],
+    "tech": [
+      "Node.js",
+      "Python",
+      "GCP",
+      "Cloud Run",
+      "Pub/Sub",
+      "Docker",
+      "Firestore",
+      "Angular"
+    ]
+  },
+  {
+    "company": "Academic / Research (IPN)",
+    "title": "M.S. Natural Resources & Environment (Precision Agriculture)",
+    "type": "On-site",
+    "location": "Mexico",
+    "start": "2024-01",
+    "end": "2026-01",
+    "summary": "Developed ML workflows for multispectral drone imagery to estimate soil parameters (inorganic nitrogen, soil organic matter) and translate imagery into actionable insights.",
+    "highlights": [
+      "Built datasets from multispectral drone imagery and structured ML pipelines for regression tasks.",
+      "Compared multiple models (SVR, MLP, ensembles) against lab methods and documented results."
+    ],
+    "tech": [
+      "Python",
+      "ML",
+      "Remote Sensing",
+      "Computer Vision",
+      "Data Analysis"
+    ]
+  }
+]

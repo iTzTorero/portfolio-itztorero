@@ -1,0 +1,97 @@
+<a class="back" routerLink="/projects">← Back to projects</a>
+
+<ng-container *ngIf="project$ | async as p; else notFound">
+  <section class="head">
+    <p class="kicker">Project</p>
+    <h1 class="title">{{ p.name }}</h1>
+    <p class="subtitle">{{ p.summary }}</p>
+
+    <div class="badges">
+      <span class="badge" *ngIf="p.role">{{ p.role }}</span>
+      <span class="badge" *ngIf="p.ownership === 'professional'"
+        >Professional work</span
+      >
+      <span class="badge" *ngIf="p.ownership === 'personal'"
+        >Personal project</span
+      >
+    </div>
+
+    <p class="disclaimer" *ngIf="p.disclaimer">{{ p.disclaimer }}</p>
+
+    <div class="actions">
+      <a
+        class="btn"
+        *ngIf="p.demo"
+        [href]="p.demo"
+        target="_blank"
+        rel="noopener"
+        >Live / Demo</a
+      >
+      <a
+        class="btn"
+        *ngIf="p.github"
+        [href]="p.github"
+        target="_blank"
+        rel="noopener"
+        >GitHub</a
+      >
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Stack</h2>
+    <div class="bar"></div>
+    <div class="pills">
+      <span class="pill" *ngFor="let s of p.stack">{{ s }}</span>
+    </div>
+  </section>
+
+  <section class="section" *ngIf="p.highlights?.length">
+    <h2>What I did</h2>
+    <div class="bar"></div>
+    <ul class="list">
+      <li *ngFor="let h of p.highlights">{{ h }}</li>
+    </ul>
+  </section>
+
+  <section class="section" *ngIf="p.architecture?.length">
+    <h2>Architecture</h2>
+    <div class="bar"></div>
+    <ul class="list">
+      <li *ngFor="let a of p.architecture">{{ a }}</li>
+    </ul>
+  </section>
+
+  <!-- Products built on top -->
+  <section class="section" *ngIf="p.products?.length">
+    <h2>Products built on top</h2>
+    <div class="bar"></div>
+
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let pr of p.products">
+        <div class="product-top">
+          <h3 class="product-name">{{ pr.name }}</h3>
+          <span class="product-type">{{ pr.type }}</span>
+        </div>
+        <p class="product-desc">{{ pr.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tags (safe) -->
+  <section class="section" *ngIf="p.tags?.length">
+    <h2>Tags</h2>
+    <div class="bar"></div>
+    <div class="pills">
+      <span class="pill" *ngFor="let t of p.tags ?? []">{{ t }}</span>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #notFound>
+  <h1 class="title">Project not found</h1>
+  <p class="subtitle">
+    That project slug does not exist in assets/projects.json
+  </p>
+  <a routerLink="/projects">← Back to projects</a>
+</ng-template>
