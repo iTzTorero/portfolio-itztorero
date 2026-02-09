@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "build": "npx ng build",
+    "start": "npx ng serve",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test",
     "serve:ssr:portfolio-itztorero": "node dist/portfolio-itztorero/server/server.mjs"
   },
   "private": true,
