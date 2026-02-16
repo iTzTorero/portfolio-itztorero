@@ -1,60 +1,63 @@
 <section class="contact">
   <div class="contact-inner">
     <section class="head">
-      <p class="kicker">Contact</p>
-      <h1 class="title">Get in touch</h1>
-      <p class="subtitle">
-        Interested in working together or have a question? Send me a message and
-        I’ll get back to you.
-      </p>
+      <p class="kicker">{{ "contact.kicker" | transloco }}</p>
+      <h1 class="title">{{ "contact.title" | transloco }}</h1>
+      <p class="subtitle">{{ "contact.subtitle" | transloco }}</p>
     </section>
 
     <section class="card">
       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
         <div class="field">
-          <label>Name</label>
-          <input type="text" formControlName="name" placeholder="Your name" />
+          <label>{{ "contact.form.name.label" | transloco }}</label>
+          <input
+            type="text"
+            formControlName="name"
+            [placeholder]="'contact.form.name.placeholder' | transloco"
+          />
           <small
             *ngIf="form.controls.name.touched && form.controls.name.invalid"
           >
-            Please enter your name.
+            {{ "contact.form.name.error" | transloco }}
           </small>
         </div>
 
         <div class="field">
-          <label>Email</label>
+          <label>{{ "contact.form.email.label" | transloco }}</label>
           <input
             type="email"
             formControlName="email"
-            placeholder="you@email.com"
+            [placeholder]="'contact.form.email.placeholder' | transloco"
           />
           <small
             *ngIf="form.controls.email.touched && form.controls.email.invalid"
           >
-            Please enter a valid email.
+            {{ "contact.form.email.error" | transloco }}
           </small>
         </div>
 
         <div class="field">
-          <label>Message</label>
+          <label>{{ "contact.form.message.label" | transloco }}</label>
           <textarea
             rows="5"
             formControlName="message"
-            placeholder="Tell me about your project or idea"
+            [placeholder]="'contact.form.message.placeholder' | transloco"
           ></textarea>
           <small
             *ngIf="
               form.controls.message.touched && form.controls.message.invalid
             "
           >
-            Message must be at least 10 characters.
+            {{ "contact.form.message.error" | transloco }}
           </small>
         </div>
 
-        <button class="btn" type="submit">Send message</button>
+        <button class="btn" type="submit">
+          {{ "contact.form.submit" | transloco }}
+        </button>
 
         <p class="success" *ngIf="sent()">
-          Your email client should open shortly ✉️
+          {{ "contact.success" | transloco }} ✉️
         </p>
       </form>
     </section>

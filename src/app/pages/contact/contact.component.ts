@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslocoPipe],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -17,7 +18,7 @@ export class ContactPage {
     message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private transloco: TranslocoService) { }
 
   submit() {
     if (this.form.invalid) {
@@ -25,11 +26,19 @@ export class ContactPage {
       return;
     }
 
-    const { name, email, message } = this.form.value;
+    const name = this.form.value.name ?? '';
+    const email = this.form.value.email ?? '';
+    const message = this.form.value.message ?? '';
 
-    const subject = encodeURIComponent(`Portfolio contact — ${name}`);
+    const subjectTpl = this.transloco.translate('contact.mail.subject'); // ej: "Portfolio contact — {{name}}"
+    const bodyTpl = this.transloco.translate('contact.mail.body');       // ej: "Name: {{name}}\nEmail: {{email}}\n\n{{message}}"
+
+    const subject = encodeURIComponent(subjectTpl.replace('{{name}}', name));
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`
+      bodyTpl
+        .replace('{{name}}', name)
+        .replace('{{email}}', email)
+        .replace('{{message}}', message)
     );
 
     window.location.href = `mailto:valenzuelacastrojuanpablo@gmail.com?subject=${subject}&body=${body}`;

@@ -1,0 +1,85 @@
+[
+  {
+    "school": {
+      "en": "National Polytechnic Institute (IPN)",
+      "es": "Instituto Politécnico Nacional (IPN)"
+    },
+    "title": {
+      "en": "M.S. Natural Resources & Environment (Precision Agriculture)",
+      "es": "Maestría en Recursos Naturales y Medio Ambiente (Agricultura de Precisión)"
+    },
+    "type": { "en": "On-site", "es": "Presencial" },
+    "location": { "en": "Mexico", "es": "México" },
+    "start": "2024-01",
+    "end": "2026-01",
+
+    "summary": {
+      "en": "Graduate research focused on applying machine learning to multispectral drone imagery in order to estimate key soil parameters and support data-driven decision-making in agriculture.",
+      "es": "Investigación de posgrado enfocada en la aplicación de aprendizaje automático a imágenes multiespectrales de dron para estimar parámetros clave del suelo y apoyar la toma de decisiones en agricultura."
+    },
+
+    "highlights": {
+      "en": [
+        "Thesis: Estimation of inorganic nitrogen and soil organic matter in agricultural soils using multispectral imagery and machine learning models.",
+        "Built custom datasets from multispectral drone imagery and laboratory soil analyses.",
+        "Developed and evaluated regression models (SVR, MLP, ensemble approaches) to estimate soil parameters.",
+        "Compared ML-based estimations against standard laboratory methods and documented accuracy and limitations."
+      ],
+      "es": [
+        "Tesis: Estimación de nitrógeno inorgánico y materia orgánica en suelos agrícolas mediante imágenes multiespectrales y modelos de aprendizaje automático.",
+        "Construí datasets personalizados a partir de imágenes multiespectrales de dron y análisis de laboratorio de suelo.",
+        "Desarrollé y evalué modelos de regresión (SVR, MLP y enfoques de ensamble) para estimar parámetros del suelo.",
+        "Comparé estimaciones basadas en ML contra métodos de laboratorio estándar y documenté precisión y limitaciones."
+      ]
+    },
+
+    "focus": [
+      "Python",
+      "Machine Learning",
+      "Multispectral Imagery",
+      "Remote Sensing",
+      "Regression Models",
+      "Precision Agriculture"
+    ]
+  },
+  {
+    "school": {
+      "en": "Technological Institute of Sonora",
+      "es": "Instituto Tecnológico de Sonora"
+    },
+    "title": {
+      "en": "B.S. Software Engineering",
+      "es": "Licenciatura en Ingeniería de Software"
+    },
+    "type": { "en": "On-site", "es": "Presencial" },
+    "location": { "en": "Mexico", "es": "México" },
+    "start": "2018-08",
+    "end": "2022-06",
+
+    "summary": {
+      "en": "Undergraduate training in software engineering with a focus on programming fundamentals, system design, and applied computing.",
+      "es": "Formación de licenciatura en ingeniería de software con enfoque en fundamentos de programación, diseño de sistemas y computación aplicada."
+    },
+
+    "highlights": {
+      "en": [
+        "Built multiple academic projects using full-stack web technologies.",
+        "Strengthened foundations in algorithms, data structures, and databases.",
+        "Applied software engineering principles such as modularity, testing, and clean architecture."
+      ],
+      "es": [
+        "Desarrollé múltiples proyectos académicos utilizando tecnologías web full-stack.",
+        "Fortalecí fundamentos en algoritmos, estructuras de datos y bases de datos.",
+        "Apliqué principios de ingeniería de software como modularidad, pruebas y arquitectura limpia."
+      ]
+    },
+
+    "focus": [
+      "Algorithms",
+      "Data Structures",
+      "Databases",
+      "Web Development",
+      "Software Architecture"
+    ]
+  }
+]

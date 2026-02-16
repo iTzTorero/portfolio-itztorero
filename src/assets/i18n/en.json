@@ -1,0 +1,125 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "education": "Education"
+  },
+
+  "home": {
+    "hero": {
+      "kicker": "Software Engineer",
+      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservices | Applied Machine Learning"
+    },
+    "about": {
+      "title": "About",
+      "text": "Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data-oriented pipelines. Experienced integrating machine learning models into production environments and working with geospatial and image-based datasets. Seeking backend, cloud, and AI systems roles."
+    },
+    "quick": {
+      "cta": "View",
+      "projects": {
+        "title": "Projects",
+        "desc": "Explore my work in cloud, ML pipelines, and full-stack applications."
+      },
+      "experience": {
+        "title": "Experience",
+        "desc": "Professional timeline from junior developer to backend engineer."
+      },
+      "contact": {
+        "title": "Contact",
+        "desc": "Get in touch for opportunities, collaborations, or questions."
+      },
+      "education": {
+        "title": "Education",
+        "desc": "Degrees and academic work in software and precision agriculture."
+      }
+    },
+
+    "skills": {
+      "title": "Top Skills"
+    }
+  },
+  "projects": {
+    "kicker": "Work",
+    "title": "Projects",
+    "subtitle": "Selected projects focused on cloud-native systems, data pipelines, and applied ML.",
+    "searchPlaceholder": "Search projects (name, tags, stack)…",
+    "searchAria": "Search projects",
+    "clear": "Clear",
+    "filters": {
+      "all": "All"
+    },
+    "links": {
+      "github": "GitHub",
+      "demo": "Demo"
+    }
+  },
+  "projectDetail": {
+    "backToProjects": "Back to projects",
+    "kicker": "Project",
+    "badges": {
+      "professional": "Professional work",
+      "personal": "Personal project"
+    },
+    "actions": {
+      "liveDemo": "Live / Demo",
+      "github": "GitHub"
+    },
+    "sections": {
+      "stack": "Stack",
+      "whatIDid": "What I did",
+      "architecture": "Architecture",
+      "productsBuiltOnTop": "Products built on top",
+      "tags": "Tags"
+    },
+    "notFound": {
+      "title": "Project not found",
+      "subtitle": "That project slug does not exist in assets/projects.json"
+    }
+  },
+  "experience": {
+    "kicker": "Career",
+    "title": "Experience",
+    "subtitle": "Production backend and data-platform engineering on GCP, plus applied machine learning research on geospatial data.",
+    "more": "More",
+    "less": "Less",
+    "present": "Present"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Get in touch",
+    "subtitle": "Interested in working together or have a question? Send me a message and I’ll get back to you.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Please enter your name."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@email.com",
+        "error": "Please enter a valid email."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project or idea",
+        "error": "Message must be at least 10 characters."
+      },
+      "submit": "Send message"
+    },
+    "success": "Your email client should open shortly",
+    "mail": {
+      "subject": "Portfolio contact — {{name}}",
+      "body": "Name: {{name}}\nEmail: {{email}}\n\n{{message}}"
+    }
+  },
+  "education": {
+    "kicker": "Education",
+    "title": "Education",
+    "subtitle": "Academic background in software engineering, data systems, and applied machine learning.",
+    "more": "More",
+    "less": "Less",
+    "present": "Present"
+  }
+}

@@ -1,21 +1,135 @@
 <header class="topbar">
-  <a routerLink="/" class="brand">Juan Pablo</a>
+  <div class="left">
+    <!-- Hamburguesa (solo móvil) -->
+    <button
+      class="menu-btn"
+      type="button"
+      (click)="menuOpen ? closeMenu() : openMenu()"
+      [class.open]="menuOpen"
+      aria-label="Toggle menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <nav class="nav" aria-label="Primary">
-    <a routerLink="/projects" routerLinkActive="active">Projects</a>
-    <a routerLink="/experience" routerLinkActive="active">Experience</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    <a routerLink="/" class="brand">
+      <img src="assets/logo.png" alt="Juan Pablo Logo" class="logo" />
+    </a>
+  </div>
+
+  <!-- Nav normal (desktop) -->
+  <nav class="nav desktop" aria-label="Primary">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ "nav.home" | transloco }}
+    </a>
+    <a routerLink="/projects" routerLinkActive="active">{{
+      "nav.projects" | transloco
+    }}</a>
+    <a routerLink="/experience" routerLinkActive="active">{{
+      "nav.experience" | transloco
+    }}</a>
+    <a routerLink="/education" routerLinkActive="active">{{
+      "nav.education" | transloco
+    }}</a>
+    <a routerLink="/contact" routerLinkActive="active">{{
+      "nav.contact" | transloco
+    }}</a>
   </nav>
 
-  <button
-    class="theme-btn"
-    type="button"
-    (click)="theme.toggle()"
-    aria-label="Toggle theme"
-  >
-    {{ theme.theme() === "dark" ? "☀️" : "🌙" }}
-  </button>
+  <div class="actions">
+    <button
+      class="theme-btn"
+      type="button"
+      (click)="theme.toggle()"
+      aria-label="Toggle theme"
+    >
+      {{ theme.theme() === "dark" ? "☀️" : "🌙" }}
+    </button>
+
+    <button class="lang-toggle" type="button" (click)="toggleLang()">
+      <span class="flag">{{ activeLang === "en" ? "🇺🇸" : "🇪🇸" }}</span>
+      <span class="label">{{ activeLang === "en" ? "EN" : "ES" }}</span>
+    </button>
+  </div>
 </header>
+
+<!-- Overlay + Drawer (igual que antes, pero con estilos nuevos) -->
+<div
+  class="backdrop"
+  *ngIf="menuOpen"
+  (click)="closeMenu()"
+  aria-hidden="true"
+></div>
+
+<aside
+  id="mobile-menu"
+  class="drawer"
+  [class.open]="menuOpen"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile menu"
+>
+  <div class="drawer-header">
+    <span class="drawer-title">Menu</span>
+    <button
+      type="button"
+      class="drawer-close"
+      (click)="closeMenu()"
+      aria-label="Close menu"
+    >
+      ✕
+    </button>
+  </div>
+
+  <nav class="drawer-nav" aria-label="Mobile primary">
+    <a
+      routerLink="/"
+      (click)="closeMenu()"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ "nav.home" | transloco }}
+    </a>
+
+    <a routerLink="/projects" (click)="closeMenu()" routerLinkActive="active">{{
+      "nav.projects" | transloco
+    }}</a>
+    <a
+      routerLink="/experience"
+      (click)="closeMenu()"
+      routerLinkActive="active"
+      >{{ "nav.experience" | transloco }}</a
+    >
+    <a
+      routerLink="/education"
+      (click)="closeMenu()"
+      routerLinkActive="active"
+      >{{ "nav.education" | transloco }}</a
+    >
+    <a routerLink="/contact" (click)="closeMenu()" routerLinkActive="active">{{
+      "nav.contact" | transloco
+    }}</a>
+  </nav>
+
+  <!-- <div class="drawer-actions">
+    <button class="drawer-btn" type="button" (click)="theme.toggle()">
+      <span class="ico">{{ theme.theme() === "dark" ? "☀️" : "🌙" }}</span>
+      <span>Theme</span>
+    </button>
+
+    <button class="drawer-btn" type="button" (click)="toggleLang()">
+      <span class="ico">{{ activeLang === "en" ? "🇺🇸" : "🇪🇸" }}</span>
+      <span>{{ activeLang === "en" ? "English" : "Español" }}</span>
+    </button>
+  </div> -->
+</aside>
+
+<!-- Lo demás igual -->
 <main class="container">
   <div
     class="route-shell"
@@ -29,7 +143,7 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <span class="copy">© {{ currentYear }} Juan Pablo</span>
+    <span class="copy">© {{ currentYear }} Juan Pablo Valenzuela</span>
 
     <div class="social">
       <a

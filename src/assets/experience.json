@@ -1,17 +1,39 @@
 [
   {
-    "company": "Monteli LLC",
-    "title": "Software Engineer (Full Stack)",
-    "type": "Remote",
-    "location": "Mexico",
+    "company": {
+      "en": "Monteli LLC",
+      "es": "Monteli LLC"
+    },
+    "title": {
+      "en": "Software Engineer (Full Stack)",
+      "es": "Ingeniero de Software (Full Stack)"
+    },
+    "type": {
+      "en": "Remote",
+      "es": "Remoto"
+    },
+    "location": {
+      "en": "Mexico",
+      "es": "México"
+    },
     "start": "2023-01",
     "end": "",
-    "summary": "Cloud-native backend and data platform work on Google Cloud, building production services and pipelines with a focus on reliability and delivery.",
-    "highlights": [
-      "Built and operated production backend services on GCP (Cloud Run / Functions / Pub/Sub) supporting daily workloads.",
-      "Designed ETL/ingestion workflows and standardized transformations to improve maintainability and reduce manual ops.",
-      "Delivered features end-to-end: API design, implementation, deployment, monitoring, and incident-driven improvements."
-    ],
+    "summary": {
+      "en": "Cloud-native backend and data platform engineering on Google Cloud, building and operating production-grade services and pipelines with a strong focus on reliability, scalability, and delivery.",
+      "es": "Ingeniería backend y de plataforma de datos cloud-native en Google Cloud, construyendo y operando servicios y pipelines en producción con enfoque en confiabilidad, escalabilidad y entrega."
+    },
+    "highlights": {
+      "en": [
+        "Built and operated production backend services on GCP (Cloud Run, Functions, Pub/Sub) supporting daily workloads.",
+        "Designed ETL and ingestion workflows with standardized transformation layers to improve maintainability.",
+        "Owned features end-to-end: API design, implementation, deployment, monitoring, and incident-driven improvements."
+      ],
+      "es": [
+        "Construí y operé servicios backend en producción sobre GCP (Cloud Run, Functions, Pub/Sub) soportando cargas diarias.",
+        "Diseñé flujos de ETL e ingesta con capas de transformación estandarizadas para mejorar la mantenibilidad.",
+        "Gestioné funcionalidades end-to-end: diseño de APIs, implementación, despliegue, monitoreo y mejoras a partir de incidentes."
+      ]
+    },
     "tech": [
       "Node.js",
       "Python",
@@ -24,21 +46,44 @@
     ]
   },
   {
-    "company": "Academic / Research (IPN)",
-    "title": "M.S. Natural Resources & Environment (Precision Agriculture)",
-    "type": "On-site",
-    "location": "Mexico",
+    "company": {
+      "en": "Graduate Research (IPN)",
+      "es": "Investigación de Posgrado (IPN)"
+    },
+    "title": {
+      "en": "Machine Learning Researcher (Geospatial & Computer Vision)",
+      "es": "Investigador en Machine Learning (Geoespacial y Visión por Computadora)"
+    },
+    "type": {
+      "en": "On-site",
+      "es": "Presencial"
+    },
+    "location": {
+      "en": "Mexico",
+      "es": "México"
+    },
     "start": "2024-01",
     "end": "2026-01",
-    "summary": "Developed ML workflows for multispectral drone imagery to estimate soil parameters (inorganic nitrogen, soil organic matter) and translate imagery into actionable insights.",
-    "highlights": [
-      "Built datasets from multispectral drone imagery and structured ML pipelines for regression tasks.",
-      "Compared multiple models (SVR, MLP, ensembles) against lab methods and documented results."
-    ],
+    "summary": {
+      "en": "Designed and evaluated regression-based machine learning models using multispectral imagery and geospatial data to estimate soil parameters, aligning model outputs with laboratory benchmarks.",
+      "es": "Diseñé y evalué modelos de aprendizaje automático basados en regresión utilizando imágenes multiespectrales y datos geoespaciales para estimar parámetros del suelo, alineando los resultados con mediciones de laboratorio."
+    },
+    "highlights": {
+      "en": [
+        "Built structured datasets combining drone imagery, field sampling, and laboratory analysis.",
+        "Developed and compared regression models (SVR, MLP, ensemble methods) using cross-validation and performance metrics.",
+        "Translated model outputs into interpretable geospatial insights for decision support."
+      ],
+      "es": [
+        "Construí datasets estructurados combinando imágenes de dron, muestreos de campo y análisis de laboratorio.",
+        "Desarrollé y comparé modelos de regresión (SVR, MLP, métodos de ensamble) utilizando validación cruzada y métricas de desempeño.",
+        "Transformé los resultados de los modelos en insights geoespaciales interpretables para apoyo a la toma de decisiones."
+      ]
+    },
     "tech": [
       "Python",
-      "ML",
-      "Remote Sensing",
+      "Machine Learning",
+      "Geospatial Data",
       "Computer Vision",
       "Data Analysis"
     ]

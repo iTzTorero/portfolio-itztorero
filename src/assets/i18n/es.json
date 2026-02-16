@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "education": "Educación"
+  },
+
+  "home": {
+    "hero": {
+      "kicker": "Ingeniero de Software",
+      "headline": "Software Engineer especializado en sistemas backend, arquitecturas cloud y ML aplicado"
+    },
+    "about": {
+      "title": "Sobre mí",
+      "text": "Ingeniero de Software con más de 3 años desarrollando sistemas cloud-native en GCP, arquitecturas de microservicios y pipelines orientados a datos. Experiencia integrando modelos de aprendizaje automático en entornos productivos y trabajando con datos geoespaciales e imágenes multiespectrales. Buscando oportunidades en backend, cloud y sistemas de IA."
+    },
+    "quick": {
+      "cta": "Ver",
+      "projects": {
+        "title": "Proyectos",
+        "desc": "Explora mi trabajo en cloud, pipelines de ML y aplicaciones full-stack."
+      },
+      "experience": {
+        "title": "Experiencia",
+        "desc": "Trayectoria profesional desde junior developer hasta backend engineer."
+      },
+      "contact": {
+        "title": "Contacto",
+        "desc": "Ponte en contacto para oportunidades, colaboraciones o preguntas."
+      },
+      "education": {
+        "title": "Educación",
+        "desc": "Grados y formación académica en software y agricultura de precisión."
+      }
+    },
+
+    "skills": {
+      "title": "Habilidades principales"
+    }
+  },
+  "projects": {
+    "kicker": "Trabajo",
+    "title": "Proyectos",
+    "subtitle": "Proyectos seleccionados enfocados en sistemas cloud-native, pipelines de datos y ML aplicado.",
+    "searchPlaceholder": "Buscar proyectos (nombre, etiquetas, stack)…",
+    "searchAria": "Buscar proyectos",
+    "clear": "Limpiar",
+    "filters": {
+      "all": "Todos"
+    },
+    "links": {
+      "github": "GitHub",
+      "demo": "Demo"
+    }
+  },
+  "projectDetail": {
+    "backToProjects": "Volver a proyectos",
+    "kicker": "Proyecto",
+    "badges": {
+      "professional": "Trabajo profesional",
+      "personal": "Proyecto personal"
+    },
+    "actions": {
+      "liveDemo": "Ver / Demo",
+      "github": "GitHub"
+    },
+    "sections": {
+      "stack": "Stack",
+      "whatIDid": "Lo que hice",
+      "architecture": "Arquitectura",
+      "productsBuiltOnTop": "Productos desarrollados",
+      "tags": "Etiquetas"
+    },
+    "notFound": {
+      "title": "Proyecto no encontrado",
+      "subtitle": "Ese slug de proyecto no existe en assets/projects.json"
+    }
+  },
+
+  "experience": {
+    "kicker": "Carrera",
+    "title": "Experiencia",
+    "subtitle": "Trabajo backend y de plataforma de datos en producción sobre GCP, además de investigación de ML aplicado en agricultura de precisión.",
+    "more": "Más",
+    "less": "Menos",
+    "present": "Actual"
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "title": "Hablemos",
+    "subtitle": "¿Te interesa colaborar o tienes una pregunta? Envíame un mensaje y te responderé pronto.",
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre",
+        "error": "Por favor escribe tu nombre."
+      },
+      "email": {
+        "label": "Correo",
+        "placeholder": "tu@correo.com",
+        "error": "Por favor escribe un correo válido."
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu proyecto o idea",
+        "error": "El mensaje debe tener al menos 10 caracteres."
+      },
+      "submit": "Enviar mensaje"
+    },
+    "success": "Tu cliente de correo debería abrirse en un momento",
+    "mail": {
+      "subject": "Contacto desde portafolio — {{name}}",
+      "body": "Nombre: {{name}}\nCorreo: {{email}}\n\n{{message}}"
+    }
+  },
+  "education": {
+    "kicker": "Educación",
+    "title": "Educación",
+    "subtitle": "Formación académica en ingeniería de software, sistemas de datos y aplicaciones de ML.",
+    "more": "Más",
+    "less": "Menos",
+    "present": "Actual"
+  }
+}

@@ -1,43 +1,40 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, signal } from '@angular/core';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 
 type LocalizedText = { en: string; es: string };
 type LocalizedList = { en: string[]; es: string[] };
 
-type ExpItem = {
-  company: LocalizedText;
+type EduItem = {
+  school: LocalizedText;
   title: LocalizedText;
-  type?: LocalizedText;
-  location?: LocalizedText;
-
-  start: string; // YYYY-MM
-  end?: string;  // YYYY-MM or "" or undefined
-
+  type?: LocalizedText;      // e.g. "On-site" / "Presencial"
+  location?: LocalizedText;  // e.g. "Mexico" / "México"
+  start: string;             // YYYY-MM
+  end?: string;              // YYYY-MM or ""
   summary: LocalizedText;
   highlights?: LocalizedList;
-  tech?: string[];
+  focus?: string[];          // tags/pills (pueden ir en inglés o mixto)
 };
 
 @Component({
   standalone: true,
   imports: [CommonModule, TranslocoPipe],
-  templateUrl: './experience.component.html',
-  styleUrl: './experience.component.scss',
+  templateUrl: './education.component.html',
+  styleUrl: './education.component.scss',
 })
-export class ExperiencePage {
-  items = signal<ExpItem[]>([]);
+export class EducationPage {
+  items = signal<EduItem[]>([]);
   expanded = signal<Record<number, boolean>>({});
 
   constructor(private http: HttpClient, private transloco: TranslocoService) {
-    this.http.get<ExpItem[]>('assets/experience.json').subscribe({
+    this.http.get<EduItem[]>('assets/education.json').subscribe({
       next: (data) => this.items.set(data ?? []),
       error: () => this.items.set([]),
     });
   }
 
-  // --- i18n helpers ---
   lang(): 'en' | 'es' {
     const l = this.transloco.getActiveLang();
     return l === 'es' ? 'es' : 'en';
@@ -53,7 +50,6 @@ export class ExperiencePage {
     return obj?.[l] ?? obj?.en ?? [];
   }
 
-  // --- UI state ---
   toggle(i: number) {
     this.expanded.set({ ...this.expanded(), [i]: !this.expanded()[i] });
   }
@@ -62,7 +58,6 @@ export class ExperiencePage {
     return !!this.expanded()[i];
   }
 
-  // --- Dates ---
   private monthName(m: number) {
     const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const monthsEs = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
@@ -78,7 +73,7 @@ export class ExperiencePage {
     const endLabel =
       end && end.trim().length
         ? fmt(end)
-        : this.transloco.translate('experience.present'); // "Present" / "Actual"
+        : this.transloco.translate('education.present'); // Present / Actual
 
     return `${fmt(start)} — ${endLabel}`;
   }

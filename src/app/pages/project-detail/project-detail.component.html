@@ -1,22 +1,35 @@
-<a class="back" routerLink="/projects">← Back to projects</a>
+<a class="back" routerLink="/projects">
+  ← {{ "projectDetail.backToProjects" | transloco }}
+</a>
 
 <ng-container *ngIf="project$ | async as p; else notFound">
   <section class="head">
-    <p class="kicker">Project</p>
-    <h1 class="title">{{ p.name }}</h1>
-    <p class="subtitle">{{ p.summary }}</p>
+    <p class="kicker">{{ "projectDetail.kicker" | transloco }}</p>
+
+    <h1 class="title">{{ t(p.name) }}</h1>
+    <p class="subtitle">{{ t(p.summary) }}</p>
 
     <div class="badges">
-      <span class="badge" *ngIf="p.role">{{ p.role }}</span>
-      <span class="badge" *ngIf="p.ownership === 'professional'"
-        >Professional work</span
-      >
-      <span class="badge" *ngIf="p.ownership === 'personal'"
-        >Personal project</span
-      >
+      <span class="badge" *ngIf="p.role">
+        {{ t(p.role) }}
+      </span>
+
+      <span class="badge" *ngIf="p.ownership === 'professional'">
+        {{ "projectDetail.badges.professional" | transloco }}
+      </span>
+
+      <span class="badge" *ngIf="p.ownership === 'personal'">
+        {{ "projectDetail.badges.personal" | transloco }}
+      </span>
+
+      <span class="badge" *ngIf="p.confidentiality">
+        {{ t(p.confidentiality) }}
+      </span>
     </div>
 
-    <p class="disclaimer" *ngIf="p.disclaimer">{{ p.disclaimer }}</p>
+    <p class="disclaimer" *ngIf="p.disclaimer">
+      {{ t(p.disclaimer) }}
+    </p>
 
     <div class="actions">
       <a
@@ -25,73 +38,74 @@
         [href]="p.demo"
         target="_blank"
         rel="noopener"
-        >Live / Demo</a
       >
+        {{ "projectDetail.actions.liveDemo" | transloco }}
+      </a>
+
       <a
         class="btn"
         *ngIf="p.github"
         [href]="p.github"
         target="_blank"
         rel="noopener"
-        >GitHub</a
       >
+        {{ "projectDetail.actions.github" | transloco }}
+      </a>
     </div>
   </section>
 
   <section class="section">
-    <h2>Stack</h2>
+    <h2>{{ "projectDetail.sections.stack" | transloco }}</h2>
     <div class="bar"></div>
     <div class="pills">
       <span class="pill" *ngFor="let s of p.stack">{{ s }}</span>
     </div>
   </section>
 
-  <section class="section" *ngIf="p.highlights?.length">
-    <h2>What I did</h2>
+  <section class="section" *ngIf="tArr(p.highlights).length">
+    <h2>{{ "projectDetail.sections.whatIDid" | transloco }}</h2>
     <div class="bar"></div>
     <ul class="list">
-      <li *ngFor="let h of p.highlights">{{ h }}</li>
+      <li *ngFor="let h of tArr(p.highlights)">{{ h }}</li>
     </ul>
   </section>
 
-  <section class="section" *ngIf="p.architecture?.length">
-    <h2>Architecture</h2>
+  <section class="section" *ngIf="tArr(p.architecture).length">
+    <h2>{{ "projectDetail.sections.architecture" | transloco }}</h2>
     <div class="bar"></div>
     <ul class="list">
-      <li *ngFor="let a of p.architecture">{{ a }}</li>
+      <li *ngFor="let a of tArr(p.architecture)">{{ a }}</li>
     </ul>
   </section>
 
-  <!-- Products built on top -->
   <section class="section" *ngIf="p.products?.length">
-    <h2>Products built on top</h2>
+    <h2>{{ "projectDetail.sections.productsBuiltOnTop" | transloco }}</h2>
     <div class="bar"></div>
 
     <div class="product-grid">
       <div class="product-card" *ngFor="let pr of p.products">
         <div class="product-top">
           <h3 class="product-name">{{ pr.name }}</h3>
-          <span class="product-type">{{ pr.type }}</span>
+          <span class="product-type">{{ t(pr.type) }}</span>
         </div>
-        <p class="product-desc">{{ pr.description }}</p>
+        <p class="product-desc">{{ t(pr.description) }}</p>
       </div>
     </div>
   </section>
 
-  <!-- Tags (safe) -->
   <section class="section" *ngIf="p.tags?.length">
-    <h2>Tags</h2>
+    <h2>{{ "projectDetail.sections.tags" | transloco }}</h2>
     <div class="bar"></div>
     <div class="pills">
-      <span class="pill" *ngFor="let t of p.tags ?? []">{{ t }}</span>
+      <span class="pill" *ngFor="let tg of p.tags ?? []">{{ tg }}</span>
     </div>
   </section>
 </ng-container>
 
 <ng-template #notFound>
-  <h1 class="title">Project not found</h1>
-  <p class="subtitle">
-    That project slug does not exist in assets/projects.json
-  </p>
-  <a routerLink="/projects">← Back to projects</a>
+  <h1 class="title">{{ "projectDetail.notFound.title" | transloco }}</h1>
+  <p class="subtitle">{{ "projectDetail.notFound.subtitle" | transloco }}</p>
+  <a routerLink="/projects">
+    ← {{ "projectDetail.backToProjects" | transloco }}
+  </a>
 </ng-template>

@@ -1,12 +1,27 @@
 [
   {
     "slug": "data-platform",
-    "name": "Data Platform (ETL + Products)",
-    "summary": "Core data platform responsible for ingesting, normalizing, and serving datasets consumed by multiple products and enterprise clients.",
+    "name": {
+      "en": "Data Platform (ETL + Products)",
+      "es": "Plataforma de Datos (ETL + Productos)"
+    },
+    "summary": {
+      "en": "Core data platform responsible for ingesting, normalizing, and serving datasets consumed by multiple SaaS products and enterprise clients.",
+      "es": "Plataforma de datos central responsable de ingerir, normalizar y servir datasets consumidos por múltiples productos SaaS y clientes empresariales."
+    },
     "ownership": "professional",
-    "role": "Software Engineer (Contributor)",
-    "confidentiality": "Proprietary",
-    "disclaimer": "Professional work (proprietary). I am a contributor, not the owner. Description focuses on architecture and technical responsibilities.",
+    "role": {
+      "en": "Software Engineer (Platform Contributor)",
+      "es": "Ingeniero de Software (Colaborador de Plataforma)"
+    },
+    "confidentiality": {
+      "en": "Proprietary",
+      "es": "Propietario"
+    },
+    "disclaimer": {
+      "en": "Professional work. I contributed to the platform architecture and backend systems. Description focuses on technical responsibilities.",
+      "es": "Trabajo profesional. Contribuí a la arquitectura de la plataforma y sistemas backend. La descripción se enfoca en responsabilidades técnicas."
+    },
     "stack": [
       "Node.js",
       "Python",
@@ -20,69 +35,148 @@
     "products": [
       {
         "name": "CattleWiz",
-        "type": "SaaS Product",
-        "description": "Cattle & beef market intelligence platform built on top of the Data Platform."
+        "type": {
+          "en": "SaaS Product",
+          "es": "Producto SaaS"
+        },
+        "description": {
+          "en": "Cattle and beef market intelligence platform built on top of the Data Platform.",
+          "es": "Plataforma de inteligencia de mercado de ganado y carne construida sobre la Plataforma de Datos."
+        }
       },
       {
         "name": "EconWiz",
-        "type": "SaaS Product (in progress)",
-        "description": "Economic data product extending the platform to macro and market indicators."
+        "type": {
+          "en": "SaaS Product (In Progress)",
+          "es": "Producto SaaS (En progreso)"
+        },
+        "description": {
+          "en": "Economic data product extending the platform to macroeconomic and market indicators.",
+          "es": "Producto de datos económicos que extiende la plataforma a indicadores macroeconómicos y de mercado."
+        }
       },
       {
         "name": "Custom Client Pipelines",
-        "type": "Enterprise Integrations",
-        "description": "Custom ingestion and transformation pipelines for enterprise clients (anonymized)."
+        "type": {
+          "en": "Enterprise Integrations",
+          "es": "Integraciones empresariales"
+        },
+        "description": {
+          "en": "Custom ingestion and transformation pipelines for enterprise clients (anonymized).",
+          "es": "Pipelines personalizados de ingesta y transformación para clientes empresariales (anonimizados)."
+        }
       }
     ],
-    "impact": [
-      "Enabled multiple products and clients from a shared, reliable data foundation.",
-      "Improved ingestion reliability with event-driven execution and monitoring.",
-      "Standardized normalization contracts to support new products faster."
-    ],
-    "highlights": [
-      "Designed ingestion adapters and normalization workflows.",
-      "Implemented event-driven pipelines using Pub/Sub.",
-      "Improved production stability via retries, idempotency, and monitoring."
-    ],
-    "architecture": [
-      "Sources → ingestion workers (Cloud Run / Functions)",
-      "Pub/Sub for decoupled stages and buffering",
-      "Transformation and normalization services",
-      "Curated datasets consumed by downstream products"
-    ]
+    "impact": {
+      "en": [
+        "Enabled multiple SaaS products and enterprise clients from a shared, reliable data foundation.",
+        "Improved ingestion reliability using event-driven architecture and structured monitoring.",
+        "Standardized normalization contracts to accelerate onboarding of new products."
+      ],
+      "es": [
+        "Habilitó múltiples productos SaaS y clientes empresariales a partir de una base de datos compartida y confiable.",
+        "Mejoró la confiabilidad de la ingesta usando arquitectura orientada a eventos y monitoreo estructurado.",
+        "Estandarizó contratos de normalización para acelerar la incorporación de nuevos productos."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Designed ingestion adapters and normalization workflows.",
+        "Implemented event-driven pipelines using Pub/Sub.",
+        "Improved production stability via retries, idempotency, and monitoring.",
+        "Contributed to platform scalability and service boundary definitions."
+      ],
+      "es": [
+        "Diseñé adaptadores de ingesta y flujos de normalización.",
+        "Implementé pipelines orientados a eventos usando Pub/Sub.",
+        "Mejoré la estabilidad en producción mediante reintentos, idempotencia y monitoreo.",
+        "Contribuí a la escalabilidad de la plataforma y definición de límites de servicio."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "External sources → ingestion workers (Cloud Run / Functions)",
+        "Pub/Sub for decoupled processing stages and buffering",
+        "Transformation and normalization services",
+        "Curated datasets consumed by downstream products"
+      ],
+      "es": [
+        "Fuentes externas → workers de ingesta (Cloud Run / Functions)",
+        "Pub/Sub para etapas desacopladas y buffering",
+        "Servicios de transformación y normalización",
+        "Datasets curados consumidos por productos downstream"
+      ]
+    }
   },
   {
     "slug": "agrilumens",
-    "name": "AgriLumens",
-    "summary": "Personal R&D project: precision agriculture platform to process multispectral drone imagery and generate soil insights using ML pipelines.",
+    "name": {
+      "en": "AgriLumens",
+      "es": "AgriLumens"
+    },
+    "summary": {
+      "en": "Personal R&D platform to process multispectral drone imagery and generate soil insights using modular ML pipelines and cloud-native services.",
+      "es": "Plataforma personal de I+D para procesar imágenes multiespectrales de dron y generar insights de suelo usando pipelines modulares de ML y servicios cloud-native."
+    },
     "ownership": "personal",
-    "role": "Built end-to-end (Architecture + Backend + ML pipeline)",
-    "confidentiality": "Public summary",
-    "disclaimer": "Personal project. Implementation details are summarized at a high level.",
+    "role": {
+      "en": "Founder & Engineer (Architecture + Backend + ML)",
+      "es": "Fundador e Ingeniero (Arquitectura + Backend + ML)"
+    },
+    "confidentiality": {
+      "en": "Public summary",
+      "es": "Resumen público"
+    },
+    "disclaimer": {
+      "en": "Personal R&D project. Implementation details are summarized at a high level.",
+      "es": "Proyecto personal de I+D. Los detalles de implementación están resumidos a alto nivel."
+    },
     "stack": [
       "FastAPI",
       "Python",
       "GCP",
       "Docker",
       "NodeODM",
-      "ML",
+      "Machine Learning",
       "OpenDroneMap"
     ],
-    "tags": ["ML", "GCP", "Computer Vision", "Microservices", "Agritech"],
-    "impact": [
-      "Automates the workflow from drone capture → processing → inference → outputs.",
-      "Designed modular services to support multiple models/datasets over time."
-    ],
-    "highlights": [
-      "Designed cloud-native architecture for imagery ingestion, processing and inference.",
-      "Integrated photogrammetry processing (ODM/NodeODM) into an automated workflow.",
-      "Built service boundaries to support future scaling and maintainability."
-    ],
-    "architecture": [
-      "Job creation → processing service (ODM/NodeODM) → inference service",
-      "Artifacts in Cloud Storage; metadata tracked for traceability",
-      "Optional event-driven orchestration for long-running jobs"
-    ],
+    "tags": ["ML", "GCP", "Computer Vision", "Microservices", "Geospatial"],
+    "impact": {
+      "en": [
+        "Automates the workflow from drone capture → processing → inference → structured outputs.",
+        "Designed modular services to support multiple models and datasets over time.",
+        "Built traceable pipelines with metadata tracking for reproducibility."
+      ],
+      "es": [
+        "Automatiza el flujo desde captura con dron → procesamiento → inferencia → salidas estructuradas.",
+        "Diseñé servicios modulares para soportar múltiples modelos y datasets con el tiempo.",
+        "Construí pipelines trazables con seguimiento de metadata para reproducibilidad."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Designed cloud-native architecture for imagery ingestion, processing, and inference.",
+        "Integrated photogrammetry processing (ODM/NodeODM) into an automated backend workflow.",
+        "Defined service boundaries to support scaling and long-running jobs."
+      ],
+      "es": [
+        "Diseñé arquitectura cloud-native para ingesta, procesamiento e inferencia de imágenes.",
+        "Integré fotogrametría (ODM/NodeODM) en un flujo backend automatizado.",
+        "Definí límites de servicio para soportar escalabilidad y jobs de larga duración."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Job creation → processing service (ODM/NodeODM) → inference service",
+        "Artifacts stored in Cloud Storage with metadata tracking",
+        "Optional event-driven orchestration for long-running tasks"
+      ],
+      "es": [
+        "Creación de job → servicio de procesamiento (ODM/NodeODM) → servicio de inferencia",
+        "Artefactos almacenados en Cloud Storage con seguimiento de metadata",
+        "Orquestación opcional orientada a eventos para tareas largas"
+      ]
+    },
     "github": "https://github.com/iTzTorero",
     "demo": ""
   }

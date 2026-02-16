@@ -1,10 +1,10 @@
 <section class="head">
-  <p class="kicker">{{ "experience.kicker" | transloco }}</p>
-  <h1 class="title">{{ "experience.title" | transloco }}</h1>
-  <p class="subtitle">{{ "experience.subtitle" | transloco }}</p>
+  <p class="kicker">{{ "education.kicker" | transloco }}</p>
+  <h1 class="title">{{ "education.title" | transloco }}</h1>
+  <p class="subtitle">{{ "education.subtitle" | transloco }}</p>
 </section>
 
-<section class="timeline" aria-label="Experience timeline">
+<section class="timeline" aria-label="Education timeline">
   <div class="item" *ngFor="let e of items(); let i = index">
     <div class="dot"></div>
 
@@ -14,7 +14,7 @@
           <h2 class="role">{{ t(e.title) }}</h2>
 
           <div class="meta">
-            <span class="company">{{ t(e.company) }}</span>
+            <span class="company">{{ t(e.school) }}</span>
 
             <span class="sep">•</span>
             <span>{{ formatRange(e.start, e.end) }}</span>
@@ -30,8 +30,8 @@
         <button class="btn" type="button" (click)="toggle(i)">
           {{
             isExpanded(i)
-              ? ("experience.less" | transloco)
-              : ("experience.more" | transloco)
+              ? ("education.less" | transloco)
+              : ("education.more" | transloco)
           }}
         </button>
       </div>
@@ -42,8 +42,8 @@
         <li *ngFor="let h of tArr(e.highlights)">{{ h }}</li>
       </ul>
 
-      <div class="pills" *ngIf="e.tech?.length">
-        <span class="pill" *ngFor="let t of e.tech">{{ t }}</span>
+      <div class="pills" *ngIf="e.focus?.length">
+        <span class="pill" *ngFor="let f of e.focus">{{ f }}</span>
       </div>
     </div>
   </div>

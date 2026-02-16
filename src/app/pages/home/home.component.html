@@ -1,7 +1,7 @@
 <section class="hero" aria-label="Introduction">
-  <p class="kicker">Software Engineer</p>
+  <p class="kicker">{{ "home.hero.kicker" | transloco }}</p>
   <h1 class="title">{{ name }}</h1>
-  <p class="subtitle">{{ headline }}</p>
+  <p class="subtitle">{{ "home.hero.headline" | transloco }}</p>
 
   <div class="meta">
     <span class="meta-item">📍 {{ location }}</span>
@@ -10,35 +10,38 @@
 
   <div class="quick">
     <a routerLink="/projects" class="card">
-      <h3>Projects</h3>
-      <p>
-        Explore my work in cloud, ML pipelines, and full-stack applications.
-      </p>
-      <span class="cta">View →</span>
+      <h3>{{ "home.quick.projects.title" | transloco }}</h3>
+      <p>{{ "home.quick.projects.desc" | transloco }}</p>
+      <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
 
     <a routerLink="/experience" class="card">
-      <h3>Experience</h3>
-      <p>Professional timeline from junior developer to backend engineer.</p>
-      <span class="cta">View →</span>
+      <h3>{{ "home.quick.experience.title" | transloco }}</h3>
+      <p>{{ "home.quick.experience.desc" | transloco }}</p>
+      <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
+    </a>
+    <a routerLink="/education" class="card">
+      <h3>{{ "home.quick.education.title" | transloco }}</h3>
+      <p>{{ "home.quick.education.desc" | transloco }}</p>
+      <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
 
     <a routerLink="/contact" class="card">
-      <h3>Contact</h3>
-      <p>Get in touch for opportunities, collaborations, or questions.</p>
-      <span class="cta">View →</span>
+      <h3>{{ "home.quick.contact.title" | transloco }}</h3>
+      <p>{{ "home.quick.contact.desc" | transloco }}</p>
+      <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
   </div>
 </section>
 
 <section class="section" aria-label="About">
-  <h2>About</h2>
+  <h2>{{ "home.about.title" | transloco }}</h2>
   <div class="bar"></div>
-  <p class="text">{{ about }}</p>
+  <p class="text">{{ "home.about.text" | transloco }}</p>
 </section>
 
 <section class="section" aria-label="Top skills">
-  <h2>Top Skills</h2>
+  <h2>{{ "home.skills.title" | transloco }}</h2>
   <div class="bar"></div>
 
   <div class="pills">
