@@ -17,25 +17,24 @@
       "text": "Ingeniero de Software con más de 3 años desarrollando sistemas cloud-native en GCP, arquitecturas de microservicios y pipelines orientados a datos. Experiencia integrando modelos de aprendizaje automático en entornos productivos y trabajando con datos geoespaciales e imágenes multiespectrales. Buscando oportunidades en backend, cloud y sistemas de IA."
     },
     "quick": {
-      "cta": "Ver",
+      "cta": "Explorar",
       "projects": {
         "title": "Proyectos",
-        "desc": "Explora mi trabajo en cloud, pipelines de ML y aplicaciones full-stack."
+        "desc": "Sistemas cloud-native, plataformas de datos y aplicaciones con ML construidas para entornos reales de producción."
       },
       "experience": {
         "title": "Experiencia",
-        "desc": "Trayectoria profesional desde junior developer hasta backend engineer."
+        "desc": "Ingeniería backend en producción, sistemas distribuidos y plataformas de datos sobre Google Cloud."
       },
       "contact": {
         "title": "Contacto",
-        "desc": "Ponte en contacto para oportunidades, colaboraciones o preguntas."
+        "desc": "Conectemos sobre oportunidades en backend, cloud o sistemas de IA."
       },
       "education": {
         "title": "Educación",
-        "desc": "Grados y formación académica en software y agricultura de precisión."
+        "desc": "Formación de posgrado en ML aplicado y agricultura de precisión."
       }
     },
-
     "skills": {
       "title": "Habilidades principales"
     }

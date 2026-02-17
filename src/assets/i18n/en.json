@@ -17,25 +17,24 @@
       "text": "Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data-oriented pipelines. Experienced integrating machine learning models into production environments and working with geospatial and image-based datasets. Seeking backend, cloud, and AI systems roles."
     },
     "quick": {
-      "cta": "View",
+      "cta": "Explore",
       "projects": {
         "title": "Projects",
-        "desc": "Explore my work in cloud, ML pipelines, and full-stack applications."
+        "desc": "Cloud-native systems, data platforms, and ML-driven applications built for real-world production."
       },
       "experience": {
         "title": "Experience",
-        "desc": "Professional timeline from junior developer to backend engineer."
+        "desc": "Production backend engineering, distributed systems, and data platforms on Google Cloud."
       },
       "contact": {
         "title": "Contact",
-        "desc": "Get in touch for opportunities, collaborations, or questions."
+        "desc": "Let’s connect about backend, cloud, or AI system opportunities."
       },
       "education": {
         "title": "Education",
-        "desc": "Degrees and academic work in software and precision agriculture."
+        "desc": "Graduate research in applied ML and precision agriculture."
       }
     },
-
     "skills": {
       "title": "Top Skills"
     }
