@@ -179,5 +179,138 @@
     },
     "github": "https://github.com/iTzTorero",
     "demo": ""
+  },
+  {
+    "slug": "finops-ai",
+    "name": {
+      "en": "FinOps Multi-Agent Assistant",
+      "es": "FinOps Multi-Agent Assistant"
+    },
+    "summary": {
+      "en": "Portfolio MVP showcasing a production-oriented multi-agent architecture for finance workflows, including A2A orchestration, RAG-ready design, and a deployable Angular UI.",
+      "es": "MVP de portafolio que demuestra una arquitectura multi-agente orientada a producción para flujos financieros, con orquestación A2A, diseño listo para RAG y UI en Angular desplegable."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (Frontend + Architecture)",
+      "es": "Fundador e Ingeniero (Frontend + Arquitectura)"
+    },
+    "confidentiality": {
+      "en": "Public",
+      "es": "Público"
+    },
+    "disclaimer": {
+      "en": "Portfolio project. UI is deployed and backend orchestration is planned (FastAPI + agents).",
+      "es": "Proyecto de portafolio. La UI está desplegada y la orquestación backend está planeada (FastAPI + agentes)."
+    },
+    "stack": [
+      "Angular",
+      "SCSS",
+      "Firebase Hosting",
+      "GCP"
+    ],
+    "tags": ["Agents", "A2A", "RAG", "LLMs", "FinOps", "Cloud"],
+    "impact": {
+      "en": [
+        "Delivered a deployable Angular landing + demo chat for an enterprise-style multi-agent assistant.",
+        "Designed explicit agent roles (Router/Task/RAG/Tool) to enable safe orchestration and future backend integration.",
+        "Established a clean MVP path to production deployment (Firebase Hosting + Cloud Run backend planned)."
+      ],
+      "es": [
+        "Entregué una landing y demo chat en Angular desplegable para un asistente multi-agente estilo enterprise.",
+        "Diseñé roles explícitos de agentes (Router/Task/RAG/Tool) para habilitar orquestación segura e integración futura con backend.",
+        "Definí un camino claro de MVP a producción (Firebase Hosting + backend en Cloud Run planeado)."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Angular UI components: navbar, hero, architecture, coordination, tech stack, demo chat, footer.",
+        "SPA-ready deployment configuration (rewrites) for stable routing on Hosting.",
+        "Repo structure aligned for future backend integration via /v1/chat."
+      ],
+      "es": [
+        "Componentes UI en Angular: navbar, hero, architecture, coordination, tech stack, demo chat, footer.",
+        "Configuración de despliegue SPA (rewrites) para routing estable en Hosting.",
+        "Estructura del repo alineada para integración futura con backend vía /v1/chat."
+      ]
+    },
+    "demo": "https://fin-ops-ai-itztorero.web.app",
+    "github": "https://github.com/iTzTorero/FinOps-AI"
+  },
+  {
+    "slug": "nauti-test-pro",
+    "name": {
+      "en": "Nauti Test Pro",
+      "es": "Nauti Test Pro"
+    },
+    "summary": {
+      "en": "Mobile-first exam preparation platform for nautical licensing, featuring timed tests, progress tracking, and subscription-based access.",
+      "es": "Plataforma de preparación de exámenes náuticos orientada a móvil, con tests cronometrados, seguimiento de progreso y acceso por suscripción."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (Full Stack)",
+      "es": "Fundador e Ingeniero (Full Stack)"
+    },
+    "confidentiality": {
+      "en": "Public",
+      "es": "Público"
+    },
+    "disclaimer": {
+      "en": "Personal project. Deployed and live.",
+      "es": "Proyecto personal. Desplegado y en producción."
+    },
+    "stack": [
+      "Vue 3",
+      "Ionic",
+      "TypeScript",
+      "Firebase",
+      "Cloud Functions",
+      "Firestore",
+      "Capacitor"
+    ],
+    "tags": ["Mobile", "PWA", "Firebase", "SaaS", "Education"],
+    "impact": {
+      "en": [
+        "Delivered a fully functional exam prep platform with real-time evaluation and score tracking.",
+        "Implemented subscription plans with payment history and member management.",
+        "Built encrypted question bank to protect proprietary content."
+      ],
+      "es": [
+        "Entregué una plataforma completa de preparación con evaluación en tiempo real y seguimiento de puntajes.",
+        "Implementé planes de suscripción con historial de pagos y gestión de miembros.",
+        "Construí un banco de preguntas encriptado para proteger el contenido propietario."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Timed test engine with evaluation and result history.",
+        "Role-based access control via Firebase Auth and Cloud Functions.",
+        "Encrypted question bank using pre-build scripts.",
+        "Cross-platform support via Capacitor (iOS/Android/Web)."
+      ],
+      "es": [
+        "Motor de tests cronometrados con evaluación e historial de resultados.",
+        "Control de acceso basado en roles mediante Firebase Auth y Cloud Functions.",
+        "Banco de preguntas encriptado con scripts de pre-build.",
+        "Soporte multiplataforma vía Capacitor (iOS/Android/Web)."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Vue 3 + Ionic frontend deployed on Firebase Hosting",
+        "Firestore for user data, exam history, and plans",
+        "Cloud Functions for backend logic and member management",
+        "Capacitor for native iOS/Android builds"
+      ],
+      "es": [
+        "Frontend Vue 3 + Ionic desplegado en Firebase Hosting",
+        "Firestore para datos de usuario, historial de exámenes y planes",
+        "Cloud Functions para lógica backend y gestión de miembros",
+        "Capacitor para builds nativos iOS/Android"
+      ]
+    },
+    "demo": "https://nauti-test-pro.web.app/",
+    "github": "https://github.com/iTzTorero/nauti-test-pro"
   }
 ]
