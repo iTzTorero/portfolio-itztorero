@@ -10,7 +10,8 @@
   "home": {
     "hero": {
       "kicker": "Software Engineer",
-      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservices | Applied Machine Learning"
+      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservices | Applied Machine Learning",
+      "downloadCV": "Download CV"
     },
     "about": {
       "title": "About",
@@ -36,7 +37,11 @@
       }
     },
     "skills": {
-      "title": "Top Skills"
+      "title": "Top Skills",
+      "backend": "Backend",
+      "cloud": "Cloud & Infra",
+      "ml": "ML & Data",
+      "frontend": "Frontend"
     }
   },
   "projects": {
@@ -67,6 +72,7 @@
     },
     "sections": {
       "stack": "Stack",
+      "impact": "Impact",
       "whatIDid": "What I did",
       "architecture": "Architecture",
       "productsBuiltOnTop": "Products built on top",

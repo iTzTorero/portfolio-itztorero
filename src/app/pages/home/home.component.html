@@ -8,6 +8,12 @@
     <a class="meta-item" [href]="'mailto:' + email">✉️ {{ email }}</a>
   </div>
 
+  <div class="hero-actions">
+    <a class="btn-primary" [href]="cvUrl()" [download]="cvFilename()">
+      {{ "home.hero.downloadCV" | transloco }}
+    </a>
+  </div>
+
   <div class="quick">
     <a routerLink="/projects" class="card">
       <h3>{{ "home.quick.projects.title" | transloco }}</h3>
@@ -44,7 +50,12 @@
   <h2>{{ "home.skills.title" | transloco }}</h2>
   <div class="bar"></div>
 
-  <div class="pills">
-    <span class="pill" *ngFor="let s of skills">{{ s }}</span>
+  <div class="skill-groups">
+    <div class="skill-group" *ngFor="let g of skillGroups">
+      <p class="group-label">{{ g.label | transloco }}</p>
+      <div class="pills">
+        <span class="pill" *ngFor="let s of g.items">{{ s }}</span>
+      </div>
+    </div>
   </div>
 </section>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, computed, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 
 type LocalizedText = { en: string; es: string };
@@ -48,7 +48,7 @@ export class ProjectsPage {
   query = signal('');
   activeTag = signal<string | null>(null);
 
-  constructor(private http: HttpClient, private transloco: TranslocoService) {
+  constructor(private http: HttpClient, private transloco: TranslocoService, private router: Router) {
     this.http.get<Project[]>('assets/projects.json').subscribe({
       next: (data) => this.projects.set(data ?? []),
       error: () => this.projects.set([]),
@@ -109,7 +109,10 @@ export class ProjectsPage {
     });
   });
 
-  // actions
+  navigate(slug: string) {
+    this.router.navigate(['/projects', slug]);
+  }
+
   setTag(tag: string | null) {
     this.activeTag.set(tag);
   }

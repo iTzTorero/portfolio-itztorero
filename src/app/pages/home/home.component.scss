@@ -36,6 +36,38 @@
       font-weight: 600;
     }
   }
+
+  .hero-actions {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+
+  &:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    color: #fff;
+  }
+
+  &::before {
+    content: '↓';
+    font-weight: 900;
+  }
 }
 
 .section {
@@ -64,11 +96,32 @@
   }
 }
 
-.pills {
+.skill-groups {
   margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-group {
+  .group-label {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}
+
+.pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .pill {

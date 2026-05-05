@@ -43,10 +43,14 @@
 </section>
 
 <section class="grid" aria-label="Project list">
-  <a
+  <div
     class="card"
     *ngFor="let p of filtered()"
-    [routerLink]="['/projects', p.slug]"
+    (click)="navigate(p.slug)"
+    (keydown.enter)="navigate(p.slug)"
+    tabindex="0"
+    role="link"
+    [attr.aria-label]="t(p.name)"
   >
     <div class="card-top">
       <h3>{{ t(p.name) }}</h3>
@@ -60,13 +64,27 @@
     </div>
 
     <div class="links">
-      <span class="link" *ngIf="p.github">
-        {{ "projects.links.github" | transloco }}
-      </span>
+      <a
+        class="link"
+        *ngIf="p.github"
+        [href]="p.github"
+        target="_blank"
+        rel="noopener"
+        (click)="$event.stopPropagation()"
+      >
+        ↗ {{ "projects.links.github" | transloco }}
+      </a>
 
-      <span class="link" *ngIf="p.demo">
-        {{ "projects.links.demo" | transloco }}
-      </span>
+      <a
+        class="link"
+        *ngIf="p.demo"
+        [href]="p.demo"
+        target="_blank"
+        rel="noopener"
+        (click)="$event.stopPropagation()"
+      >
+        ↗ {{ "projects.links.demo" | transloco }}
+      </a>
     </div>
-  </a>
+  </div>
 </section>

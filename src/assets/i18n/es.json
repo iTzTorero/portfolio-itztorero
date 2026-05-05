@@ -10,7 +10,8 @@
   "home": {
     "hero": {
       "kicker": "Ingeniero de Software",
-      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservicios | Aprendizaje automático aplicado"
+      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservicios | Aprendizaje automático aplicado",
+      "downloadCV": "Descargar CV"
     },
     "about": {
       "title": "Sobre mí",
@@ -36,7 +37,11 @@
       }
     },
     "skills": {
-      "title": "Habilidades principales"
+      "title": "Habilidades principales",
+      "backend": "Backend",
+      "cloud": "Cloud & Infra",
+      "ml": "ML & Datos",
+      "frontend": "Frontend"
     }
   },
   "projects": {
@@ -67,6 +72,7 @@
     },
     "sections": {
       "stack": "Stack",
+      "impact": "Impacto",
       "whatIDid": "Lo que hice",
       "architecture": "Arquitectura",
       "productsBuiltOnTop": "Productos desarrollados",

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 import { ProjectsService } from '../../shared/projects.service';
 import { Observable } from 'rxjs';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
+import { Title } from '@angular/platform-browser';
 export type Project = {
   slug: string;
   name: string;
@@ -38,15 +39,18 @@ export type Project = {
   styleUrl: './project-detail.component.scss',
 })
 export class ProjectDetailComponent {
-  constructor(private route: ActivatedRoute, private projects: ProjectsService, private transloco: TranslocoService) { }
-
+  constructor(
+    private route: ActivatedRoute,
+    private projects: ProjectsService,
+    private transloco: TranslocoService,
+    private titleService: Title
+  ) {}
 
   lang(): 'en' | 'es' {
     return (this.transloco.getActiveLang() as 'en' | 'es') ?? 'en';
   }
 
   t(obj: any): string {
-    // Para campos tipo {en, es}
     const l = this.lang();
     return obj?.[l] ?? obj?.en ?? '';
   }
@@ -55,8 +59,12 @@ export class ProjectDetailComponent {
     const l = this.lang();
     return obj?.[l] ?? obj?.en ?? [];
   }
+
   project$: Observable<Project | undefined> = this.route.paramMap.pipe(
-    switchMap((params) => this.projects.bySlug(params.get('slug') ?? ''))
+    switchMap((params) => this.projects.bySlug(params.get('slug') ?? '')),
+    tap((p) => {
+      if (p) this.titleService.setTitle(`${this.t(p.name)} | Juan Pablo`);
+    })
   );
 
 

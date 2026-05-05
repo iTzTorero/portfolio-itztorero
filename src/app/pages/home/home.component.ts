@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TranslocoPipe } from '@ngneat/transloco';
+import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   standalone: true,
@@ -11,12 +12,29 @@ import { TranslocoPipe } from '@ngneat/transloco';
 })
 export class HomePage {
   name = 'Juan Pablo Valenzuela Castro';
-  headline = 'Backend-focused Software Engineer | GCP | FastAPI | Microservices | ML for Precision Agriculture';
   location = 'Mexico (Remote)';
   email = 'valenzuelacastrojuanpablo@gmail.com';
 
-  about =
-    'Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data-oriented pipelines. Experienced integrating ML models into production workflows for precision agriculture applications. Seeking backend/cloud and AI systems roles.';
+  skillGroups = [
+    { label: 'home.skills.backend', items: ['Node.js', 'Python', 'FastAPI'] },
+    { label: 'home.skills.cloud', items: ['GCP', 'Docker', 'Microservices'] },
+    { label: 'home.skills.ml', items: ['ML Pipelines', 'Geospatial Data', 'Computer Vision'] },
+    { label: 'home.skills.frontend', items: ['Angular', 'Vue 3', 'TypeScript'] },
+  ];
 
-  skills = ['Node.js', 'Python', 'FastAPI', 'GCP', 'Docker', 'Microservices', 'ML Pipelines', 'Angular'];
+  private lang = toSignal(this.transloco.langChanges$, { initialValue: this.transloco.getActiveLang() });
+
+  cvUrl = computed(() =>
+    this.lang() === 'es'
+      ? 'assets/CV_JuanPablo_Valenzuela_ES.pdf'
+      : 'assets/CV_JuanPablo_Valenzuela_EN.pdf'
+  );
+
+  cvFilename = computed(() =>
+    this.lang() === 'es'
+      ? 'CV_JuanPablo_Valenzuela_ES.pdf'
+      : 'CV_JuanPablo_Valenzuela_EN.pdf'
+  );
+
+  constructor(private transloco: TranslocoService) {}
 }
