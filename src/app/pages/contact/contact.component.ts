@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
+import { SeoService } from '../../shared/seo.service';
 
 @Component({
   standalone: true,
@@ -18,7 +19,13 @@ export class ContactPage {
     message: ['', [Validators.required, Validators.minLength(10)]],
   });
 
-  constructor(private fb: FormBuilder, private transloco: TranslocoService) { }
+  constructor(private fb: FormBuilder, private transloco: TranslocoService, seo: SeoService) {
+    seo.update({
+      title: 'Contact',
+      description: 'Get in touch with Juan Pablo Valenzuela — available for remote backend, cloud, and AI systems roles. Send a message directly from this page.',
+      path: '/contact',
+    });
+  }
 
   submit() {
     if (this.form.invalid) {

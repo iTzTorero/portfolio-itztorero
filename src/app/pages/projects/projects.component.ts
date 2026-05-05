@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, computed, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
+import { SeoService } from '../../shared/seo.service';
 
 type LocalizedText = { en: string; es: string };
 type LocalizedList = { en: string[]; es: string[] };
@@ -48,7 +49,12 @@ export class ProjectsPage {
   query = signal('');
   activeTag = signal<string | null>(null);
 
-  constructor(private http: HttpClient, private transloco: TranslocoService, private router: Router) {
+  constructor(private http: HttpClient, private transloco: TranslocoService, private router: Router, seo: SeoService) {
+    seo.update({
+      title: 'Projects',
+      description: 'Projects by Juan Pablo Valenzuela — cloud-native data platforms, ETL pipelines, ML-driven applications, and production SaaS built on GCP.',
+      path: '/projects',
+    });
     this.http.get<Project[]>('assets/projects.json').subscribe({
       next: (data) => this.projects.set(data ?? []),
       error: () => this.projects.set([]),

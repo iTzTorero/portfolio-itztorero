@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
+import { SeoService } from '../../shared/seo.service';
 
 type LocalizedText = { en: string; es: string };
 type LocalizedList = { en: string[]; es: string[] };
@@ -30,7 +31,12 @@ export class ExperiencePage {
   items = signal<ExpItem[]>([]);
   expanded = signal<Record<number, boolean>>({});
 
-  constructor(private http: HttpClient, private transloco: TranslocoService) {
+  constructor(private http: HttpClient, private transloco: TranslocoService, seo: SeoService) {
+    seo.update({
+      title: 'Experience',
+      description: 'Work experience of Juan Pablo Valenzuela — backend and cloud engineering on GCP at Monteli LLC, and ML research at IPN in precision agriculture.',
+      path: '/experience',
+    });
     this.http.get<ExpItem[]>('assets/experience.json').subscribe({
       next: (data) => this.items.set(data ?? []),
       error: () => this.items.set([]),

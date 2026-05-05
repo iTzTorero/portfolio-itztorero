@@ -3,6 +3,7 @@ import { Component, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { SeoService } from '../../shared/seo.service';
 
 @Component({
   standalone: true,
@@ -36,5 +37,11 @@ export class HomePage {
       : 'CV_JuanPablo_Valenzuela_EN.pdf'
   );
 
-  constructor(private transloco: TranslocoService) {}
+  constructor(private transloco: TranslocoService, seo: SeoService) {
+    seo.update({
+      title: 'Software Engineer',
+      description: 'Juan Pablo Valenzuela Castro — Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data pipelines. Available for remote backend, cloud, and AI roles.',
+      path: '/',
+    });
+  }
 }

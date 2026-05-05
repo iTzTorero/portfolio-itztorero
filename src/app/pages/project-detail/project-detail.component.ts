@@ -6,6 +6,7 @@ import { ProjectsService } from '../../shared/projects.service';
 import { Observable } from 'rxjs';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 import { Title } from '@angular/platform-browser';
+import { SeoService } from '../../shared/seo.service';
 export type Project = {
   slug: string;
   name: string;
@@ -43,7 +44,8 @@ export class ProjectDetailComponent {
     private route: ActivatedRoute,
     private projects: ProjectsService,
     private transloco: TranslocoService,
-    private titleService: Title
+    private titleService: Title,
+    private seo: SeoService
   ) {}
 
   lang(): 'en' | 'es' {
@@ -63,7 +65,11 @@ export class ProjectDetailComponent {
   project$: Observable<Project | undefined> = this.route.paramMap.pipe(
     switchMap((params) => this.projects.bySlug(params.get('slug') ?? '')),
     tap((p) => {
-      if (p) this.titleService.setTitle(`${this.t(p.name)} | Juan Pablo`);
+      if (p) this.seo.update({
+        title: this.t(p.name),
+        description: this.t(p.summary),
+        path: `/projects/${p.slug}`,
+      });
     })
   );
 
