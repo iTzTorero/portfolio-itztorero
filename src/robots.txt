@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-itztorero.web.app/sitemap.xml
+Sitemap: https://itztorero.dev/sitemap.xml

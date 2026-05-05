@@ -13,6 +13,6 @@ export const routes: Routes = [
         title: 'Project | Juan Pablo',
     },
 
-    { path: '**', redirectTo: '' },
+    { path: '**', loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundPage), title: '404 | Juan Pablo' },
 
 ];

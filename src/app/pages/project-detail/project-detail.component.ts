@@ -5,7 +5,6 @@ import { switchMap, tap } from 'rxjs/operators';
 import { ProjectsService } from '../../shared/projects.service';
 import { Observable } from 'rxjs';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
-import { Title } from '@angular/platform-browser';
 import { SeoService } from '../../shared/seo.service';
 export type Project = {
   slug: string;
@@ -44,7 +43,6 @@ export class ProjectDetailComponent {
     private route: ActivatedRoute,
     private projects: ProjectsService,
     private transloco: TranslocoService,
-    private titleService: Title,
     private seo: SeoService
   ) {}
 

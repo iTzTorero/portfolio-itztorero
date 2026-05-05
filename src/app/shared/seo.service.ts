@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-const BASE_URL = 'https://portfolio-itztorero.web.app';
-const OG_IMAGE = `${BASE_URL}/assets/logo.png`;
+const BASE_URL = 'https://itztorero.dev';
+const OG_IMAGE = `${BASE_URL}/assets/og-image.png`;
 const AUTHOR = 'Juan Pablo Valenzuela Castro';
 
 @Injectable({ providedIn: 'root' })
