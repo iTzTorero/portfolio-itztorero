@@ -119,91 +119,123 @@
       "es": "Balltics — Plataforma de Gestión de Ligas de Béisbol"
     },
     "summary": {
-      "en": "End-to-end SaaS platform to run amateur baseball leagues: public site for fans (standings, stats, leaders, game reports) plus an admin suite for live pitch-by-pitch game capture, roster management, and Stripe billing.",
-      "es": "Plataforma SaaS integral para administrar ligas de béisbol amateur: sitio público para aficionados (posiciones,estadísticas, líderes, reportes de juego) más una suite de administración con captura de juego pitcheo por pitcheo en vivo, gestión de rosters y facturación con Stripe."
+      "en": "Multi-tenant SaaS to run amateur baseball leagues end to end: a real-time public site for fans (standings, leaders, season stats, full box scores) plus an admin suite for live pitch-by-pitch scoring, roster management, and recurring Stripe billing — built for the Mexican/LATAM market.",
+      "es": "SaaS multi-tenant para administrar ligas de béisbol amateur de extremo a extremo: un sitio público en tiempo real para aficionados (posiciones, líderes, estadísticas de temporada, box scores completos) más una suite de administración con anotación pitcheo por pitcheo en vivo, gestión de rosters y cobros recurrentes con Stripe — pensado para el mercado mexicano/LATAM."
     },
     "ownership": "personal",
     "role": {
-      "en": "Full-Stack Engineer (Solo / Owner)",
-      "es": "Ingeniero Full-Stack (Solo / Dueño)"
+      "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
+      "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
     },
     "confidentiality": {
-      "en": "Public",
-      "es": "Público"
+      "en": "Public summary",
+      "es": "Resumen público"
     },
     "disclaimer": {
-      "en": "Personal product I designed and built end to end: frontend, Firebase backend, Cloud Functions, security rules, and CI/CD.",
-      "es": "Producto personal que diseñé y construí de extremo a extremo: frontend, backend en Firebase, Cloud Functions, reglas de seguridad y CI/CD."
+      "en": "Personal product I own and operate end to end (frontend, Firebase backend, Cloud Functions, security rules, and CI/CD), offered commercially to baseball leagues. Implementation details are summarized at a high level.",
+      "es": "Producto personal que poseo y opero de extremo a extremo (frontend, backend en Firebase, Cloud Functions, reglas de seguridad y CI/CD), ofrecido comercialmente a ligas de béisbol. Los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
       "Angular 17",
       "TypeScript",
       "Angular Signals",
       "RxJS",
+      "Tailwind CSS",
       "Firebase",
       "Firestore",
       "Firebase Auth",
       "Cloud Functions",
       "Firebase Hosting",
       "Firebase Storage",
+      "IndexedDB",
       "Stripe",
       "SendGrid",
-      "Tailwind CSS",
-      "GitHub Actions"
+      "GitHub Actions",
+      "GCP"
     ],
-    "features": {
+    "tags": [
+      "SaaS",
+      "Sports Tech",
+      "Baseball",
+      "Live Scoring",
+      "Multi-tenant",
+      "Offline-first",
+      "Stripe",
+      "Firebase",
+      "Angular",
+      "LATAM",
+      "Full Stack"
+    ],
+    "impact": {
       "en": [
-        "Public fan experience: live standings, batting/pitching leaders, season stats, and full game box scores per league and tournament.",
-        "Live pitch-by-pitch capture engine: a full state machine tracking count, bases, runners, outs, inning transitions, and substitutions, producing running batting/pitching lines in real time.",
-        "Alternative inning-by-inning box-score capture path for faster, lower-detail scoring.",
-        "Offline-first capture: game state persists to localStorage instantly and syncs to Firestore (IndexedDB cache) with debounced writes, restoring cleanly after a reload or connection loss.",
-        "Role-based admin: super_admin, admin_liga (scoped per allowed league), and capturista (game capture only), enforced both in route guards and Firestore security rules.",
-        "Roster and player management with real-world identity (CURP/passport) and photo/logo uploads to Firebase Storage.",
-        "Jornadas, tournaments, and configurable league rules (regulation innings, knockout rules).",
-        "Stripe billing: account statements (estados-cuenta) and a self-service customer portal via Cloud Functions.",
-        "Multi-tenant hosting: a dedicated public site per league (e.g. Liga Peimbert) alongside the main admin app.",
-        "Historical stats layer for legacy leagues, merging official leader exports with computed data via fuzzy (Jaccard) name matching."
+        "League organizers run an entire season from one platform — standings, stats, schedules (jornadas), tournaments, and billing — replacing spreadsheets and manual scorekeeping.",
+        "Fans follow their league in real time from any phone with no app install: live standings, batting/pitching leaders, season stats, and full game box scores.",
+        "Live pitch-by-pitch capture turns a phone into a professional scoring console that produces official box scores and season stats automatically, with no manual tallying.",
+        "Offline-first capture keeps scoring working at remote fields with no signal and syncs automatically when the connection returns — zero lost games.",
+        "Recurring revenue per league via Stripe subscription billing, account statements, and a self-service customer portal.",
+        "Multi-tenant from day one — each league gets its own branded public site and isolated data, so the same platform scales to many leagues without code changes."
       ],
       "es": [
-        "Experiencia pública para aficionados: posiciones en vivo, líderes de bateo/pitcheo, estadísticas de temporada y box scores completos por liga y torneo.",
-        "Motor de captura pitcheo por pitcheo en vivo: una máquina de estados completa que controla cuenta, bases, corredores, outs, transiciones de entrada y sustituciones, generando líneas acumuladas de bateo/pitcheo en tiempo real.",
-        "Ruta alterna de captura por box score entrada por entrada para anotar más rápido con menor detalle.",
-        "Captura offline-first: el estado del juego se persiste en localStorage al instante y sincroniza a Firestore (caché IndexedDB) con escrituras debounced, restaurándose de forma limpia tras recargar o perder conexión.",
-        "Administración por roles: super_admin, admin_liga (acotado a sus ligas permitidas) y capturista (solo captura),  aplicado tanto en guards de ruta como en reglas de seguridad de Firestore.",
-        "Gestión de rosters y jugadores con identidad real (CURP/pasaporte) y carga de fotos/logos a Firebase Storage.",
-        "Jornadas, torneos y reglas de liga configurables (entradas reglamentarias, reglas de nocaut).",
-        "Facturación con Stripe: estados de cuenta y portal de cliente autogestionado vía Cloud Functions.",
-        "Hosting multi-tenant: un sitio público dedicado por liga (p. ej. Liga Peimbert) junto a la app principal de administración.",
-        "Capa de estadísticas históricas para ligas heredadas, combinando exportaciones oficiales de líderes con datos calculados mediante coincidencia difusa de nombres (Jaccard)."
+        "Los organizadores administran una temporada completa desde una sola plataforma — posiciones, estadísticas, jornadas, torneos y facturación — reemplazando hojas de cálculo y anotación manual.",
+        "Los aficionados siguen su liga en tiempo real desde cualquier teléfono sin instalar apps: posiciones en vivo, líderes de bateo/pitcheo, estadísticas de temporada y box scores completos.",
+        "La captura pitcheo por pitcheo en vivo convierte un teléfono en una consola de anotación profesional que genera box scores oficiales y estadísticas de temporada automáticamente, sin conteo manual.",
+        "La captura offline-first sigue funcionando en campos remotos sin señal y sincroniza automáticamente al recuperar la conexión — cero juegos perdidos.",
+        "Ingreso recurrente por liga vía suscripciones de Stripe, estados de cuenta y portal de cliente autogestionado.",
+        "Multi-tenant desde el día uno — cada liga obtiene su propio sitio público con marca y datos aislados, así la misma plataforma escala a muchas ligas sin cambiar código."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Built a full pitch-by-pitch state machine (~1,500 lines) tracking count, bases, runners, outs, inning transitions, and substitutions — producing live batting/pitching lines in real time.",
+        "Engineered dual-layer offline persistence: synchronous localStorage writes plus debounced Firestore (IndexedDB) sync, restoring exact game state after reloads or connection loss.",
+        "Designed a signals-based in-memory cache that boots the whole app from a single Promise.all, with an optimistic write pattern that updates the UI without re-fetching.",
+        "Implemented a three-tier role system (super_admin / admin_liga / capturista) enforced in both Angular route guards and Firestore security rules, scoped per allowed league.",
+        "Integrated Stripe end to end: subscription billing, hardened webhook-driven charges, account statements, and a self-service customer portal via Cloud Functions.",
+        "Built a multi-tenant hosting setup — a dedicated branded public site per league alongside the admin app — on Firebase Hosting targets.",
+        "Created a historical-stats layer that merges official leader exports with computed data via fuzzy (Jaccard) name matching for legacy leagues.",
+        "Offered a second, faster inning-by-inning box-score capture path for organizers who don't need full pitch-level detail.",
+        "Set up CI/CD with GitHub Actions: automated production deploys on push to main via a dedicated service account."
+      ],
+      "es": [
+        "Construí una máquina de estados pitcheo por pitcheo completa (~1,500 líneas) que controla cuenta, bases, corredores, outs, transiciones de entrada y sustituciones — generando líneas de bateo/pitcheo en vivo en tiempo real.",
+        "Diseñé persistencia offline de doble capa: escrituras síncronas en localStorage más sincronización debounced a Firestore (IndexedDB), restaurando el estado exacto del juego tras recargas o pérdida de conexión.",
+        "Diseñé un caché en memoria basado en signals que arranca toda la app desde un solo Promise.all, con un patrón de escritura optimista que actualiza la UI sin re-fetch.",
+        "Implementé un sistema de tres roles (super_admin / admin_liga / capturista) aplicado tanto en guards de ruta de Angular como en reglas de seguridad de Firestore, acotado por liga permitida.",
+        "Integré Stripe de extremo a extremo: cobros por suscripción, cargos blindados vía webhooks, estados de cuenta y portal de cliente autogestionado mediante Cloud Functions.",
+        "Construí un esquema de hosting multi-tenant — un sitio público con marca dedicado por liga junto a la app de administración — sobre targets de Firebase Hosting.",
+        "Creé una capa de estadísticas históricas que combina exportaciones oficiales de líderes con datos calculados mediante coincidencia difusa de nombres (Jaccard) para ligas heredadas.",
+        "Ofrecí una segunda ruta de captura más rápida por box score entrada por entrada para organizadores que no necesitan detalle pitcheo por pitcheo.",
+        "Configuré CI/CD con GitHub Actions: deploys automáticos a producción en cada push a main vía una cuenta de servicio dedicada."
       ]
     },
     "architecture": {
       "en": [
         "Angular 17 SPA: fully standalone components, lazy-loaded routes (loadComponent/loadChildren), router input binding, and global view transitions — no NgModules.",
-        "State management with Angular signals (signal/computed/effect); no NgRx. LigaService boots by fetching all top-levelcollections in a single Promise.all and serves an in-memory signal cache.",
+        "State managed with Angular signals (signal/computed/effect), no NgRx; LigaService boots by fetching all top-level collections in a single Promise.all and serves an in-memory signal cache.",
         "Optimistic cache pattern: writes go to Firestore and immediately update the signal cache via matching mutators, avoiding re-fetches.",
         "Firestore as primary datastore with multi-tab IndexedDB offline persistence; static TypeScript datasets back historical exports and fallback display data.",
-        "Stat consolidation runs client-side as the source of truth; Cloud Functions handle user provisioning and Stripe billing (the game-completion trigger is intentionally a no-op to avoid double counting).",
-        "Cloud Functions (Node.js + TypeScript): Stripe billing and customer portal, user lifecycle (create/update/delete viaAdmin SDK), post-signup provisioning, and transactional email via SendGrid.",
+        "Season stats are consolidated in real time as games are captured; Cloud Functions handle user provisioning and Stripe billing.",
+        "Cloud Functions (Node.js + TypeScript): Stripe subscription billing and customer portal, user lifecycle (create/update/delete via Admin SDK), post-signup provisioning, and transactional email via SendGrid.",
         "Security rules: public read on all collections; writes gated by role (super_admin full access, admin_liga scoped by an allowed-leagues map, capturista limited to game updates); /users writable only by the Admin SDK.",
         "Firebase Hosting with multiple targets (admin app + per-league public sites) and immutable long-cache headers for hashed assets.",
         "CI/CD via GitHub Actions: automatic production deploy on push to main using a dedicated service account."
       ],
       "es": [
         "SPA en Angular 17: componentes totalmente standalone, rutas lazy-loaded (loadComponent/loadChildren), router input binding y view transitions globales — sin NgModules.",
-        "Manejo de estado con Angular signals (signal/computed/effect); sin NgRx. LigaService arranca obteniendo todas las colecciones de primer nivel en un solo Promise.all y sirve un caché en memoria basado en signals.",
+        "Estado con Angular signals (signal/computed/effect), sin NgRx; LigaService arranca obteniendo todas las colecciones de primer nivel en un solo Promise.all y sirve un caché en memoria basado en signals.",
         "Patrón de caché optimista: las escrituras van a Firestore y actualizan de inmediato el caché de signals vía mutadores correspondientes, evitando re-fetches.",
-        "Firestore como almacén principal con persistencia offline multi-pestaña en IndexedDB; datasets estáticos en TypeScript respaldan exportaciones históricas y datos de despliegue de respaldo.",
-        "La consolidación de estadísticas corre en el cliente como fuente de verdad; las Cloud Functions manejan aprovisionamiento de usuarios y facturación Stripe (el trigger de fin de juego es intencionalmente un no-op para evitar doble conteo).",
-        "Cloud Functions (Node.js + TypeScript): facturación y portal de cliente Stripe, ciclo de vida de usuarios (crear/actualizar/eliminar vía Admin SDK), aprovisionamiento post-registro y correos transaccionales vía SendGrid.",
+        "Firestore como almacén principal con persistencia offline multi-pestaña en IndexedDB; datasets estáticos en TypeScript respaldan exportaciones históricas y datos de respaldo.",
+        "Las estadísticas de temporada se consolidan en tiempo real conforme se capturan los juegos; las Cloud Functions manejan aprovisionamiento de usuarios y facturación con Stripe.",
+        "Cloud Functions (Node.js + TypeScript): cobro por suscripción y portal de cliente de Stripe, ciclo de vida de usuarios (crear/actualizar/eliminar vía Admin SDK), aprovisionamiento post-registro y correos transaccionales vía SendGrid.",
         "Reglas de seguridad: lectura pública en todas las colecciones; escrituras acotadas por rol (super_admin acceso total, admin_liga acotado por un mapa de ligas permitidas, capturista limitado a actualizar juegos); /users solo escribible por el Admin SDK.",
         "Firebase Hosting con múltiples targets (app de administración + sitios públicos por liga) y headers de caché largo inmutable para assets con hash.",
         "CI/CD con GitHub Actions: deploy automático a producción en cada push a main usando una cuenta de servicio dedicada."
       ]
     },
     "demo": "https://balltics.web.app",
-    "github": "https://github.com/iTzTorero/balltics"
+    "github": ""
   },
+
   {
     "slug": "data-platform",
     "name": {
