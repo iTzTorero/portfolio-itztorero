@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing my professional experience, selected projects, and technical background as a Software Engineer focused on backend systems, cloud architectures, and data-driven platforms.
 
-🌐 **Live site:** _(add URL once deployed)_
+🌐 **Live site:** [itztorero.dev](https://itztorero.dev)
 
 ---
 
