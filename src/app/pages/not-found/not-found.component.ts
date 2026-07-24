@@ -14,6 +14,7 @@ export class NotFoundPage {
       title: '404 — Not Found',
       description: 'Page not found.',
       path: '/404',
+      noindex: true,
     });
   }
 }

@@ -1,41 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, computed, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 import { SeoService } from '../../shared/seo.service';
-
-type LocalizedText = { en: string; es: string };
-type LocalizedList = { en: string[]; es: string[] };
-
-type Project = {
-  slug: string;
-
-  name: LocalizedText;
-  summary: LocalizedText;
-
-  stack: string[];
-  tags?: string[];
-
-  ownership?: 'personal' | 'professional';
-  role?: LocalizedText;
-
-  confidentiality?: LocalizedText;
-  disclaimer?: LocalizedText;
-
-  products?: {
-    name: string;
-    type: LocalizedText;
-    description: LocalizedText;
-  }[];
-
-  impact?: LocalizedList;
-  highlights?: LocalizedList;
-  architecture?: LocalizedList;
-
-  github?: string;
-  demo?: string;
-};
+import { LocalizedText, LocalizedList, Project } from '../../shared/portfolio.types';
 
 @Component({
   standalone: true,
@@ -49,7 +18,7 @@ export class ProjectsPage {
   query = signal('');
   activeTag = signal<string | null>(null);
 
-  constructor(private http: HttpClient, private transloco: TranslocoService, private router: Router, seo: SeoService) {
+  constructor(private http: HttpClient, private transloco: TranslocoService, seo: SeoService) {
     seo.update({
       title: 'Projects',
       description: 'Projects by Juan Pablo Valenzuela — cloud-native data platforms, ETL pipelines, ML-driven applications, and production SaaS built on GCP.',
@@ -114,10 +83,6 @@ export class ProjectsPage {
       return matchesTag && matchesQ;
     });
   });
-
-  navigate(slug: string) {
-    this.router.navigate(['/projects', slug]);
-  }
 
   setTag(tag: string | null) {
     this.activeTag.set(tag);

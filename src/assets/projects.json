@@ -55,28 +55,28 @@
       "en": [
         "Patients book, reschedule, and cancel 24/7 entirely inside WhatsApp — no app install — cutting the reception/phone load for clinics and independent professionals.",
         "AI agent built on GPT function calling where the model NEVER writes to the database: it only invokes server-defined tools, keeping every booking correct, auditable, and safe.",
-        "Deterministic confirmation layer outside the LLM: 1-hour reminders bind appointment IDs so a reply or button  tap confirms the exact appointment — eliminating false 'confirmed' states.",
-        "Usage-based monetization with Stripe metered billing, charging only for completed appointments per  subscription cycle.",
-        "Native Mexican e-invoicing (CFDI): patients self-invoice from WhatsApp or a public portal, with  per-organization encrypted credentials.",
+        "Deterministic confirmation layer outside the LLM: 1-hour reminders bind appointment IDs so a reply or button tap confirms the exact appointment — eliminating false 'confirmed' states.",
+        "Usage-based monetization with Stripe metered billing, charging only for completed appointments per subscription cycle.",
+        "Native Mexican e-invoicing (CFDI): patients self-invoice from WhatsApp or a public portal, with per-organization encrypted credentials.",
         "Multi-tenant from day one — a single data model serves solo professionals and multi-doctor clinics, with tenant isolation enforced server-side."
       ],
       "es": [
         "Los pacientes agendan, reagendan y cancelan 24/7 completamente dentro de WhatsApp —sin instalar apps— reduciendo la carga de recepción/teléfono para clínicas y profesionales independientes.",
-        "Agente de IA sobre GPT con function calling donde el modelo NUNCA escribe en la base de datos: solo invoca  tools definidas en el backend, manteniendo cada cita correcta, auditable y segura.",
+        "Agente de IA sobre GPT con function calling donde el modelo NUNCA escribe en la base de datos: solo invoca tools definidas en el backend, manteniendo cada cita correcta, auditable y segura.",
         "Capa de confirmación determinista fuera del LLM: los recordatorios de 1 hora amarran los IDs de cita, así una respuesta o un botón confirman la cita exacta — eliminando los 'confirmado' falsos.",
-        "Monetización por uso con cobro medido de Stripe, facturando solo las citas completadas por ciclo de  suscripción.",
-        "Facturación electrónica mexicana (CFDI) nativa: los pacientes se autofacturan desde WhatsApp o un portal  público, con credenciales encriptadas por organización.",
-        "Multi-tenant desde el día uno — un solo modelo de datos sirve a profesionales independientes y clínicas con  varios médicos, con aislamiento de inquilino forzado en el servidor."
+        "Monetización por uso con cobro medido de Stripe, facturando solo las citas completadas por ciclo de suscripción.",
+        "Facturación electrónica mexicana (CFDI) nativa: los pacientes se autofacturan desde WhatsApp o un portal público, con credenciales encriptadas por organización.",
+        "Multi-tenant desde el día uno — un solo modelo de datos sirve a profesionales independientes y clínicas con varios médicos, con aislamiento de inquilino forzado en el servidor."
       ]
     },
     "highlights": {
       "en": [
         "Designed an AI agent on GPT function calling: the model only calls typed tools, executed server-side against Firestore — the LLM never touches the database.",
-        "Built WhatsApp interactive flows — service/professional/date/time pickers and quick-reply template buttons  with dynamic per-message payloads.",
+        "Built WhatsApp interactive flows — service/professional/date/time pickers and quick-reply template buttons with dynamic per-message payloads.",
         "Implemented a truncation-proof slot-filling state and bounded conversation history so the bot stops re-asking and survives long chats.",
         "Hardened webhooks: Meta and Stripe signature verification on the raw body, plus messageId deduplication via atomic Firestore writes.",
         "Automated WhatsApp template sync to Meta via the Graph API with non-destructive edits (avoiding Meta's name-deletion cooldown).",
-        "Multi-tenant auth via Firebase custom claims + tenant middleware scoping every query; feature flags updated  only from Stripe webhooks.",
+        "Multi-tenant auth via Firebase custom claims + tenant middleware scoping every query; feature flags updated only from Stripe webhooks.",
         "Scheduled jobs for reminders inside Meta's free 24h window, no-show detection, and daily reports.",
         "Super-admin panel with per-organization cost/margin analytics and live conversation monitoring; CI/CD via GitHub Actions with a test gate that blocks deploys."
       ],

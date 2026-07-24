@@ -43,34 +43,31 @@
 </section>
 
 <section class="grid" aria-label="Project list">
-  <div
-    class="card"
-    *ngFor="let p of filtered()"
-    (click)="navigate(p.slug)"
-    (keydown.enter)="navigate(p.slug)"
-    tabindex="0"
-    role="link"
-    [attr.aria-label]="t(p.name)"
-  >
-    <div class="card-top">
-      <h3>{{ t(p.name) }}</h3>
-      <span class="arrow">→</span>
-    </div>
+  <article class="card" *ngFor="let p of filtered()">
+    <a
+      class="card-link"
+      [routerLink]="['/projects', p.slug]"
+      [attr.aria-label]="t(p.name)"
+    >
+      <div class="card-top">
+        <h3>{{ t(p.name) }}</h3>
+        <span class="arrow">→</span>
+      </div>
 
-    <p class="summary">{{ t(p.summary) }}</p>
+      <p class="summary">{{ t(p.summary) }}</p>
 
-    <div class="meta">
-      <span class="chip" *ngFor="let s of p.stack">{{ s }}</span>
-    </div>
+      <div class="meta">
+        <span class="chip" *ngFor="let s of p.stack">{{ s }}</span>
+      </div>
+    </a>
 
-    <div class="links">
+    <div class="links" *ngIf="p.github || p.demo">
       <a
         class="link"
         *ngIf="p.github"
         [href]="p.github"
         target="_blank"
         rel="noopener"
-        (click)="$event.stopPropagation()"
       >
         ↗ {{ "projects.links.github" | transloco }}
       </a>
@@ -81,10 +78,9 @@
         [href]="p.demo"
         target="_blank"
         rel="noopener"
-        (click)="$event.stopPropagation()"
       >
         ↗ {{ "projects.links.demo" | transloco }}
       </a>
     </div>
-  </div>
+  </article>
 </section>

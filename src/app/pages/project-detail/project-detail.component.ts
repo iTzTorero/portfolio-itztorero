@@ -6,31 +6,7 @@ import { ProjectsService } from '../../shared/projects.service';
 import { Observable } from 'rxjs';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 import { SeoService } from '../../shared/seo.service';
-export type Project = {
-  slug: string;
-  name: string;
-  summary: string;
-
-  ownership?: 'personal' | 'professional';
-  role?: string;
-  confidentiality?: string;
-  disclaimer?: string;
-
-  stack: string[];
-
-  // optional arrays
-  tags?: string[];
-  impact?: string[];
-  highlights?: string[];
-  architecture?: string[];
-
-  // nested products
-  products?: { name: string; type: string; description: string }[];
-
-  // links
-  github?: string;
-  demo?: string;
-};
+import { LocalizedText, LocalizedList, Project } from '../../shared/portfolio.types';
 
 @Component({
   standalone: true,
@@ -50,12 +26,12 @@ export class ProjectDetailComponent {
     return (this.transloco.getActiveLang() as 'en' | 'es') ?? 'en';
   }
 
-  t(obj: any): string {
+  t(obj?: LocalizedText | null): string {
     const l = this.lang();
     return obj?.[l] ?? obj?.en ?? '';
   }
 
-  tArr(obj: any): string[] {
+  tArr(obj?: LocalizedList | null): string[] {
     const l = this.lang();
     return obj?.[l] ?? obj?.en ?? [];
   }

@@ -6,7 +6,11 @@
       type="button"
       (click)="menuOpen ? closeMenu() : openMenu()"
       [class.open]="menuOpen"
-      aria-label="Toggle menu"
+      aria-controls="mobile-menu"
+      [attr.aria-expanded]="menuOpen"
+      [attr.aria-label]="
+        (menuOpen ? 'nav.aria.closeMenu' : 'nav.aria.openMenu') | transloco
+      "
     >
       <span></span>
       <span></span>
@@ -46,12 +50,17 @@
       class="theme-btn"
       type="button"
       (click)="theme.toggle()"
-      aria-label="Toggle theme"
+      [attr.aria-label]="'nav.aria.theme' | transloco"
     >
       {{ theme.theme() === "dark" ? "☀️" : "🌙" }}
     </button>
 
-    <button class="lang-toggle" type="button" (click)="toggleLang()">
+    <button
+      class="lang-toggle"
+      type="button"
+      (click)="toggleLang()"
+      [attr.aria-label]="'nav.aria.language' | transloco"
+    >
       <span class="flag">{{ activeLang === "en" ? "🇺🇸" : "🇪🇸" }}</span>
       <span class="label">{{ activeLang === "en" ? "EN" : "ES" }}</span>
     </button>
@@ -80,7 +89,7 @@
       type="button"
       class="drawer-close"
       (click)="closeMenu()"
-      aria-label="Close menu"
+      [attr.aria-label]="'nav.aria.closeMenu' | transloco"
     >
       ✕
     </button>
@@ -115,18 +124,6 @@
       "nav.contact" | transloco
     }}</a>
   </nav>
-
-  <!-- <div class="drawer-actions">
-    <button class="drawer-btn" type="button" (click)="theme.toggle()">
-      <span class="ico">{{ theme.theme() === "dark" ? "☀️" : "🌙" }}</span>
-      <span>Theme</span>
-    </button>
-
-    <button class="drawer-btn" type="button" (click)="toggleLang()">
-      <span class="ico">{{ activeLang === "en" ? "🇺🇸" : "🇪🇸" }}</span>
-      <span>{{ activeLang === "en" ? "English" : "Español" }}</span>
-    </button>
-  </div> -->
 </aside>
 
 <!-- Lo demás igual -->

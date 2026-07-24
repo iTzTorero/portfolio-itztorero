@@ -4,7 +4,13 @@
     "projects": "Projects",
     "experience": "Experience",
     "contact": "Contact",
-    "education": "Education"
+    "education": "Education",
+    "aria": {
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "theme": "Toggle theme",
+      "language": "Switch language"
+    }
   },
 
   "home": {
@@ -113,7 +119,10 @@
       },
       "submit": "Send message"
     },
-    "success": "Your email client should open shortly",
+    "sending": "Sending…",
+    "success": "Thanks! Your message was sent.",
+    "mailtoOpening": "Your email client should open shortly",
+    "error": "Something went wrong. Please email me directly.",
     "mail": {
       "subject": "Portfolio contact — {{name}}",
       "body": "Name: {{name}}\nEmail: {{email}}\n\n{{message}}"

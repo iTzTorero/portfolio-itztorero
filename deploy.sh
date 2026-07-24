@@ -10,6 +10,9 @@ fi
 
 COMMIT_MSG="$1"
 
+echo "==> Generating prerender routes & sitemap..."
+node scripts/gen-prerender.mjs
+
 echo "==> Building..."
 node_modules/.bin/ng build --configuration=production
 

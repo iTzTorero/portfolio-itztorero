@@ -4,7 +4,13 @@
     "projects": "Proyectos",
     "experience": "Experiencia",
     "contact": "Contacto",
-    "education": "Educación"
+    "education": "Educación",
+    "aria": {
+      "openMenu": "Abrir menú",
+      "closeMenu": "Cerrar menú",
+      "theme": "Cambiar tema",
+      "language": "Cambiar idioma"
+    }
   },
 
   "home": {
@@ -114,7 +120,10 @@
       },
       "submit": "Enviar mensaje"
     },
-    "success": "Tu cliente de correo debería abrirse en un momento",
+    "sending": "Enviando…",
+    "success": "¡Gracias! Tu mensaje fue enviado.",
+    "mailtoOpening": "Tu cliente de correo debería abrirse en un momento",
+    "error": "Algo salió mal. Escríbeme directamente por correo.",
     "mail": {
       "subject": "Contacto desde portafolio — {{name}}",
       "body": "Nombre: {{name}}\nCorreo: {{email}}\n\n{{message}}"

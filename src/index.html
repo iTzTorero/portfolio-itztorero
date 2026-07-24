@@ -5,6 +5,24 @@
     <title>Juan Pablo Valenzuela Castro | Software Engineer</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Apply saved theme & language before first paint to avoid FOUC -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "dark" || t === "light")
+            document.documentElement.setAttribute("data-theme", t);
+          var l = localStorage.getItem("lang");
+          if (l !== "en" && l !== "es")
+            l =
+              (navigator.language || "en").toLowerCase().indexOf("es") === 0
+                ? "es"
+                : "en";
+          document.documentElement.lang = l;
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Juan Pablo Valenzuela Castro — Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data pipelines. Available for remote backend, cloud, and AI roles." />
     <meta name="author" content="Juan Pablo Valenzuela Castro" />
     <meta name="robots" content="index, follow" />

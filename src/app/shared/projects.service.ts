@@ -2,21 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Project } from './portfolio.types';
 
-export type Project = {
-    slug: string;
-    name: string;
-    summary: string;
-    ownership?: 'personal' | 'professional';
-    role?: string;
-    disclaimer?: string;
-    stack: string[];
-    tags: string[];
-    highlights?: string[];
-    architecture?: string[];
-    github?: string;
-    demo?: string;
-};
+export type { Project } from './portfolio.types';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {

@@ -3,12 +3,13 @@
   "version": "2.0.1",
   "scripts": {
     "ng": "ng",
+    "gen:prerender": "node scripts/gen-prerender.mjs",
+    "prebuild": "node scripts/gen-prerender.mjs",
     "build": "ng build",
     "start": "npx ng serve",
     "watch": "npx ng build --watch --configuration development",
     "test": "npx ng test",
-    "deploy": "firebase deploy --only hosting",
-    "serve:ssr:portfolio-itztorero": "node dist/portfolio-itztorero/server/server.mjs"
+    "deploy": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {

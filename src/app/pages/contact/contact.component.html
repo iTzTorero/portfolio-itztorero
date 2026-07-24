@@ -9,9 +9,11 @@
     <section class="card">
       <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
         <div class="field">
-          <label>{{ "contact.form.name.label" | transloco }}</label>
+          <label for="contact-name">{{ "contact.form.name.label" | transloco }}</label>
           <input
+            id="contact-name"
             type="text"
+            autocomplete="name"
             formControlName="name"
             [placeholder]="'contact.form.name.placeholder' | transloco"
           />
@@ -23,9 +25,11 @@
         </div>
 
         <div class="field">
-          <label>{{ "contact.form.email.label" | transloco }}</label>
+          <label for="contact-email">{{ "contact.form.email.label" | transloco }}</label>
           <input
+            id="contact-email"
             type="email"
+            autocomplete="email"
             formControlName="email"
             [placeholder]="'contact.form.email.placeholder' | transloco"
           />
@@ -37,8 +41,9 @@
         </div>
 
         <div class="field">
-          <label>{{ "contact.form.message.label" | transloco }}</label>
+          <label for="contact-message">{{ "contact.form.message.label" | transloco }}</label>
           <textarea
+            id="contact-message"
             rows="5"
             formControlName="message"
             [placeholder]="'contact.form.message.placeholder' | transloco"
@@ -52,12 +57,21 @@
           </small>
         </div>
 
-        <button class="btn" type="submit">
-          {{ "contact.form.submit" | transloco }}
+        <button class="btn" type="submit" [disabled]="status() === 'sending'">
+          {{
+            (status() === "sending" ? "contact.sending" : "contact.form.submit")
+              | transloco
+          }}
         </button>
 
-        <p class="success" *ngIf="sent()">
+        <p class="success" *ngIf="status() === 'sent'">
           {{ "contact.success" | transloco }} ✉️
+        </p>
+        <p class="success" *ngIf="status() === 'mailto'">
+          {{ "contact.mailtoOpening" | transloco }} ✉️
+        </p>
+        <p class="error" *ngIf="status() === 'error'">
+          {{ "contact.error" | transloco }}
         </p>
       </form>
     </section>

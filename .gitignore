@@ -69,3 +69,6 @@ coverage/
 .angular/
 .cache/
 dist/
+
+# Generated before build by scripts/gen-prerender.mjs
+/prerender-routes.txt
