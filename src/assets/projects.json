@@ -113,6 +113,95 @@
     "github": ""
   },
   {
+    "slug": "sociko",
+    "name": {
+      "en": "Sociko",
+      "es": "Sociko"
+    },
+    "summary": {
+      "en": "Member, membership and revenue management SaaS for gyms, studios and clubs in Mexico. The differentiator is the collections list: every lapsed member is flagged with their phone number next to them — recovering a single one pays for the subscription. The gym's money never flows through the platform.",
+      "es": "SaaS de control de socios, membresías e ingresos para gimnasios, estudios y clubs en México. El diferenciador es la lista de cobranza: cada socio vencido queda apuntado con su teléfono al lado — con recuperar a uno solo, la suscripción ya se pagó. El dinero del gimnasio nunca pasa por la plataforma."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
+      "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
+    },
+    "confidentiality": {
+      "en": "Public summary",
+      "es": "Resumen público"
+    },
+    "disclaimer": {
+      "en": "Personal product in pre-launch, already live in production and operated solo. Multi-tenant SaaS handling gym members' data on behalf of each gym; implementation details are summarized at a high level.",
+      "es": "Producto personal en pre-lanzamiento, ya en producción y operado en solitario. SaaS multi-tenant que trata datos de socios por cuenta de cada gimnasio; los detalles de implementación se resumen a alto nivel."
+    },
+    "stack": [
+      "Angular 21",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Firebase Hosting",
+      "Firestore",
+      "Firebase Auth",
+      "Cloud Functions",
+      "Stripe Connect",
+      "Resend",
+      "PWA",
+      "GitHub Actions"
+    ],
+    "tags": [
+      "SaaS",
+      "Multi-tenant",
+      "Fitness",
+      "Stripe",
+      "Firebase",
+      "PWA",
+      "LATAM",
+      "Full Stack"
+    ],
+    "impact": {
+      "en": [
+        "Front-desk check-in answers on the spot whether a member is current — and every lapsed member who walks in gets flagged on the collections list with their phone number, which is where the gym recovers unpaid monthly fees.",
+        "Membership status is always derived from the expiry date, never stored: no cron job flipping flags, no data lying at midnight.",
+        "Optional online billing via Stripe Connect direct charges: payments land in the gym's own Stripe account under the gym's name — the platform never touches the funds.",
+        "Offline-first PWA: the member roster stays readable at the front desk even when the internet drops."
+      ],
+      "es": [
+        "El check-in del mostrador dice en el momento si el socio está al corriente — y cada vencido que intenta entrar queda apuntado en la lista de cobranza con su teléfono, que es de donde el gimnasio recupera mensualidades.",
+        "El estatus de la membresía siempre se deriva de la fecha de vencimiento, nunca se guarda: no hay cron volteando banderas ni datos que mientan a medianoche.",
+        "Cobro en línea opcional con cargos directos de Stripe Connect: el pago cae en la cuenta de Stripe del propio gimnasio, a su nombre — la plataforma jamás toca los fondos.",
+        "PWA offline-first: el padrón se sigue consultando en el mostrador aunque se caiga el internet."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Fully civil date model (YYYY-MM-DD strings) with a lint rule banning `new Date()` outside a single helper — in an expirations business, one timezone slip turns away a paying member at the door.",
+        "Monthly renewals anchored to the original date with end-of-month clamping, verified by mutation testing: 12 on-time renewals add up to exactly one calendar year.",
+        "Atomic renew-and-charge transactions keyed by idempotency: a double tap on 'Renew' cannot duplicate the income record or the membership.",
+        "Full technical SEO: public routes prerendered to real HTML at build time, per-page metas, JSON-LD and sitemap."
+      ],
+      "es": [
+        "Modelo de fechas 100% civil (strings YYYY-MM-DD) con regla de lint que prohíbe `new Date()` fuera de un único helper — en un negocio de vencimientos, un desfase de zona horaria deja afuera a un socio que sí pagó.",
+        "Renovaciones mensuales ancladas a la fecha original con clamp de fin de mes, verificado por mutación: 12 renovaciones puntuales suman exactamente un año de calendario.",
+        "Renovación y cobro en una transacción atómica con clave de idempotencia: el doble tap en 'Renovar' no puede duplicar ni el ingreso ni la membresía.",
+        "SEO técnico completo: rutas públicas prerenderizadas a HTML real en el build, metas por página, JSON-LD y sitemap."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Angular 21 (signals, standalone components) as a PWA on Firebase Hosting; Cloud Functions v2 (Node 22) as the backend; multi-tenant Firestore with every document under organizations/{orgId}.",
+        "Stripe webhooks are the single source of truth for plans and feature flags; optional member billing uses Connect direct charges with an application fee.",
+        "CI gates (lint + tests on both layers) with automatic deploy to Firebase on every commit to main."
+      ],
+      "es": [
+        "Angular 21 (signals, standalone components) como PWA sobre Firebase Hosting; Cloud Functions v2 (Node 22) de backend; Firestore multi-tenant con todo documento bajo organizations/{orgId}.",
+        "Los webhooks de Stripe son la única fuente de verdad de planes y feature flags; el cobro opcional a socios usa cargos directos de Connect con application fee.",
+        "Gates de CI (lint + pruebas en las dos capas) con deploy automático a Firebase en cada commit a main."
+      ]
+    },
+    "demo": "https://sociko.com.mx",
+    "github": ""
+  },
+  {
     "slug": "balltics",
     "name": {
       "en": "Balltics — Baseball League Management Platform",
@@ -235,7 +324,6 @@
     "demo": "https://balltics.web.app",
     "github": ""
   },
-
   {
     "slug": "data-platform",
     "name": {
@@ -377,7 +465,13 @@
       "Machine Learning",
       "OpenDroneMap"
     ],
-    "tags": ["ML", "GCP", "Computer Vision", "Microservices", "Geospatial"],
+    "tags": [
+      "ML",
+      "GCP",
+      "Computer Vision",
+      "Microservices",
+      "Geospatial"
+    ],
     "impact": {
       "en": [
         "Automates the workflow from drone capture → processing → inference → structured outputs.",
@@ -440,8 +534,20 @@
       "en": "Frontend demo. Focuses on architecture design and UI implementation — backend not implemented.",
       "es": "Demo de frontend. Enfocado en diseño de arquitectura e implementación de UI — backend no implementado."
     },
-    "stack": ["Angular", "SCSS", "Firebase Hosting", "GCP"],
-    "tags": ["Agents", "A2A", "RAG", "LLMs", "FinOps", "Cloud"],
+    "stack": [
+      "Angular",
+      "SCSS",
+      "Firebase Hosting",
+      "GCP"
+    ],
+    "tags": [
+      "Agents",
+      "A2A",
+      "RAG",
+      "LLMs",
+      "FinOps",
+      "Cloud"
+    ],
     "impact": {
       "en": [
         "Delivered a deployable Angular landing + demo chat for an enterprise-style multi-agent assistant.",
