@@ -325,6 +325,334 @@
     "github": ""
   },
   {
+    "slug": "nauti-test-pro",
+    "name": {
+      "en": "Nauti Test Pro",
+      "es": "Nauti Test Pro"
+    },
+    "summary": {
+      "en": "Full-stack PWA for nautical exam preparation. Built, deployed, and operated solo — covering product design, backend, payments, and infrastructure from day one.",
+      "es": "PWA full-stack para preparación de exámenes náuticos. Construida, desplegada y operada en solitario — cubriendo diseño de producto, backend, pagos e infraestructura desde el inicio."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
+      "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
+    },
+    "confidentiality": {
+      "en": "Public",
+      "es": "Público"
+    },
+    "disclaimer": {
+      "en": "Personal project. Live in production at nautitestpro.com since February 2025.",
+      "es": "Proyecto personal. En producción en nautitestpro.com desde febrero de 2025."
+    },
+    "stack": [
+      "Vue 3",
+      "Ionic 7",
+      "Capacitor (iOS/Android)",
+      "TypeScript",
+      "Vite",
+      "Firebase Hosting",
+      "Firestore",
+      "Firebase Auth",
+      "Cloud Functions",
+      "Stripe",
+      "Resend",
+      "Workbox (PWA)",
+      "GA4",
+      "Sentry",
+      "GCP"
+    ],
+    "tags": [
+      "PWA",
+      "SaaS",
+      "Firebase",
+      "Stripe",
+      "Education",
+      "Mobile",
+      "Full Stack"
+    ],
+    "impact": {
+      "en": [
+        "Shipped and maintained a production SaaS platform solo, covering every layer from UI to cloud infrastructure.",
+        "Token-based monetization integrated with Stripe Checkout and webhooks, with full payment history per user.",
+        "PWA with Workbox service worker — installable on iOS and Android with no app store dependency.",
+        "SMS MFA (Firebase multi-factor auth) enforced at login, with per-user enrollment and bonus token incentive.",
+        "Encrypted question bank using pre-build AES scripts to protect proprietary exam content.",
+        "Admin dashboard with broadcast messaging, per-user read tracking, token management, and PWA adoption metrics."
+      ],
+      "es": [
+        "Desarrollé y mantuve una plataforma SaaS en producción en solitario, cubriendo cada capa desde la UI hasta la infraestructura cloud.",
+        "Monetización por tokens integrada con Stripe Checkout y webhooks, con historial de pagos por usuario.",
+        "PWA con service worker Workbox — instalable en iOS y Android sin depender de ninguna tienda de apps.",
+        "SMS MFA (autenticación multifactor de Firebase) aplicada en el login, con enrolamiento por usuario e incentivo de tokens.",
+        "Banco de preguntas encriptado con scripts AES de pre-build para proteger el contenido propietario del examen.",
+        "Dashboard de administración con mensajería broadcast, seguimiento de lectura por usuario, gestión de tokens y métricas de adopción de PWA."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Test engine with timed evaluations, randomized sets, per-question feedback, and result history.",
+        "Token economy: users earn free tokens via email and SMS verification, purchase more via Stripe.",
+        "Cloud Functions handle Stripe webhooks, token grants, MFA enrollment validation, and automated welcome messages.",
+        "Transactional emails (password reset, email verification) sent via Resend with branded HTML templates.",
+        "PWA install tracking per user (isPWA / hasEverUsedPWA / platform) stored in Firestore and visible in admin dashboard.",
+        "Custom domain (nautitestpro.com) with Firebase Hosting, Google Search Console, sitemap, and SEO meta tags.",
+        "Firestore security rules enforce admin-only writes on sensitive subcollections."
+      ],
+      "es": [
+        "Motor de tests con evaluaciones cronometradas, sets aleatorios, feedback por pregunta e historial de resultados.",
+        "Economía de tokens: los usuarios ganan tokens verificando correo y SMS, y compran más vía Stripe.",
+        "Cloud Functions manejan webhooks de Stripe, otorgamiento de tokens, validación de MFA y mensajes de bienvenida automáticos.",
+        "Emails transaccionales (reseteo de contraseña, verificación de correo) enviados vía Resend con plantillas HTML personalizadas.",
+        "Seguimiento de instalación PWA por usuario (isPWA / hasEverUsedPWA / platform) almacenado en Firestore y visible en el dashboard.",
+        "Dominio propio (nautitestpro.com) con Firebase Hosting, Google Search Console, sitemap y meta tags SEO.",
+        "Reglas de seguridad de Firestore que fuerzan escrituras solo de admin en subcolecciones sensibles."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Vue 3 + Ionic SPA, Vite build, deployed to Firebase Hosting with PWA (Workbox autoUpdate)",
+        "Firestore: members/{uid}, messages, tokenLogs, payments, userLogs subcollections",
+        "Firebase Auth with email/password + SMS MFA (multi-factor enrollment per user)",
+        "Cloud Functions (Node.js): Stripe webhook, token grants (email/phone bonus), member lifecycle triggers, Resend email dispatch",
+        "Stripe Checkout sessions created server-side; webhook fulfills token balance atomically via Firestore transaction",
+        "Pre-build encryption script (AES) bundles question bank as .encrypted.ts — decrypted client-side at runtime"
+      ],
+      "es": [
+        "SPA Vue 3 + Ionic, build con Vite, desplegada en Firebase Hosting con PWA (Workbox autoUpdate)",
+        "Firestore: subcolecciones members/{uid}, messages, tokenLogs, payments, userLogs",
+        "Firebase Auth con email/contraseña + SMS MFA (enrolamiento multifactor por usuario)",
+        "Cloud Functions (Node.js): webhook Stripe, otorgamiento de tokens (bonus email/teléfono), triggers de ciclo de vida de miembros, envío de emails vía Resend",
+        "Sesiones de Stripe Checkout creadas server-side; webhook fulfills saldo de tokens atómicamente vía transacción Firestore",
+        "Script de encriptación pre-build (AES) empaqueta el banco de preguntas como .encrypted.ts — desencriptado client-side en tiempo de ejecución"
+      ]
+    },
+    "demo": "https://nautitestpro.com",
+    "github": "https://github.com/iTzTorero/nauti-test-pro"
+  },
+  {
+    "slug": "jbp-software",
+    "name": {
+      "en": "JBP — Produce Sourcing, Trip Costing & Cash Control",
+      "es": "JBP — Acopio, costeo por viaje y control del dinero"
+    },
+    "summary": {
+      "en": "Custom system for an agro-industrial sourcing company in northwestern Mexico that buys tomato and chili and delivers it to industrial plants. It costs every truckload against the purchase order, separates estimated margin from real margin, and explains the gap by its two causes — weight shrinkage and quality penalty — money that used to leak without anyone measuring it. Built and shipped solo; in production.",
+      "es": "Sistema a medida para una empresa agroindustrial de acopio en el noroeste de México que compra tomate y chile y lo entrega en plantas industriales. Costea cada viaje contra la orden de compra, separa el margen estimado del real y explica la diferencia por sus dos causas —merma de peso y castigo por calidad—, dinero que antes se fugaba sin que nadie lo midiera. Construido y entregado en solitario; en producción."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (VALC Tech) — Solo, end-to-end",
+      "es": "Fundador e Ingeniero (VALC Tech) — En solitario, de extremo a extremo"
+    },
+    "confidentiality": {
+      "en": "Private repository — client-operated",
+      "es": "Repositorio privado — operado por el cliente"
+    },
+    "disclaimer": {
+      "en": "Custom software designed, built and deployed solo under contract, and operated by the client. The repository and all business data are private; the description covers architecture and engineering decisions only.",
+      "es": "Software a medida diseñado, construido y desplegado en solitario bajo contrato, y operado por el cliente. El repositorio y todos los datos de negocio son privados; la descripción cubre únicamente arquitectura y decisiones de ingeniería."
+    },
+    "stack": [
+      "Angular 21",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "PWA (offline-first)",
+      "Firebase",
+      "Firestore",
+      "Firebase Auth",
+      "Cloud Functions v2 (Node 22)",
+      "Firebase Storage",
+      "FCM",
+      "Firebase Emulator Suite",
+      "Vitest",
+      "GitHub Actions",
+      "GCP"
+    ],
+    "tags": [
+      "Custom Software",
+      "Agritech",
+      "Offline-first",
+      "PWA",
+      "Firebase",
+      "Fintech-adjacent",
+      "Multi-entity",
+      "Full Stack",
+      "In Production"
+    ],
+    "impact": {
+      "en": [
+        "Made margin leakage visible: the system splits estimated vs real margin per trip and attributes the difference to shrinkage or quality penalty, which is the number the business now negotiates on.",
+        "Lets the business compare its two sourcing routes — buying through a supplier versus buying direct from the grower and paying harvest and freight separately — instead of guessing which one pays better.",
+        "Replaced spreadsheet-based control of supplier current accounts, advances and bank reconciliation across two legal entities and two bank accounts.",
+        "Field capture works with no signal: crews record loads next to the scale and the data syncs when coverage returns.",
+        "Shipped to production with automated deploys, so fixes reach the client the same day they are merged."
+      ],
+      "es": [
+        "Hizo visible la fuga de margen: el sistema separa margen estimado y real por viaje y atribuye la diferencia a merma o castigo, que es el número con el que el negocio ahora negocia.",
+        "Permite comparar las dos rutas de acopio —comprar vía proveedor o comprar directo al agricultor pagando corte y flete por separado— en vez de adivinar cuál deja más.",
+        "Sustituyó el control en hojas de cálculo de cuentas corrientes de proveedores, anticipos y conciliación bancaria entre dos razones sociales y dos cuentas de banco.",
+        "La captura en campo funciona sin señal: se registra el viaje junto a la báscula y los datos sincronizan cuando vuelve la cobertura.",
+        "Entregado en producción con despliegue automatizado, así que las correcciones llegan al cliente el mismo día que se integran."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Money is stored in integer cents and weights in grams — never floats, because the whole business is a subtraction of cents per kilo.",
+        "Every operation that touches money goes through idempotent callable Cloud Functions; direct client writes are a deliberate exception limited to offline field capture, guarded by strict Firestore rules.",
+        "Role-based access via custom claims (admin, partner, office, supplier, read-only), with token revocation when a role changes.",
+        "Suppliers cannot see sale prices, purchase orders or freight rates — they read a trigger-maintained projection of their own trips, enforced by a Firestore rule with its own test, so the company's per-kilo margin is never exposed.",
+        "Dashboard totals come from trigger-maintained monthly aggregate documents that recompute the full month rather than incrementing, because Firestore can deliver the same event twice and a repeated increment inflates a total silently.",
+        "Business dates are pinned to America/Mazatlan, not UTC — with the wrong zone, anything captured after 23:00 fell into the next day.",
+        "Nothing is deleted: soft-delete plus an author audit trail on every movement of money.",
+        "Four-level test pyramid on isolated emulator instances — unit tests, 123 Firestore/Storage rules cases and 93 Cloud Functions tests — so a live demo can keep running while the suite executes.",
+        "Modules delivered: trips and costing, money and advances, activities per crop cycle, collections, plant reconciliation, banking, finance reports and catalogs."
+      ],
+      "es": [
+        "El dinero se guarda en centavos enteros y los pesos en gramos —nunca floats—, porque el negocio entero es una resta de centavos por kilo.",
+        "Toda operación que toca dinero pasa por callable Cloud Functions idempotentes; la escritura directa del cliente es una excepción deliberada, limitada a la captura offline en campo y acotada por reglas estrictas de Firestore.",
+        "Control de acceso por roles vía custom claims (administrador, socio, oficina, proveedor, solo lectura), con revocación de tokens al cambiar el rol.",
+        "El proveedor no ve precios de venta, órdenes de compra ni tarifas de flete: lee una proyección de sus propios viajes mantenida por trigger, forzada por una regla de Firestore con prueba propia, para no exponer el margen por kilo de la empresa.",
+        "Los totales del tablero salen de documentos de agregados mensuales mantenidos por triggers que recalculan el mes completo en vez de sumar diferencias, porque Firestore puede entregar el mismo evento dos veces y un incremento repetido infla un total sin que nadie lo note.",
+        "Las fechas de negocio están ancladas a America/Mazatlan y no a UTC: con la zona equivocada, lo capturado después de las 23:00 caía al día siguiente.",
+        "Nada se borra: soft-delete y bitácora de autor en cada movimiento de dinero.",
+        "Pirámide de pruebas de cuatro niveles sobre instancias de emulador aisladas —unitarias, 123 casos de reglas de Firestore/Storage y 93 pruebas de Cloud Functions—, de modo que una demostración en vivo sigue corriendo mientras la suite se ejecuta.",
+        "Módulos entregados: viajes y costeo, dinero y anticipos, actividades por ciclo de cultivo, cobranza, relación contra planta, banco, reportes financieros y catálogos."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Monorepo: apps/web (Angular PWA) + functions (Cloud Functions v2, TypeScript on Node 22)",
+        "Shared calculation core synced into functions so client and server cost a trip with the exact same code",
+        "Firestore multi-entity model: catalogs shared across both legal entities, movements always scoped by entityId",
+        "Offline-first capture through the Firestore SDK's local persistence; money operations through callables",
+        "Trigger-maintained aggregates for dashboards; scheduled rebuild scripts for historical recalculation",
+        "Two isolated emulator instances (development and tests) on separate port ranges, so the test suite never disturbs a running demo",
+        "CI/CD with GitHub Actions: pull requests verify, pushes to main verify and deploy"
+      ],
+      "es": [
+        "Monorepo: apps/web (PWA en Angular) + functions (Cloud Functions v2, TypeScript sobre Node 22)",
+        "Núcleo de cálculo compartido y sincronizado hacia functions, para que cliente y servidor costeen un viaje con exactamente el mismo código",
+        "Modelo Firestore multi-entidad: catálogos compartidos entre las dos razones sociales, movimientos siempre acotados por entityId",
+        "Captura offline-first mediante la persistencia local del SDK de Firestore; las operaciones de dinero van por callables",
+        "Agregados mantenidos por triggers para los tableros; scripts de rehecho para recalcular históricos",
+        "Dos instancias de emulador aisladas (desarrollo y pruebas) en rangos de puertos distintos, para que la suite nunca estorbe a una demostración en curso",
+        "CI/CD con GitHub Actions: los pull requests verifican, los push a main verifican y despliegan"
+      ]
+    },
+    "demo": "",
+    "github": ""
+  },
+  {
+    "slug": "numa",
+    "name": {
+      "en": "Numa — Multi-tenant POS & Business Admin",
+      "es": "Numa — POS y administración multi-tenant"
+    },
+    "summary": {
+      "en": "Multi-tenant POS and back-office SaaS for small businesses, launching in Venezuela first and Mexico second from a single codebase. It handles the part most POS tools skip in a dollarized economy: prices anchored in USD, sales settled in local currency at the day's official rate, and country-specific taxes applied without forking the product.",
+      "es": "SaaS multi-tenant de punto de venta y administración para pymes, con lanzamiento primero en Venezuela y después en México desde un solo código. Resuelve la parte que la mayoría de los POS evita en una economía dolarizada: precios anclados en USD, ventas liquidadas en moneda local a la tasa oficial del día e impuestos por país aplicados sin bifurcar el producto."
+    },
+    "ownership": "personal",
+    "role": {
+      "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
+      "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
+    },
+    "confidentiality": {
+      "en": "Private repository — pre-launch",
+      "es": "Repositorio privado — pre-lanzamiento"
+    },
+    "disclaimer": {
+      "en": "Personal product in active development. Multi-tenant core, roles and billing foundations are built and tested; catalog, inventory and sales modules are the phases in progress. Not publicly launched yet.",
+      "es": "Producto personal en desarrollo activo. El núcleo multi-tenant, los roles y las bases de facturación están construidos y probados; los módulos de catálogo, inventario y ventas son las fases en curso. Aún sin lanzamiento público."
+    },
+    "stack": [
+      "Angular 20",
+      "TypeScript",
+      "SCSS",
+      "PWA (offline-first)",
+      "Firebase",
+      "Firestore",
+      "Firebase Auth",
+      "Cloud Functions v2 (Node 22)",
+      "Firebase Storage",
+      "Cloud Scheduler",
+      "Firebase Emulator Suite",
+      "Resend",
+      "GCP"
+    ],
+    "tags": [
+      "SaaS",
+      "Multi-tenant",
+      "POS",
+      "PWA",
+      "Offline-first",
+      "Firebase",
+      "Multi-currency",
+      "LATAM",
+      "Full Stack",
+      "In Development"
+    ],
+    "impact": {
+      "en": [
+        "One codebase serves two countries with different currencies, taxes and payment rails — no forks, no parallel branches to keep in sync.",
+        "Self-serve billing is the wedge against the incumbent in the Venezuelan market, which still collects manually.",
+        "Built entirely against the Firebase Emulator Suite, so the product reached a tested multi-tenant core at zero cloud spend before launch.",
+        "Cut the initial bundle from 654 KB to 225 KB, which matters for shop counters on slow connections."
+      ],
+      "es": [
+        "Un solo código atiende a dos países con monedas, impuestos y medios de cobro distintos — sin forks ni ramas paralelas que mantener sincronizadas.",
+        "La facturación self-serve es la cuña frente al competidor establecido en el mercado venezolano, que todavía cobra de forma manual.",
+        "Construido íntegramente contra el Firebase Emulator Suite, así que el producto llegó a un núcleo multi-tenant probado con cero gasto en la nube antes de lanzar.",
+        "Bundle inicial reducido de 654 KB a 225 KB, algo que pesa en mostradores con conexiones lentas."
+      ]
+    },
+    "highlights": {
+      "en": [
+        "Country differences are isolated behind injected strategies — tax, currency, billing and invoicing — resolved per tenant, so adding a market is a configuration, not a fork.",
+        "Multi-currency sales record the USD amount, the local amount and the exchange rate actually applied, so a receipt can always be reconstructed months later.",
+        "A scheduled job pulls the official daily exchange rate into a canonical document path, keeping every sale of that day on one rate.",
+        "Multi-tenant isolation is enforced by Firestore rules with a dedicated test suite (24/24 passing), after an early review caught a role-escalation hole where overlapping rule matches combined with OR.",
+        "Backend-owned fields such as subscription state and tenant configuration are immutable from the client.",
+        "Invitation-based onboarding with granular per-member permissions, verified email and guarded routes.",
+        "Firebase SDKs load through lazy getters instead of eager imports, which is what kept the initial bundle small.",
+        "Business dates resolve in America/Caracas rather than UTC, so a day's sales close when the shop closes."
+      ],
+      "es": [
+        "Las diferencias por país quedan aisladas tras estrategias inyectadas —impuestos, moneda, cobro y facturación— resueltas por tenant, de modo que sumar un mercado es configuración y no un fork.",
+        "Las ventas multimoneda guardan el monto en USD, el monto en moneda local y la tasa realmente aplicada, para poder reconstruir un ticket meses después.",
+        "Un job programado trae la tasa oficial diaria a una ruta canónica, manteniendo todas las ventas del día sobre una misma tasa.",
+        "El aislamiento multi-tenant lo fuerzan las reglas de Firestore con una suite de pruebas propia (24/24), después de que una revisión temprana detectara una escalada de rol donde los match solapados se unían con OR.",
+        "Los campos que pertenecen al backend, como el estado de suscripción y la configuración del tenant, son inmutables desde el cliente.",
+        "Alta por invitación con permisos granulares por miembro, correo verificado y rutas protegidas.",
+        "Los SDKs de Firebase se cargan por getters diferidos en vez de imports eager, que es lo que mantuvo pequeño el bundle inicial.",
+        "Las fechas de negocio se resuelven en America/Caracas y no en UTC, para que el día de ventas cierre cuando cierra el comercio."
+      ]
+    },
+    "architecture": {
+      "en": [
+        "Monorepo: apps/web (Angular PWA, offline-first with IndexedDB and Firestore persistence) + functions (Node 22, TypeScript)",
+        "Firestore multi-tenant model: platform/ for global config, plans and daily rates; tenants/{tenantId}/ for members, catalog, inventory, sales, cash boxes, banking, receivables and expenses",
+        "Callable functions for tenant creation and privileged operations; scheduled function for the daily exchange rate",
+        "Per-tenant CountryConfig injects TaxStrategy, CurrencyStrategy, BillingStrategy and InvoiceStrategy",
+        "Security by Firestore rules with an explicit members carve-out, since overlapping matches combine with OR",
+        "Local-first development: the full Emulator Suite (auth, firestore, functions, storage, pub/sub) on dedicated ports"
+      ],
+      "es": [
+        "Monorepo: apps/web (PWA en Angular, offline-first con IndexedDB y persistencia de Firestore) + functions (Node 22, TypeScript)",
+        "Modelo Firestore multi-tenant: platform/ para configuración global, planes y tasas diarias; tenants/{tenantId}/ para miembros, catálogo, inventario, ventas, cajas, banco, cuentas por cobrar y gastos",
+        "Callable functions para la creación de tenants y operaciones privilegiadas; función programada para la tasa de cambio diaria",
+        "Un CountryConfig por tenant inyecta TaxStrategy, CurrencyStrategy, BillingStrategy e InvoiceStrategy",
+        "Seguridad por reglas de Firestore con una exclusión explícita de members, ya que los match solapados se combinan con OR",
+        "Desarrollo local primero: el Emulator Suite completo (auth, firestore, functions, storage, pub/sub) en puertos propios"
+      ]
+    },
+    "demo": "",
+    "github": ""
+  },
+  {
     "slug": "data-platform",
     "name": {
       "en": "Data Platform (ETL + Products)",
@@ -627,113 +955,5 @@
         "Planeado: vector store Chroma para el agente RAG, capa acotada de ejecución de herramientas, imagen Docker y despliegue en Cloud Run"
       ]
     }
-  },
-  {
-    "slug": "nauti-test-pro",
-    "name": {
-      "en": "Nauti Test Pro",
-      "es": "Nauti Test Pro"
-    },
-    "summary": {
-      "en": "Full-stack PWA for nautical exam preparation. Built, deployed, and operated solo — covering product design, backend, payments, and infrastructure from day one.",
-      "es": "PWA full-stack para preparación de exámenes náuticos. Construida, desplegada y operada en solitario — cubriendo diseño de producto, backend, pagos e infraestructura desde el inicio."
-    },
-    "ownership": "personal",
-    "role": {
-      "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
-      "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
-    },
-    "confidentiality": {
-      "en": "Public",
-      "es": "Público"
-    },
-    "disclaimer": {
-      "en": "Personal project. Live in production at nautitestpro.com since February 2025.",
-      "es": "Proyecto personal. En producción en nautitestpro.com desde febrero de 2025."
-    },
-    "stack": [
-      "Vue 3",
-      "Ionic 7",
-      "Capacitor (iOS/Android)",
-      "TypeScript",
-      "Vite",
-      "Firebase Hosting",
-      "Firestore",
-      "Firebase Auth",
-      "Cloud Functions",
-      "Stripe",
-      "Resend",
-      "Workbox (PWA)",
-      "GA4",
-      "Sentry",
-      "GCP"
-    ],
-    "tags": [
-      "PWA",
-      "SaaS",
-      "Firebase",
-      "Stripe",
-      "Education",
-      "Mobile",
-      "Full Stack"
-    ],
-    "impact": {
-      "en": [
-        "Shipped and maintained a production SaaS platform solo, covering every layer from UI to cloud infrastructure.",
-        "Token-based monetization integrated with Stripe Checkout and webhooks, with full payment history per user.",
-        "PWA with Workbox service worker — installable on iOS and Android with no app store dependency.",
-        "SMS MFA (Firebase multi-factor auth) enforced at login, with per-user enrollment and bonus token incentive.",
-        "Encrypted question bank using pre-build AES scripts to protect proprietary exam content.",
-        "Admin dashboard with broadcast messaging, per-user read tracking, token management, and PWA adoption metrics."
-      ],
-      "es": [
-        "Desarrollé y mantuve una plataforma SaaS en producción en solitario, cubriendo cada capa desde la UI hasta la infraestructura cloud.",
-        "Monetización por tokens integrada con Stripe Checkout y webhooks, con historial de pagos por usuario.",
-        "PWA con service worker Workbox — instalable en iOS y Android sin depender de ninguna tienda de apps.",
-        "SMS MFA (autenticación multifactor de Firebase) aplicada en el login, con enrolamiento por usuario e incentivo de tokens.",
-        "Banco de preguntas encriptado con scripts AES de pre-build para proteger el contenido propietario del examen.",
-        "Dashboard de administración con mensajería broadcast, seguimiento de lectura por usuario, gestión de tokens y métricas de adopción de PWA."
-      ]
-    },
-    "highlights": {
-      "en": [
-        "Test engine with timed evaluations, randomized sets, per-question feedback, and result history.",
-        "Token economy: users earn free tokens via email and SMS verification, purchase more via Stripe.",
-        "Cloud Functions handle Stripe webhooks, token grants, MFA enrollment validation, and automated welcome messages.",
-        "Transactional emails (password reset, email verification) sent via Resend with branded HTML templates.",
-        "PWA install tracking per user (isPWA / hasEverUsedPWA / platform) stored in Firestore and visible in admin dashboard.",
-        "Custom domain (nautitestpro.com) with Firebase Hosting, Google Search Console, sitemap, and SEO meta tags.",
-        "Firestore security rules enforce admin-only writes on sensitive subcollections."
-      ],
-      "es": [
-        "Motor de tests con evaluaciones cronometradas, sets aleatorios, feedback por pregunta e historial de resultados.",
-        "Economía de tokens: los usuarios ganan tokens verificando correo y SMS, y compran más vía Stripe.",
-        "Cloud Functions manejan webhooks de Stripe, otorgamiento de tokens, validación de MFA y mensajes de bienvenida automáticos.",
-        "Emails transaccionales (reseteo de contraseña, verificación de correo) enviados vía Resend con plantillas HTML personalizadas.",
-        "Seguimiento de instalación PWA por usuario (isPWA / hasEverUsedPWA / platform) almacenado en Firestore y visible en el dashboard.",
-        "Dominio propio (nautitestpro.com) con Firebase Hosting, Google Search Console, sitemap y meta tags SEO.",
-        "Reglas de seguridad de Firestore que fuerzan escrituras solo de admin en subcolecciones sensibles."
-      ]
-    },
-    "architecture": {
-      "en": [
-        "Vue 3 + Ionic SPA, Vite build, deployed to Firebase Hosting with PWA (Workbox autoUpdate)",
-        "Firestore: members/{uid}, messages, tokenLogs, payments, userLogs subcollections",
-        "Firebase Auth with email/password + SMS MFA (multi-factor enrollment per user)",
-        "Cloud Functions (Node.js): Stripe webhook, token grants (email/phone bonus), member lifecycle triggers, Resend email dispatch",
-        "Stripe Checkout sessions created server-side; webhook fulfills token balance atomically via Firestore transaction",
-        "Pre-build encryption script (AES) bundles question bank as .encrypted.ts — decrypted client-side at runtime"
-      ],
-      "es": [
-        "SPA Vue 3 + Ionic, build con Vite, desplegada en Firebase Hosting con PWA (Workbox autoUpdate)",
-        "Firestore: subcolecciones members/{uid}, messages, tokenLogs, payments, userLogs",
-        "Firebase Auth con email/contraseña + SMS MFA (enrolamiento multifactor por usuario)",
-        "Cloud Functions (Node.js): webhook Stripe, otorgamiento de tokens (bonus email/teléfono), triggers de ciclo de vida de miembros, envío de emails vía Resend",
-        "Sesiones de Stripe Checkout creadas server-side; webhook fulfills saldo de tokens atómicamente vía transacción Firestore",
-        "Script de encriptación pre-build (AES) empaqueta el banco de preguntas como .encrypted.ts — desencriptado client-side en tiempo de ejecución"
-      ]
-    },
-    "demo": "https://nautitestpro.com",
-    "github": "https://github.com/iTzTorero/nauti-test-pro"
   }
 ]
