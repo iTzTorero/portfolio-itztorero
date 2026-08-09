@@ -1,6 +1,51 @@
 [
   {
     "company": {
+      "en": "VALC Tech (Independent practice)",
+      "es": "VALC Tech (práctica independiente)"
+    },
+    "title": {
+      "en": "Founder & Software Engineer",
+      "es": "Fundador e Ingeniero de Software"
+    },
+    "type": {
+      "en": "Remote",
+      "es": "Remoto"
+    },
+    "location": {
+      "en": "Mexico",
+      "es": "México"
+    },
+    "start": "2026-01",
+    "end": "",
+    "summary": {
+      "en": "Independent software practice run alongside my full-time role: custom software under contract for Agrícola Industrial JBP (produce sourcing, trip costing and cash control — in production) and self-funded SaaS products in production (AgendaBot Pro, Nauti Test Pro, Balltics). End-to-end ownership: architecture, backend, Stripe billing and operations on GCP/Firebase.",
+      "es": "Práctica independiente de software en paralelo a mi empleo de tiempo completo: software a medida bajo contrato para Agrícola Industrial JBP (acopio, costeo por viaje y control de caja — en producción) y productos SaaS propios en producción (AgendaBot Pro, Nauti Test Pro, Balltics). Responsabilidad de punta a punta: arquitectura, backend, cobros con Stripe y operación sobre GCP/Firebase."
+    },
+    "highlights": {
+      "en": [
+        "AgendaBot Pro: LLM agent in production booking real appointments over WhatsApp — GPT function calling with every tool executed server-side.",
+        "JBP: client system under contract, in production — per-trip costing, estimated vs real margin, advances and bank reconciliation.",
+        "Balltics: multi-tenant league platform running a real baseball league's full season."
+      ],
+      "es": [
+        "AgendaBot Pro: agente LLM en producción agendando citas reales por WhatsApp — GPT function calling con todas las tools ejecutadas en el backend.",
+        "JBP: sistema para cliente bajo contrato, en producción — costeo por viaje, margen estimado vs real, anticipos y conciliación bancaria.",
+        "Balltics: plataforma multi-tenant de ligas que opera la temporada completa de una liga real de béisbol."
+      ]
+    },
+    "tech": [
+      "Angular",
+      "Firebase",
+      "Node.js",
+      "Cloud Functions",
+      "Stripe",
+      "WhatsApp Cloud API",
+      "OpenAI"
+    ]
+  },
+  {
+    "company": {
       "en": "Monteli LLC",
       "es": "Monteli LLC"
     },
@@ -65,8 +110,8 @@
     "start": "2024-01",
     "end": "2026-01",
     "summary": {
-      "en": "Designed and evaluated regression-based machine learning models using multispectral imagery and geospatial data to estimate soil parameters, aligning model outputs with laboratory benchmarks.",
-      "es": "Diseñé y evalué modelos de aprendizaje automático basados en regresión utilizando imágenes multiespectrales y datos geoespaciales para estimar parámetros del suelo, alineando los resultados con mediciones de laboratorio."
+      "en": "Applied research conducted as part of my M.S. at IPN, in parallel with my full-time role at Monteli LLC. Designed and evaluated regression-based machine learning models using multispectral imagery and geospatial data to estimate soil parameters, aligning model outputs with laboratory benchmarks.",
+      "es": "Investigación aplicada realizada como parte de mi maestría en el IPN, en paralelo a mi puesto de tiempo completo en Monteli LLC. Diseñé y evalué modelos de aprendizaje automático basados en regresión utilizando imágenes multiespectrales y datos geoespaciales para estimar parámetros del suelo, alineando los resultados con mediciones de laboratorio."
     },
     "highlights": {
       "en": [

@@ -9,7 +9,7 @@
       "en": "Multi-tenant SaaS that lets patients book, reschedule, and cancel appointments entirely from WhatsApp — no extra app — for the Mexican/LATAM market. Powered by an AI agent (GPT function calling) with deterministic guardrails, WhatsApp Cloud API, Stripe billing, and Mexican e-invoicing (CFDI).",
       "es": "SaaS multi-tenant que permite a los pacientes agendar, reagendar y cancelar citas completamente desde WhatsApp —sin apps adicionales— para el mercado mexicano/LATAM. Impulsado por un agente de IA (GPT con function calling) con guardrails deterministas, WhatsApp Cloud API, cobros con Stripe y facturación electrónica (CFDI)."
     },
-    "ownership": "personal",
+    "ownership": "product-live",
     "role": {
       "en": "Founder & Engineer (Full Stack — Product, AI, Backend, Infrastructure)",
       "es": "Fundador e Ingeniero (Full Stack — Producto, IA, Backend, Infraestructura)"
@@ -19,8 +19,8 @@
       "es": "Resumen público"
     },
     "disclaimer": {
-      "en": "Personal product, live in production and operated solo. Multi-tenant SaaS handling client and patient data; implementation details are summarized at a high level.",
-      "es": "Producto personal, en producción y operado en solitario. SaaS multi-tenant que maneja datos de clientes y pacientes; los detalles de implementación se resumen a alto nivel."
+      "en": "Own product, live in production and operated solo. Multi-tenant SaaS handling client and patient data; implementation details are summarized at a high level.",
+      "es": "Producto propio, en producción y operado en solitario. SaaS multi-tenant que maneja datos de clientes y pacientes; los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
       "Angular 21",
@@ -110,7 +110,19 @@
       ]
     },
     "demo": "https://agendabotpro.com",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "Live in production",
+      "es": "En producción"
+    },
+    "categories": [
+      "saas",
+      "ai"
+    ],
+    "metaDescription": {
+      "en": "Multi-tenant SaaS where patients book, reschedule and cancel appointments over WhatsApp, run by a GPT agent with server-side tools. Stripe + CFDI.",
+      "es": "SaaS multi-tenant: pacientes agendan, reagendan y cancelan citas por WhatsApp con un agente GPT y tools en backend. Stripe y CFDI."
+    }
   },
   {
     "slug": "sociko",
@@ -122,7 +134,7 @@
       "en": "Member, membership and revenue management SaaS for gyms, studios and clubs in Mexico. The differentiator is the collections list: every lapsed member is flagged with their phone number next to them — recovering a single one pays for the subscription. The gym's money never flows through the platform.",
       "es": "SaaS de control de socios, membresías e ingresos para gimnasios, estudios y clubs en México. El diferenciador es la lista de cobranza: cada socio vencido queda apuntado con su teléfono al lado — con recuperar a uno solo, la suscripción ya se pagó. El dinero del gimnasio nunca pasa por la plataforma."
     },
-    "ownership": "personal",
+    "ownership": "product-dev",
     "role": {
       "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
       "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
@@ -132,8 +144,8 @@
       "es": "Resumen público"
     },
     "disclaimer": {
-      "en": "Personal product in pre-launch, already live in production and operated solo. Multi-tenant SaaS handling gym members' data on behalf of each gym; implementation details are summarized at a high level.",
-      "es": "Producto personal en pre-lanzamiento, ya en producción y operado en solitario. SaaS multi-tenant que trata datos de socios por cuenta de cada gimnasio; los detalles de implementación se resumen a alto nivel."
+      "en": "Own product in pre-launch, already live in production and operated solo. Multi-tenant SaaS handling gym members' data on behalf of each gym; implementation details are summarized at a high level.",
+      "es": "Producto propio en pre-lanzamiento, ya en producción y operado en solitario. SaaS multi-tenant que trata datos de socios por cuenta de cada gimnasio; los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
       "Angular 21",
@@ -199,19 +211,30 @@
       ]
     },
     "demo": "https://sociko.com.mx",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "Pre-launch — live in production",
+      "es": "Pre-lanzamiento — ya en producción"
+    },
+    "categories": [
+      "saas"
+    ],
+    "metaDescription": {
+      "en": "Gym CRM that flags every lapsed member with their phone number — recovering one pays for the subscription. Angular, Firebase, Stripe.",
+      "es": "CRM para gimnasios que marca a cada socio vencido con su teléfono: recuperar uno paga la suscripción. Angular, Firebase, Stripe."
+    }
   },
   {
     "slug": "balltics",
     "name": {
-      "en": "Balltics — Baseball League Management Platform",
-      "es": "Balltics — Plataforma de Gestión de Ligas de Béisbol"
+      "en": "Balltics — The platform running a real baseball league",
+      "es": "Balltics — La plataforma que opera una liga real de béisbol"
     },
     "summary": {
-      "en": "Multi-tenant SaaS to run amateur baseball leagues end to end: a real-time public site for fans (standings, leaders, season stats, full box scores) plus an admin suite for live pitch-by-pitch scoring, roster management, and recurring Stripe billing — built for the Mexican/LATAM market.",
-      "es": "SaaS multi-tenant para administrar ligas de béisbol amateur de extremo a extremo: un sitio público en tiempo real para aficionados (posiciones, líderes, estadísticas de temporada, box scores completos) más una suite de administración con anotación pitcheo por pitcheo en vivo, gestión de rosters y cobros recurrentes con Stripe — pensado para el mercado mexicano/LATAM."
+      "en": "Multi-tenant SaaS to run amateur baseball leagues end to end: a real-time public site for fans (standings, leaders, season stats, full box scores) plus an admin suite for live pitch-by-pitch scoring, roster management, and recurring Stripe billing — built for the Mexican/LATAM market. In production — running a real league's full season (Liga Arturo Peimbert Camacho).",
+      "es": "SaaS multi-tenant para administrar ligas de béisbol amateur de extremo a extremo: un sitio público en tiempo real para aficionados (posiciones, líderes, estadísticas de temporada, box scores completos) más una suite de administración con anotación pitcheo por pitcheo en vivo, gestión de rosters y cobros recurrentes con Stripe — pensado para el mercado mexicano/LATAM. En producción — opera la temporada completa de una liga real (Liga Arturo Peimbert Camacho)."
     },
-    "ownership": "personal",
+    "ownership": "product-live",
     "role": {
       "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
       "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
@@ -221,8 +244,8 @@
       "es": "Resumen público"
     },
     "disclaimer": {
-      "en": "Personal product I own and operate end to end (frontend, Firebase backend, Cloud Functions, security rules, and CI/CD), offered commercially to baseball leagues. Implementation details are summarized at a high level.",
-      "es": "Producto personal que poseo y opero de extremo a extremo (frontend, backend en Firebase, Cloud Functions, reglas de seguridad y CI/CD), ofrecido comercialmente a ligas de béisbol. Los detalles de implementación se resumen a alto nivel."
+      "en": "Own product I own and operate end to end (frontend, Firebase backend, Cloud Functions, security rules, and CI/CD), offered commercially to baseball leagues. Implementation details are summarized at a high level.",
+      "es": "Producto propio que poseo y opero de extremo a extremo (frontend, backend en Firebase, Cloud Functions, reglas de seguridad y CI/CD), ofrecido comercialmente a ligas de béisbol. Los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
       "Angular 17",
@@ -322,7 +345,18 @@
       ]
     },
     "demo": "https://balltics.web.app",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "In production — running a real league",
+      "es": "En producción — opera una liga real"
+    },
+    "categories": [
+      "saas"
+    ],
+    "metaDescription": {
+      "en": "Multi-tenant platform running a real baseball league: live pitch-by-pitch scoring, public standings and Stripe billing on Firebase.",
+      "es": "Plataforma multi-tenant que opera una liga real de béisbol: anotación en vivo lanzamiento a lanzamiento y cobros con Stripe."
+    }
   },
   {
     "slug": "nauti-test-pro",
@@ -334,7 +368,7 @@
       "en": "Full-stack PWA for nautical exam preparation. Built, deployed, and operated solo — covering product design, backend, payments, and infrastructure from day one.",
       "es": "PWA full-stack para preparación de exámenes náuticos. Construida, desplegada y operada en solitario — cubriendo diseño de producto, backend, pagos e infraestructura desde el inicio."
     },
-    "ownership": "personal",
+    "ownership": "product-live",
     "role": {
       "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
       "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
@@ -344,8 +378,8 @@
       "es": "Público"
     },
     "disclaimer": {
-      "en": "Personal project. Live in production at nautitestpro.com since February 2025.",
-      "es": "Proyecto personal. En producción en nautitestpro.com desde febrero de 2025."
+      "en": "Own project. Live in production at nautitestpro.com since February 2025.",
+      "es": "Proyecto propio. En producción en nautitestpro.com desde febrero de 2025."
     },
     "stack": [
       "Vue 3",
@@ -430,19 +464,31 @@
       ]
     },
     "demo": "https://nautitestpro.com",
-    "github": "https://github.com/iTzTorero/nauti-test-pro"
+    "github": "https://github.com/iTzTorero/nauti-test-pro",
+    "status": {
+      "en": "Live in production",
+      "es": "En producción"
+    },
+    "categories": [
+      "saas",
+      "mobile"
+    ],
+    "metaDescription": {
+      "en": "PWA + mobile app for nautical exam prep with a token economy: Stripe unlocks encrypted question banks served server-side. Vue 3, Firebase.",
+      "es": "PWA y app móvil para exámenes náuticos con economía de tokens: Stripe desbloquea bancos de preguntas cifrados. Vue 3, Firebase."
+    }
   },
   {
     "slug": "jbp-software",
     "name": {
-      "en": "JBP — Produce Sourcing, Trip Costing & Cash Control",
-      "es": "JBP — Acopio, costeo por viaje y control del dinero"
+      "en": "JBP — Cost control for produce sourcing",
+      "es": "JBP — Control de costos para acopio agrícola"
     },
     "summary": {
-      "en": "Custom system for Agrícola Industrial JBP, an agro-industrial sourcing company in northwestern Mexico that buys tomato and chili and delivers it to industrial plants. It costs every truckload against the purchase order, separates estimated margin from real margin, and explains the gap by its two causes — weight shrinkage and quality penalty — money that used to leak without anyone measuring it. Built and shipped solo; in production.",
-      "es": "Sistema a medida para Agrícola Industrial JBP, empresa agroindustrial de acopio en el noroeste de México que compra tomate y chile y lo entrega en plantas industriales. Costea cada viaje contra la orden de compra, separa el margen estimado del real y explica la diferencia por sus dos causas —merma de peso y castigo por calidad—, dinero que antes se fugaba sin que nadie lo midiera. Construido y entregado en solitario; en producción."
+      "en": "Client case — Agrícola Industrial JBP (northwestern Mexico): their produce-sourcing operation now knows the real margin of every trip and where money was leaking. Custom system for Agrícola Industrial JBP, an agro-industrial sourcing company in northwestern Mexico that buys tomato and chili and delivers it to industrial plants. It costs every truckload against the purchase order, separates estimated margin from real margin, and explains the gap by its two causes — weight shrinkage and quality penalty — money that used to leak without anyone measuring it. Built and shipped solo; in production.",
+      "es": "Caso de cliente — Agrícola Industrial JBP (noroeste de México): su operación de acopio ahora sabe el margen real de cada viaje y dónde se fugaba el dinero. Sistema a medida para Agrícola Industrial JBP, empresa agroindustrial de acopio en el noroeste de México que compra tomate y chile y lo entrega en plantas industriales. Costea cada viaje contra la orden de compra, separa el margen estimado del real y explica la diferencia por sus dos causas —merma de peso y castigo por calidad—, dinero que antes se fugaba sin que nadie lo midiera. Construido y entregado en solitario; en producción."
     },
-    "ownership": "personal",
+    "ownership": "client",
     "role": {
       "en": "Founder & Engineer (VALC Tech) — Solo, end-to-end",
       "es": "Fundador e Ingeniero (VALC Tech) — En solitario, de extremo a extremo"
@@ -540,19 +586,30 @@
       ]
     },
     "demo": "",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "In production — client-operated",
+      "es": "En producción — operado por el cliente"
+    },
+    "categories": [
+      "custom"
+    ],
+    "metaDescription": {
+      "en": "Custom produce-sourcing system for a real client: per-trip costing, estimated vs real margin, advances and bank reconciliation. In production.",
+      "es": "Sistema a medida para un cliente agroindustrial real: costeo por viaje, margen estimado vs real, anticipos y conciliación bancaria. En producción."
+    }
   },
   {
     "slug": "numa",
     "name": {
-      "en": "Numa — Multi-tenant POS & Business Admin",
-      "es": "Numa — POS y administración multi-tenant"
+      "en": "Numa — POS with CFDI invoicing built in",
+      "es": "Numa — Punto de venta con facturación CFDI integrada"
     },
     "summary": {
       "en": "Multi-tenant POS and back-office SaaS for small businesses in Mexico. The wedge is CFDI 4.0 invoicing built into the product instead of sold as an add-on, plus self-serve billing — the free POS options in this market are free because they tie the merchant to their own card terminal.",
       "es": "SaaS multi-tenant de punto de venta y administración para pymes mexicanas. La cuña es la facturación CFDI 4.0 dentro del producto en vez de vendida como complemento, más el cobro self-serve — los POS gratuitos de este mercado son gratis porque amarran al comercio a su propia terminal."
     },
-    "ownership": "personal",
+    "ownership": "product-dev",
     "role": {
       "en": "Founder & Engineer (Full Stack — Product, Backend, Infrastructure)",
       "es": "Fundador e Ingeniero (Full Stack — Producto, Backend, Infraestructura)"
@@ -562,8 +619,8 @@
       "es": "Repositorio privado — pre-lanzamiento"
     },
     "disclaimer": {
-      "en": "Personal product in active development for the Mexican market. The multi-tenant core, roles and invitations are built and tested; catalog, inventory, sales and CFDI invoicing are the phases in progress. Not publicly launched yet.",
-      "es": "Producto personal en desarrollo activo para el mercado mexicano. El núcleo multi-tenant, los roles y las invitaciones están construidos y probados; catálogo, inventario, ventas y facturación CFDI son las fases en curso. Aún sin lanzamiento público."
+      "en": "Own product in active development for the Mexican market. The multi-tenant core, roles and invitations are built and tested; catalog, inventory, sales and CFDI invoicing are the phases in progress. Not publicly launched yet.",
+      "es": "Producto propio en desarrollo activo para el mercado mexicano. El núcleo multi-tenant, los roles y las invitaciones están construidos y probados; catálogo, inventario, ventas y facturación CFDI son las fases en curso. Aún sin lanzamiento público."
     },
     "stack": [
       "Angular 20",
@@ -646,7 +703,18 @@
       ]
     },
     "demo": "",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "In development",
+      "es": "En desarrollo"
+    },
+    "categories": [
+      "saas"
+    ],
+    "metaDescription": {
+      "en": "Multi-tenant POS for small businesses in Mexico with CFDI 4.0 invoicing built in — offline-first PWA on Firebase, billed with Stripe.",
+      "es": "POS multi-tenant para pymes mexicanas con facturación CFDI 4.0 integrada — PWA offline-first sobre Firebase, cobro con Stripe."
+    }
   },
   {
     "slug": "data-platform",
@@ -658,7 +726,7 @@
       "en": "Core data platform responsible for ingesting, normalizing, and serving datasets consumed by multiple SaaS products and enterprise clients.",
       "es": "Plataforma de datos central responsable de ingerir, normalizar y servir datasets consumidos por múltiples productos SaaS y clientes empresariales."
     },
-    "ownership": "professional",
+    "ownership": "employer",
     "role": {
       "en": "Software Engineer (Platform Contributor)",
       "es": "Ingeniero de Software (Colaborador de Plataforma)"
@@ -763,6 +831,17 @@
         "Servicios de transformación y normalización",
         "Datasets curados consumidos por productos downstream"
       ]
+    },
+    "status": {
+      "en": "In production",
+      "es": "En producción"
+    },
+    "categories": [
+      "data"
+    ],
+    "metaDescription": {
+      "en": "GCP data platform ingesting, normalizing and serving datasets to SaaS products and enterprise clients. Event-driven ETL microservices.",
+      "es": "Plataforma de datos en GCP que ingesta, normaliza y sirve datasets a productos SaaS y clientes enterprise. ETL event-driven."
     }
   },
   {
@@ -775,7 +854,7 @@
       "en": "Microservices platform that turns multispectral drone imagery into soil chemistry estimates. It runs the full chain end to end — flight upload, photogrammetric processing, spectral feature extraction, ML regression, and geospatial reports — and was built as the research platform for my MSc thesis.",
       "es": "Plataforma de microservicios que convierte imágenes multiespectrales de dron en estimaciones de química del suelo. Ejecuta la cadena completa —carga del vuelo, procesamiento fotogramétrico, extracción de variables espectrales, regresión con ML y reportes geoespaciales— y fue construida como la plataforma de investigación de mi tesis de maestría."
     },
-    "ownership": "personal",
+    "ownership": "research",
     "role": {
       "en": "Founder & Engineer (Architecture, Backend, ML)",
       "es": "Fundador e Ingeniero (Arquitectura, Backend, ML)"
@@ -786,7 +865,7 @@
     },
     "disclaimer": {
       "en": "Personal R&D project and MSc research platform. The repository is private; implementation details are summarized at a high level.",
-      "es": "Proyecto personal de I+D y plataforma de investigación de maestría. El repositorio es privado; los detalles de implementación se resumen a alto nivel."
+      "es": "Proyecto propio de I+D y plataforma de investigación de maestría. El repositorio es privado; los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
       "Python",
@@ -866,19 +945,30 @@
       ]
     },
     "demo": "",
-    "github": ""
+    "github": "",
+    "status": {
+      "en": "Research platform — M.S. thesis",
+      "es": "Plataforma de investigación — tesis de maestría"
+    },
+    "categories": [
+      "data"
+    ],
+    "metaDescription": {
+      "en": "Microservices platform turning multispectral drone imagery into soil chemistry estimates with ML — built for my M.S. thesis research.",
+      "es": "Plataforma de microservicios que convierte imágenes de dron en estimaciones de química del suelo con ML — investigación de maestría."
+    }
   },
   {
     "slug": "finops-ai",
     "name": {
-      "en": "FinOps Multi-Agent Assistant",
-      "es": "FinOps Multi-Agent Assistant"
+      "en": "FinOps Multi-Agent Assistant (in progress)",
+      "es": "FinOps — Asistente multi-agente (en desarrollo)"
     },
     "summary": {
-      "en": "Reference architecture for a multi-agent assistant over finance workflows: a router that classifies intent and dispatches to specialized agents, with typed request/response contracts, trace IDs and per-step latency events. The Angular UI is deployed and the FastAPI backend implements the routing and observability skeleton; the LLM, RAG and tool layers are designed but not yet wired.",
-      "es": "Arquitectura de referencia para un asistente multi-agente sobre flujos financieros: un router que clasifica la intención y despacha a agentes especializados, con contratos tipados de request/response, trace IDs y eventos de latencia por paso. La UI en Angular está desplegada y el backend en FastAPI implementa el esqueleto de enrutamiento y observabilidad; las capas de LLM, RAG y herramientas están diseñadas pero aún no conectadas."
+      "en": "Multi-agent assistant over finance workflows (in progress): a router classifies intent and dispatches to specialized agents, with typed request/response contracts, trace IDs and per-step latency events. The Angular UI and the FastAPI routing/observability skeleton are deployed; the LLM, RAG and tool layers land next — I'm building tracing and cost telemetry first so agent answers ship measurable from day one.",
+      "es": "Asistente multi-agente sobre flujos financieros (en desarrollo): un router clasifica la intención y despacha a agentes especializados, con contratos tipados de request/response, trace IDs y eventos de latencia por paso. La UI en Angular y el esqueleto de enrutado/observabilidad en FastAPI ya están desplegados; las capas de LLM, RAG y tools son lo siguiente — construyo primero trazas y telemetría de costos para que las respuestas del agente salgan medibles desde el día uno."
     },
-    "ownership": "personal",
+    "ownership": "product-dev",
     "role": {
       "en": "Engineer (Architecture, Frontend, Backend Scaffold)",
       "es": "Ingeniero (Arquitectura, Frontend, Esqueleto de Backend)"
@@ -888,8 +978,8 @@
       "es": "Público"
     },
     "disclaimer": {
-      "en": "Personal project built as an architecture study, not a production system. The router, API contracts and observability events are implemented; agent responses are still stubs pending LLM, RAG and tool integration.",
-      "es": "Proyecto personal construido como estudio de arquitectura, no un sistema en producción. El router, los contratos de API y los eventos de observabilidad están implementados; las respuestas de los agentes siguen siendo stubs a la espera de integrar LLM, RAG y herramientas."
+      "en": "Own project built as an architecture study, not a production system. The router, API contracts and observability events are implemented; agent responses are still stubs pending LLM, RAG and tool integration.",
+      "es": "Proyecto propio construido como estudio de arquitectura, no un sistema en producción. El router, los contratos de API y los eventos de observabilidad están implementados; las respuestas de los agentes siguen siendo stubs a la espera de integrar LLM, RAG y herramientas."
     },
     "stack": [
       "Python",
@@ -954,6 +1044,17 @@
       ]
     },
     "demo": "https://fin-ops-ai-itztorero.web.app",
-    "github": "https://github.com/iTzTorero/FinOps-AI"
+    "github": "https://github.com/iTzTorero/FinOps-AI",
+    "status": {
+      "en": "In progress",
+      "es": "En desarrollo"
+    },
+    "categories": [
+      "ai"
+    ],
+    "metaDescription": {
+      "en": "Multi-agent assistant architecture for FinOps: intent routing, typed contracts and per-step tracing. FastAPI + Angular; LLM layer lands next.",
+      "es": "Arquitectura de asistente multi-agente para FinOps: enrutado de intención, contratos tipados y trazas por paso. FastAPI + Angular."
+    }
   }
 ]

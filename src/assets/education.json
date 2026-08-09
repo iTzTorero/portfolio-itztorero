@@ -8,16 +8,20 @@
       "en": "M.S. Natural Resources & Environment (Precision Agriculture)",
       "es": "Maestría en Recursos Naturales y Medio Ambiente (Agricultura de Precisión)"
     },
-    "type": { "en": "On-site", "es": "Presencial" },
-    "location": { "en": "Mexico", "es": "México" },
+    "type": {
+      "en": "On-site",
+      "es": "Presencial"
+    },
+    "location": {
+      "en": "Mexico",
+      "es": "México"
+    },
     "start": "2024-01",
     "end": "2026-01",
-
     "summary": {
       "en": "Graduate research focused on applying machine learning to multispectral drone imagery in order to estimate key soil parameters and support data-driven decision-making in agriculture.",
       "es": "Investigación de posgrado enfocada en la aplicación de aprendizaje automático a imágenes multiespectrales de dron para estimar parámetros clave del suelo y apoyar la toma de decisiones en agricultura."
     },
-
     "highlights": {
       "en": [
         "Thesis: Estimation of inorganic nitrogen and soil organic matter in agricultural soils using multispectral imagery and machine learning models.",
@@ -32,7 +36,6 @@
         "Comparé estimaciones basadas en ML contra métodos de laboratorio estándar y documenté precisión y limitaciones."
       ]
     },
-
     "focus": [
       "Python",
       "Machine Learning",
@@ -51,16 +54,20 @@
       "en": "B.S. Software Engineering",
       "es": "Licenciatura en Ingeniería de Software"
     },
-    "type": { "en": "On-site", "es": "Presencial" },
-    "location": { "en": "Mexico", "es": "México" },
-    "start": "2018-08",
-    "end": "2022-06",
-
+    "type": {
+      "en": "On-site",
+      "es": "Presencial"
+    },
+    "location": {
+      "en": "Mexico",
+      "es": "México"
+    },
+    "start": "2019-08",
+    "end": "2023-05",
     "summary": {
       "en": "Undergraduate training in software engineering with a focus on programming fundamentals, system design, and applied computing.",
       "es": "Formación de licenciatura en ingeniería de software con enfoque en fundamentos de programación, diseño de sistemas y computación aplicada."
     },
-
     "highlights": {
       "en": [
         "Built multiple academic projects using full-stack web technologies.",
@@ -73,7 +80,6 @@
         "Apliqué principios de ingeniería de software como modularidad, pruebas y arquitectura limpia."
       ]
     },
-
     "focus": [
       "Algorithms",
       "Data Structures",
