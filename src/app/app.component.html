@@ -17,7 +17,7 @@
       <span></span>
     </button>
 
-    <a routerLink="/" class="brand">
+    <a [routerLink]="lang.link('/')" class="brand">
       <img src="assets/logo.webp" alt="Juan Pablo Logo" class="logo" />
     </a>
   </div>
@@ -25,22 +25,25 @@
   <!-- Nav normal (desktop) -->
   <nav class="nav desktop" aria-label="Primary">
     <a
-      routerLink="/"
+      [routerLink]="lang.link('/')"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
     >
       {{ "nav.home" | transloco }}
     </a>
-    <a routerLink="/projects" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/projects')" routerLinkActive="active">{{
       "nav.projects" | transloco
     }}</a>
-    <a routerLink="/experience" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/services')" routerLinkActive="active">{{
+      "nav.services" | transloco
+    }}</a>
+    <a [routerLink]="lang.link('/experience')" routerLinkActive="active">{{
       "nav.experience" | transloco
     }}</a>
-    <a routerLink="/education" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/education')" routerLinkActive="active">{{
       "nav.education" | transloco
     }}</a>
-    <a routerLink="/contact" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/contact')" routerLinkActive="active">{{
       "nav.contact" | transloco
     }}</a>
   </nav>
@@ -61,8 +64,9 @@
       (click)="toggleLang()"
       [attr.aria-label]="'nav.aria.language' | transloco"
     >
-      <span class="flag">{{ activeLang === "en" ? "🇺🇸" : "🇪🇸" }}</span>
-      <span class="label">{{ activeLang === "en" ? "EN" : "ES" }}</span>
+      <span class="label" [class.dim]="lang.lang !== 'en'">EN</span>
+      <span class="label sep" aria-hidden="true">|</span>
+      <span class="label" [class.dim]="lang.lang !== 'es'">ES</span>
     </button>
   </div>
 </header>
@@ -81,10 +85,10 @@
   [class.open]="menuOpen"
   role="dialog"
   aria-modal="true"
-  aria-label="Mobile menu"
+  [attr.aria-label]="'nav.menu' | transloco"
 >
   <div class="drawer-header">
-    <span class="drawer-title">Menu</span>
+    <span class="drawer-title">{{ "nav.menu" | transloco }}</span>
     <button
       type="button"
       class="drawer-close"
@@ -97,7 +101,7 @@
 
   <nav class="drawer-nav" aria-label="Mobile primary">
     <a
-      routerLink="/"
+      [routerLink]="lang.link('/')"
       (click)="closeMenu()"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -105,22 +109,25 @@
       {{ "nav.home" | transloco }}
     </a>
 
-    <a routerLink="/projects" (click)="closeMenu()" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/projects')" (click)="closeMenu()" routerLinkActive="active">{{
       "nav.projects" | transloco
     }}</a>
+    <a [routerLink]="lang.link('/services')" (click)="closeMenu()" routerLinkActive="active">{{
+      "nav.services" | transloco
+    }}</a>
     <a
-      routerLink="/experience"
+      [routerLink]="lang.link('/experience')"
       (click)="closeMenu()"
       routerLinkActive="active"
       >{{ "nav.experience" | transloco }}</a
     >
     <a
-      routerLink="/education"
+      [routerLink]="lang.link('/education')"
       (click)="closeMenu()"
       routerLinkActive="active"
       >{{ "nav.education" | transloco }}</a
     >
-    <a routerLink="/contact" (click)="closeMenu()" routerLinkActive="active">{{
+    <a [routerLink]="lang.link('/contact')" (click)="closeMenu()" routerLinkActive="active">{{
       "nav.contact" | transloco
     }}</a>
   </nav>

@@ -12,9 +12,13 @@ const projects = JSON.parse(
   readFileSync(join(root, 'src/assets/projects.json'), 'utf8')
 );
 
-const staticRoutes = ['/', '/projects', '/experience', '/education', '/contact'];
+const staticRoutes = ['/', '/projects', '/services', '/experience', '/education', '/contact'];
 const projectRoutes = projects.map((p) => `/projects/${p.slug}`);
-const routes = [...staticRoutes, ...projectRoutes];
+const enRoutes = [...staticRoutes, ...projectRoutes];
+// Cada ruta EN tiene su gemela indexable en español bajo /es (mismas páginas,
+// idioma fijado por la ruta; hreflang lo emite SeoService en el <head>).
+const esRoutes = enRoutes.map((r) => (r === '/' ? '/es' : `/es${r}`));
+const routes = [...enRoutes, ...esRoutes];
 
 // 1) Routes file consumed by the Angular prerenderer (angular.json -> prerender.routesFile)
 writeFileSync(
@@ -26,12 +30,13 @@ writeFileSync(
 // 2) sitemap.xml (priority by depth, today's lastmod)
 const today = new Date().toISOString().slice(0, 10);
 const priorityFor = (route) => {
-  if (route === '/') return '1.0';
-  if (route === '/projects') return '0.9';
-  if (route.startsWith('/projects/')) return '0.8';
+  const bare = route === '/es' ? '/' : route.replace(/^\/es\//, '/');
+  if (bare === '/') return '1.0';
+  if (bare === '/projects' || bare === '/services') return '0.9';
+  if (bare.startsWith('/projects/')) return '0.8';
   return '0.7';
 };
-const changefreqFor = (route) => (route === '/contact' ? 'yearly' : 'monthly');
+const changefreqFor = (route) => (route.endsWith('/contact') ? 'yearly' : 'monthly');
 
 const urls = routes
   .map(

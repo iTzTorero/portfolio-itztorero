@@ -208,15 +208,20 @@
   outline-offset: 3px;
 }
 
-.lang-toggle .flag {
-  font-size: 16px;
-  line-height: 1;
-}
-
 .lang-toggle .label {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.lang-toggle .label.dim {
+  opacity: 0.45;
+  font-weight: 500;
+}
+
+.lang-toggle .label.sep {
+  opacity: 0.3;
+  font-weight: 400;
 }
 .topbar {
   display: flex;

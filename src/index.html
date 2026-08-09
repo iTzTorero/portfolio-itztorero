@@ -6,20 +6,20 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Apply saved theme & language before first paint to avoid FOUC -->
+    <!-- Apply saved theme & language before first paint to avoid FOUC.
+         La URL manda: /es/* siempre es español. -->
     <script>
       (function () {
         try {
           var t = localStorage.getItem("theme");
           if (t === "dark" || t === "light")
             document.documentElement.setAttribute("data-theme", t);
-          var l = localStorage.getItem("lang");
-          if (l !== "en" && l !== "es")
-            l =
-              (navigator.language || "en").toLowerCase().indexOf("es") === 0
-                ? "es"
-                : "en";
-          document.documentElement.lang = l;
+          var p = location.pathname;
+          if (p === "/es" || p.indexOf("/es/") === 0) {
+            document.documentElement.lang = "es";
+          } else {
+            document.documentElement.lang = "en";
+          }
         } catch (e) {}
       })();
     </script>
@@ -48,16 +48,18 @@
       "@type": "Person",
       "name": "Juan Pablo Valenzuela Castro",
       "url": "https://itztorero.dev",
-      "jobTitle": "Software Engineer",
+      "jobTitle": "Software Engineer — Backend, Cloud & AI",
       "sameAs": [
         "https://github.com/iTzTorero",
         "https://www.linkedin.com/in/itztorero/"
       ],
-      "knowsAbout": ["GCP", "Node.js", "Python", "FastAPI", "Microservices", "Machine Learning", "Angular"]
+      "knowsAbout": ["GCP", "Firebase", "Node.js", "Python", "FastAPI", "LLM agents", "GPT function calling", "Multi-tenant SaaS", "Stripe", "CFDI 4.0", "Machine Learning", "Computer Vision", "Angular"]
     }
     </script>
 
-    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="icon" href="favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://itztorero.dev/" />
   </head>
   <body>

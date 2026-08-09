@@ -1,8 +1,10 @@
 import { Component, HostListener, inject, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ThemeService } from './shared/theme.service';
+import { LangService } from './shared/lang.service';
+import { AnalyticsService } from './shared/analytics.service';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 
 @Component({
@@ -23,62 +25,56 @@ import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 export class AppComponent {
   currentYear = new Date().getFullYear();
   theme = inject(ThemeService);
+  lang = inject(LangService);
 
-  activeLang: 'en' | 'es' = 'en';
   private isBrowser: boolean;
 
   constructor(
     private transloco: TranslocoService,
+    private router: Router,
+    analytics: AnalyticsService,
     @Inject(PLATFORM_ID) platformId: object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
 
-    // ✅ Siempre define un idioma (server + browser)
-    this.transloco.setActiveLang(this.activeLang);
-
-    // ✅ Solo en browser: leer navigator/localStorage y setear html lang
+    // El idioma real lo fija el guard de la ruta (/es/* → es); aquí solo
+    // se decide la redirección inicial según preferencia guardada/navegador.
     if (this.isBrowser) {
-      const saved = localStorage.getItem('lang') as 'en' | 'es' | null;
-      const browser = navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en';
+      const path = location.pathname;
+      const isEs = path === '/es' || path.startsWith('/es/');
+      let saved: string | null = null;
+      try {
+        saved = localStorage.getItem('lang');
+      } catch {}
+      const prefersEs = saved ? saved === 'es' : navigator.language?.toLowerCase().startsWith('es');
 
-      this.activeLang = saved ?? browser;
-      this.transloco.setActiveLang(this.activeLang);
-      document.documentElement.lang = this.activeLang;
+      if (!isEs && prefersEs && saved !== 'en') {
+        this.router.navigateByUrl(path === '/' ? '/es' : `/es${path}`);
+      }
     }
 
-    // Theme init (si ThemeService usa localStorage, conviene que también sea SSR-safe)
     this.theme.init();
+    analytics.init();
   }
+
   menuOpen = false;
 
   openMenu() {
     this.menuOpen = true;
-    document.body.style.overflow = "hidden"; // evita scroll detrás
+    document.body.style.overflow = 'hidden'; // evita scroll detrás
   }
 
   closeMenu() {
     this.menuOpen = false;
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
   }
 
-  // opcional: cerrar con ESC
-  @HostListener("document:keydown.escape")
+  @HostListener('document:keydown.escape')
   onEsc() {
     if (this.menuOpen) this.closeMenu();
   }
 
-  setLang(lang: 'en' | 'es') {
-    this.activeLang = lang;
-    this.transloco.setActiveLang(lang);
-
-    if (this.isBrowser) {
-      localStorage.setItem('lang', lang);
-      document.documentElement.lang = lang;
-    }
-  }
   toggleLang() {
-    const next = this.activeLang === 'en' ? 'es' : 'en';
-    this.setLang(next);
+    this.lang.toggle();
   }
-
 }
