@@ -23,7 +23,7 @@
       "es": "Producto personal, en producción y operado en solitario. SaaS multi-tenant que maneja datos de clientes y pacientes; los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
-      "Angular 17",
+      "Angular 21",
       "TypeScript",
       "Tailwind CSS",
       "Node.js",
@@ -32,7 +32,7 @@
       "Firestore",
       "Firebase Auth",
       "Cloud Functions",
-      "GPT (function calling)",
+      "OpenAI GPT-4o (function calling)",
       "WhatsApp Cloud API",
       "Stripe",
       "Facturapi (CFDI)",
@@ -238,7 +238,7 @@
       "Firebase Storage",
       "IndexedDB",
       "Stripe",
-      "SendGrid",
+      "Resend",
       "GitHub Actions",
       "GCP"
     ],
@@ -600,7 +600,8 @@
     },
     "stack": [
       "Vue 3",
-      "Ionic",
+      "Ionic 7",
+      "Capacitor (iOS/Android)",
       "TypeScript",
       "Vite",
       "Firebase Hosting",
@@ -610,6 +611,8 @@
       "Stripe",
       "Resend",
       "Workbox (PWA)",
+      "GA4",
+      "Sentry",
       "GCP"
     ],
     "tags": [
