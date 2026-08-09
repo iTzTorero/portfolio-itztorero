@@ -1,6 +1,7 @@
 import { Component, HostListener, inject, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { filter, take } from 'rxjs/operators';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { ThemeService } from './shared/theme.service';
 import { LangService } from './shared/lang.service';
@@ -39,17 +40,28 @@ export class AppComponent {
 
     // El idioma real lo fija el guard de la ruta (/es/* → es); aquí solo
     // se decide la redirección inicial según preferencia guardada/navegador.
+    // La redirección espera al primer NavigationEnd: hacerla durante la
+    // navegación inicial la cancela a medias y termina en el 404.
     if (this.isBrowser) {
-      const path = location.pathname;
-      const isEs = path === '/es' || path.startsWith('/es/');
       let saved: string | null = null;
       try {
         saved = localStorage.getItem('lang');
       } catch {}
       const prefersEs = saved ? saved === 'es' : navigator.language?.toLowerCase().startsWith('es');
 
-      if (!isEs && prefersEs && saved !== 'en') {
-        this.router.navigateByUrl(path === '/' ? '/es' : `/es${path}`);
+      if (prefersEs && saved !== 'en') {
+        this.router.events
+          .pipe(
+            filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+            take(1)
+          )
+          .subscribe((e) => {
+            const path = e.urlAfterRedirects.split('?')[0].split('#')[0].replace(/\/+$/, '') || '/';
+            const isEs = path === '/es' || path.startsWith('/es/');
+            if (!isEs) {
+              this.router.navigateByUrl(path === '/' ? '/es' : `/es${path}`);
+            }
+          });
       }
     }
 
