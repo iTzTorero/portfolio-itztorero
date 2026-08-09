@@ -175,3 +175,36 @@
   font-size: 13px;
   line-height: 1.75;
 }
+
+.badge-status {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.eng-notes {
+  summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    h2 {
+      display: inline;
+    }
+  }
+
+  &[open] summary::after {
+    content: '–';
+  }
+}

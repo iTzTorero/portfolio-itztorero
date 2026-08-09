@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@ngneat/transloco';
 import { SeoService } from '../../shared/seo.service';
+import { AnalyticsService } from '../../shared/analytics.service';
 
 type SubmitStatus = 'idle' | 'sending' | 'sent' | 'mailto' | 'error';
 
@@ -17,7 +18,18 @@ export class ContactPage {
   // directly — no email client needed. Leave empty to fall back to a mailto: link.
   private readonly WEB3FORMS_ACCESS_KEY = '';
 
+  private analytics = inject(AnalyticsService);
+
   status = signal<SubmitStatus>('idle');
+
+  get whatsappLink(): string {
+    const text = this.transloco.translate('contact.whatsappText');
+    return `https://wa.me/526871748530?text=${encodeURIComponent(text)}`;
+  }
+
+  trackWhatsApp() {
+    this.analytics.track('contact_click', { channel: 'whatsapp' });
+  }
 
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -26,9 +38,12 @@ export class ContactPage {
   });
 
   constructor(private fb: FormBuilder, private transloco: TranslocoService, seo: SeoService) {
+    const es = this.transloco.getActiveLang() === 'es';
     seo.update({
-      title: 'Contact',
-      description: 'Get in touch with Juan Pablo Valenzuela — available for remote backend, cloud, and AI systems roles. Send a message directly from this page.',
+      title: es ? 'Contacto — Vacantes y proyectos' : 'Contact — Roles & Projects',
+      description: es
+        ? '¿Una vacante de backend, cloud o IA, o un sistema para tu negocio? Escríbele a Juan Pablo Valenzuela desde esta página; responde en menos de 24 horas.'
+        : 'Hiring for a backend, cloud or AI role — or need software built for your business? Message Juan Pablo Valenzuela directly from this page.',
       path: '/contact',
     });
   }
@@ -69,6 +84,7 @@ export class ContactPage {
 
       if (res.ok) {
         this.status.set('sent');
+        this.analytics.track('contact_submit', { method: 'web3forms' });
         this.form.reset();
       } else {
         this.status.set('error');
@@ -92,6 +108,7 @@ export class ContactPage {
 
     window.location.href = `mailto:valenzuelacastrojuanpablo@gmail.com?subject=${subject}&body=${body}`;
 
+    this.analytics.track('contact_click', { channel: 'mailto' });
     this.status.set('mailto');
     this.form.reset();
   }

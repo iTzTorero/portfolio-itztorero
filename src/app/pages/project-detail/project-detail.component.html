@@ -1,4 +1,4 @@
-<a class="back" routerLink="/projects">
+<a class="back" [routerLink]="langSvc.link('/projects')">
   ← {{ "projectDetail.backToProjects" | transloco }}
 </a>
 
@@ -10,16 +10,16 @@
     <p class="subtitle">{{ t(p.summary) }}</p>
 
     <div class="badges">
+      <span class="badge badge-status" *ngIf="p.status">
+        {{ t(p.status) }}
+      </span>
+
+      <span class="badge" *ngIf="badgeKey(p) as bk">
+        {{ bk | transloco }}
+      </span>
+
       <span class="badge" *ngIf="p.role">
         {{ t(p.role) }}
-      </span>
-
-      <span class="badge" *ngIf="p.ownership === 'professional'">
-        {{ "projectDetail.badges.professional" | transloco }}
-      </span>
-
-      <span class="badge" *ngIf="p.ownership === 'personal'">
-        {{ "projectDetail.badges.personal" | transloco }}
       </span>
 
       <span class="badge" *ngIf="p.confidentiality">
@@ -79,11 +79,15 @@
   </section>
 
   <section class="section" *ngIf="tArr(p.architecture).length">
-    <h2>{{ "projectDetail.sections.architecture" | transloco }}</h2>
-    <div class="bar"></div>
-    <ul class="list">
-      <li *ngFor="let a of tArr(p.architecture)">{{ a }}</li>
-    </ul>
+    <details class="eng-notes">
+      <summary>
+        <h2>{{ "projectDetail.sections.architecture" | transloco }}</h2>
+      </summary>
+      <div class="bar"></div>
+      <ul class="list">
+        <li *ngFor="let a of tArr(p.architecture)">{{ a }}</li>
+      </ul>
+    </details>
   </section>
 
   <section class="section" *ngIf="p.products?.length">
@@ -113,7 +117,7 @@
 <ng-template #notFound>
   <h1 class="title">{{ "projectDetail.notFound.title" | transloco }}</h1>
   <p class="subtitle">{{ "projectDetail.notFound.subtitle" | transloco }}</p>
-  <a routerLink="/projects">
+  <a [routerLink]="langSvc.link('/projects')">
     ← {{ "projectDetail.backToProjects" | transloco }}
   </a>
 </ng-template>

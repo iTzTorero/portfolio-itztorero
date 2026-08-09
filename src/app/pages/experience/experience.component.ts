@@ -32,9 +32,14 @@ export class ExperiencePage {
   expanded = signal<Record<number, boolean>>({});
 
   constructor(private http: HttpClient, private transloco: TranslocoService, seo: SeoService) {
+    const es = this.lang() === 'es';
     seo.update({
-      title: 'Experience',
-      description: 'Work experience of Juan Pablo Valenzuela — backend and cloud engineering on GCP at Monteli LLC, and ML research at IPN in precision agriculture.',
+      title: es
+        ? 'Experiencia — Ingeniería backend y de plataformas de datos'
+        : 'Experience — Backend & Data Platform Engineering',
+      description: es
+        ? 'Experiencia de Juan Pablo Valenzuela: ingeniería backend y cloud sobre GCP en Monteli LLC e investigación de ML en el IPN (agricultura de precisión).'
+        : 'Work experience of Juan Pablo Valenzuela — backend and cloud engineering on GCP at Monteli LLC, and ML research at IPN in precision agriculture.',
       path: '/experience',
     });
     this.http.get<ExpItem[]>('assets/experience.json').subscribe({

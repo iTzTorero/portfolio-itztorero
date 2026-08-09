@@ -30,9 +30,12 @@ export class EducationPage {
   expanded = signal<Record<number, boolean>>({});
 
   constructor(private http: HttpClient, private transloco: TranslocoService, seo: SeoService) {
+    const es = this.lang() === 'es';
     seo.update({
-      title: 'Education',
-      description: 'Academic background of Juan Pablo Valenzuela — M.S. in Precision Agriculture (IPN) applying ML to drone imagery, and B.S. in Software Engineering.',
+      title: es ? 'Educación — Posgrado en ML aplicado' : 'Education — Applied ML Graduate Background',
+      description: es
+        ? 'Formación de Juan Pablo Valenzuela: maestría en agricultura de precisión (IPN) aplicando ML a imágenes de dron y licenciatura en ingeniería de software.'
+        : 'Academic background of Juan Pablo Valenzuela — M.S. in Precision Agriculture (IPN) applying ML to drone imagery, and B.S. in Software Engineering.',
       path: '/education',
     });
     this.http.get<EduItem[]>('assets/education.json').subscribe({

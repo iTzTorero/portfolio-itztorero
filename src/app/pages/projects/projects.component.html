@@ -24,8 +24,8 @@
     <button
       class="pill"
       type="button"
-      [class.active]="activeTag() === null"
-      (click)="setTag(null)"
+      [class.active]="activeCategory() === null"
+      (click)="setCategory(null)"
     >
       {{ "projects.filters.all" | transloco }}
     </button>
@@ -33,11 +33,11 @@
     <button
       class="pill"
       type="button"
-      *ngFor="let t of tags()"
-      [class.active]="activeTag() === t"
-      (click)="setTag(t)"
+      *ngFor="let c of categories"
+      [class.active]="activeCategory() === c.key"
+      (click)="setCategory(c.key)"
     >
-      {{ t }}
+      {{ c.label | transloco }}
     </button>
   </div>
 </section>
@@ -46,13 +46,15 @@
   <article class="card" *ngFor="let p of filtered()">
     <a
       class="card-link"
-      [routerLink]="['/projects', p.slug]"
+      [routerLink]="[langSvc.link('/projects'), p.slug]"
       [attr.aria-label]="t(p.name)"
     >
       <div class="card-top">
         <h3>{{ t(p.name) }}</h3>
         <span class="arrow">→</span>
       </div>
+
+      <span class="status" *ngIf="p.status">{{ t(p.status) }}</span>
 
       <p class="summary">{{ t(p.summary) }}</p>
 

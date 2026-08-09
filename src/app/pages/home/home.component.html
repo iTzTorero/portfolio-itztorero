@@ -5,41 +5,51 @@
 
   <div class="meta">
     <span class="meta-item">📍 {{ location }}</span>
-    <a class="meta-item" [href]="'mailto:' + email">✉️ {{ email }}</a>
-    <a class="meta-item" href="https://www.linkedin.com/in/itztorero/" target="_blank" rel="noopener">LinkedIn →</a>
-    <a class="meta-item" href="https://github.com/iTzTorero" target="_blank" rel="noopener">GitHub →</a>
+    <a class="meta-item" [href]="'mailto:' + email" (click)="trackContactClick('email')">✉️ {{ email }}</a>
+    <a class="meta-item" href="https://www.linkedin.com/in/itztorero/" target="_blank" rel="noopener" (click)="trackContactClick('linkedin')">LinkedIn →</a>
+    <a class="meta-item" href="https://github.com/iTzTorero" target="_blank" rel="noopener" (click)="trackContactClick('github')">GitHub →</a>
   </div>
 
   <div class="hero-actions">
-    <a class="btn-primary" [href]="cvUrl()" [download]="cvFilename()">
-      {{ "home.hero.downloadCV" | transloco }}
+    <a class="btn-primary" [routerLink]="lang.link('/projects')">
+      {{ "home.hero.viewProjects" | transloco }} →
+    </a>
+    <a class="btn-secondary" [href]="cvUrl()" [download]="cvFilename()" (click)="trackCvDownload()">
+      ↓ {{ "home.hero.downloadCV" | transloco }}
     </a>
   </div>
 
   <div class="quick">
-    <a routerLink="/projects" class="card">
+    <a [routerLink]="lang.link('/projects')" class="card">
       <h3>{{ "home.quick.projects.title" | transloco }}</h3>
       <p>{{ "home.quick.projects.desc" | transloco }}</p>
       <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
 
-    <a routerLink="/experience" class="card">
+    <a [routerLink]="lang.link('/experience')" class="card">
       <h3>{{ "home.quick.experience.title" | transloco }}</h3>
       <p>{{ "home.quick.experience.desc" | transloco }}</p>
       <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
-    <a routerLink="/education" class="card">
+    <a [routerLink]="lang.link('/education')" class="card">
       <h3>{{ "home.quick.education.title" | transloco }}</h3>
       <p>{{ "home.quick.education.desc" | transloco }}</p>
       <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
 
-    <a routerLink="/contact" class="card">
+    <a [routerLink]="lang.link('/contact')" class="card">
       <h3>{{ "home.quick.contact.title" | transloco }}</h3>
       <p>{{ "home.quick.contact.desc" | transloco }}</p>
       <span class="cta">{{ "home.quick.cta" | transloco }} →</span>
     </a>
   </div>
+
+  <a [routerLink]="lang.link('/services')" class="business" aria-label="VALC Tech">
+    <p class="business-kicker">{{ "home.business.kicker" | transloco }}</p>
+    <h3>{{ "home.business.title" | transloco }}</h3>
+    <p class="business-text">{{ "home.business.text" | transloco }}</p>
+    <span class="cta">{{ "home.business.cta" | transloco }} →</span>
+  </a>
 </section>
 
 <section class="section" aria-label="About">
