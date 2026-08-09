@@ -549,8 +549,8 @@
       "es": "Numa — POS y administración multi-tenant"
     },
     "summary": {
-      "en": "Multi-tenant POS and back-office SaaS for small businesses, launching in Venezuela first and Mexico second from a single codebase. It handles the part most POS tools skip in a dollarized economy: prices anchored in USD, sales settled in local currency at the day's official rate, and country-specific taxes applied without forking the product.",
-      "es": "SaaS multi-tenant de punto de venta y administración para pymes, con lanzamiento primero en Venezuela y después en México desde un solo código. Resuelve la parte que la mayoría de los POS evita en una economía dolarizada: precios anclados en USD, ventas liquidadas en moneda local a la tasa oficial del día e impuestos por país aplicados sin bifurcar el producto."
+      "en": "Multi-tenant POS and back-office SaaS for small businesses in Mexico. The wedge is CFDI 4.0 invoicing built into the product instead of sold as an add-on, plus self-serve billing — the free POS options in this market are free because they tie the merchant to their own card terminal.",
+      "es": "SaaS multi-tenant de punto de venta y administración para pymes mexicanas. La cuña es la facturación CFDI 4.0 dentro del producto en vez de vendida como complemento, más el cobro self-serve — los POS gratuitos de este mercado son gratis porque amarran al comercio a su propia terminal."
     },
     "ownership": "personal",
     "role": {
@@ -562,8 +562,8 @@
       "es": "Repositorio privado — pre-lanzamiento"
     },
     "disclaimer": {
-      "en": "Personal product in active development. Multi-tenant core, roles and billing foundations are built and tested; catalog, inventory and sales modules are the phases in progress. Not publicly launched yet.",
-      "es": "Producto personal en desarrollo activo. El núcleo multi-tenant, los roles y las bases de facturación están construidos y probados; los módulos de catálogo, inventario y ventas son las fases en curso. Aún sin lanzamiento público."
+      "en": "Personal product in active development for the Mexican market. The multi-tenant core, roles and invitations are built and tested; catalog, inventory, sales and CFDI invoicing are the phases in progress. Not publicly launched yet.",
+      "es": "Producto personal en desarrollo activo para el mercado mexicano. El núcleo multi-tenant, los roles y las invitaciones están construidos y probados; catálogo, inventario, ventas y facturación CFDI son las fases en curso. Aún sin lanzamiento público."
     },
     "stack": [
       "Angular 20",
@@ -575,8 +575,8 @@
       "Firebase Auth",
       "Cloud Functions v2 (Node 22)",
       "Firebase Storage",
-      "Cloud Scheduler",
       "Firebase Emulator Suite",
+      "Stripe",
       "Resend",
       "GCP"
     ],
@@ -587,62 +587,62 @@
       "PWA",
       "Offline-first",
       "Firebase",
-      "Multi-currency",
+      "Stripe",
       "LATAM",
       "Full Stack"
     ],
     "impact": {
       "en": [
-        "One codebase serves two countries with different currencies, taxes and payment rails — no forks, no parallel branches to keep in sync.",
-        "Self-serve billing is the wedge against the incumbent in the Venezuelan market, which still collects manually.",
-        "Built entirely against the Firebase Emulator Suite, so the product reached a tested multi-tenant core at zero cloud spend before launch.",
-        "Cut the initial bundle from 654 KB to 225 KB, which matters for shop counters on slow connections."
+        "Narrowed the product to a single market, which retired the multi-currency and daily exchange-rate machinery and moved CFDI 4.0 invoicing from a post-MVP phase to a pre-launch one.",
+        "Invoicing ships inside the product — in Mexico a POS that cannot stamp CFDI does not compete with the established accounting suites.",
+        "Self-serve billing on Stripe, against incumbents that still onboard and collect manually.",
+        "Built entirely against the Firebase Emulator Suite, so the product reached a tested multi-tenant core at zero cloud spend before launch."
       ],
       "es": [
-        "Un solo código atiende a dos países con monedas, impuestos y medios de cobro distintos — sin forks ni ramas paralelas que mantener sincronizadas.",
-        "La facturación self-serve es la cuña frente al competidor establecido en el mercado venezolano, que todavía cobra de forma manual.",
-        "Construido íntegramente contra el Firebase Emulator Suite, así que el producto llegó a un núcleo multi-tenant probado con cero gasto en la nube antes de lanzar.",
-        "Bundle inicial reducido de 654 KB a 225 KB, algo que pesa en mostradores con conexiones lentas."
+        "Acoté el producto a un solo mercado, lo que retiró la maquinaria de multimoneda y tasa de cambio diaria y adelantó la facturación CFDI 4.0 de una fase posterior al MVP a una previa al lanzamiento.",
+        "La facturación va dentro del producto — en México un POS que no timbra CFDI no compite con las suites contables establecidas.",
+        "Cobro self-serve con Stripe, frente a competidores que todavía dan de alta y cobran de forma manual.",
+        "Construido íntegramente contra el Firebase Emulator Suite, así que el producto llegó a un núcleo multi-tenant probado con cero gasto en la nube antes de lanzar."
       ]
     },
     "highlights": {
       "en": [
-        "Country differences are isolated behind injected strategies — tax, currency, billing and invoicing — resolved per tenant, so adding a market is a configuration, not a fork.",
-        "Multi-currency sales record the USD amount, the local amount and the exchange rate actually applied, so a receipt can always be reconstructed months later.",
-        "A scheduled job pulls the official daily exchange rate into a canonical document path, keeping every sale of that day on one rate.",
-        "Multi-tenant isolation is enforced by Firestore rules with a dedicated test suite (24/24 passing), after an early review caught a role-escalation hole where overlapping rule matches combined with OR.",
+        "Retired Venezuela support in a single refactor: the daily BCV exchange-rate job, the IGTF tax, USD/VES multi-currency, the onboarding country selector and the 'VE' branch all came out, and createTenant now seeds MXN and 16% IVA directly.",
+        "Business dates resolve in the merchant's own timezone, configurable per tenant and defaulting to America/Mexico_City — Mexico spans four zones and a cash-out closed in the wrong one splits a day's takings across two.",
+        "Multi-tenant isolation is enforced by Firestore rules with a dedicated test suite (24/24 passing), after an early review found a role-escalation hole where overlapping rule matches combine with OR.",
         "Backend-owned fields such as subscription state and tenant configuration are immutable from the client.",
-        "Invitation-based onboarding with granular per-member permissions, verified email and guarded routes.",
-        "Firebase SDKs load through lazy getters instead of eager imports, which is what kept the initial bundle small.",
-        "Business dates resolve in America/Caracas rather than UTC, so a day's sales close when the shop closes."
+        "Invitation-based onboarding with granular per-member permissions: acceptInvite requires a verified email, and any user-controlled text is escaped before it reaches email HTML.",
+        "Session state never leaks between accounts — the tenant context is dropped when the uid changes and cleared on every logout.",
+        "Firebase SDKs load through lazy getters rather than eager imports; the change cut the initial bundle from 654 KB to 225 KB and keeps it near 290 KB as features land.",
+        "Every phase closes with a multi-agent code review before moving on: 16 findings fixed in Phase 0, 13 in Phase 1."
       ],
       "es": [
-        "Las diferencias por país quedan aisladas tras estrategias inyectadas —impuestos, moneda, cobro y facturación— resueltas por tenant, de modo que sumar un mercado es configuración y no un fork.",
-        "Las ventas multimoneda guardan el monto en USD, el monto en moneda local y la tasa realmente aplicada, para poder reconstruir un ticket meses después.",
-        "Un job programado trae la tasa oficial diaria a una ruta canónica, manteniendo todas las ventas del día sobre una misma tasa.",
-        "El aislamiento multi-tenant lo fuerzan las reglas de Firestore con una suite de pruebas propia (24/24), después de que una revisión temprana detectara una escalada de rol donde los match solapados se unían con OR.",
+        "Retiré el soporte de Venezuela en un solo refactor: salieron el job diario de tasa BCV, el IGTF, la multimoneda USD/VES, el selector de país en el alta y la rama 'VE', y createTenant ahora siembra MXN e IVA 16% directamente.",
+        "Las fechas de negocio se resuelven en la zona horaria del comercio, configurable por tenant y con America/Mexico_City por defecto — México tiene cuatro husos y un corte de caja cerrado en el equivocado parte el día en dos.",
+        "El aislamiento multi-tenant lo fuerzan las reglas de Firestore con una suite de pruebas propia (24/24), después de que una revisión temprana encontrara una escalada de rol donde los match solapados se unen con OR.",
         "Los campos que pertenecen al backend, como el estado de suscripción y la configuración del tenant, son inmutables desde el cliente.",
-        "Alta por invitación con permisos granulares por miembro, correo verificado y rutas protegidas.",
-        "Los SDKs de Firebase se cargan por getters diferidos en vez de imports eager, que es lo que mantuvo pequeño el bundle inicial.",
-        "Las fechas de negocio se resuelven en America/Caracas y no en UTC, para que el día de ventas cierre cuando cierra el comercio."
+        "Alta por invitación con permisos granulares por miembro: acceptInvite exige correo verificado y todo texto controlado por el usuario se escapa antes de llegar al HTML del correo.",
+        "El estado de sesión nunca se filtra entre cuentas — el contexto del tenant se descarta al cambiar de uid y se limpia en cada cierre de sesión.",
+        "Los SDKs de Firebase se cargan por getters diferidos en vez de imports eager; el cambio bajó el bundle inicial de 654 KB a 225 KB y lo mantiene cerca de 290 KB conforme entran funcionalidades.",
+        "Cada fase cierra con una revisión de código multi-agente antes de avanzar: 16 hallazgos corregidos en la Fase 0 y 13 en la Fase 1."
       ]
     },
     "architecture": {
       "en": [
         "Monorepo: apps/web (Angular PWA, offline-first with IndexedDB and Firestore persistence) + functions (Node 22, TypeScript)",
-        "Firestore multi-tenant model: platform/ for global config, plans and daily rates; tenants/{tenantId}/ for members, catalog, inventory, sales, cash boxes, banking, receivables and expenses",
-        "Callable functions for tenant creation and privileged operations; scheduled function for the daily exchange rate",
-        "Per-tenant CountryConfig injects TaxStrategy, CurrencyStrategy, BillingStrategy and InvoiceStrategy",
-        "Security by Firestore rules with an explicit members carve-out, since overlapping matches combine with OR",
-        "Local-first development: the full Emulator Suite (auth, firestore, functions, storage, pub/sub) on dedicated ports"
+        "Firestore multi-tenant model: platform/ for global config and SaaS plans; tenants/{tenantId}/ for members, catalog, inventory, sales, cash boxes, banking, receivables and expenses",
+        "Callable functions for tenant creation and privileged operations; tenant config seeded with MXN and 16% IVA",
+        "Security by Firestore rules with explicit carve-outs for members and invites, since overlapping matches combine with OR",
+        "CFDI 4.0 stamping through a PAC is its own pre-launch phase; Stripe handles SaaS billing in MXN",
+        "Local-first development: the full Emulator Suite (auth, firestore, functions, storage, pub/sub, tasks) on dedicated ports"
       ],
       "es": [
         "Monorepo: apps/web (PWA en Angular, offline-first con IndexedDB y persistencia de Firestore) + functions (Node 22, TypeScript)",
-        "Modelo Firestore multi-tenant: platform/ para configuración global, planes y tasas diarias; tenants/{tenantId}/ para miembros, catálogo, inventario, ventas, cajas, banco, cuentas por cobrar y gastos",
-        "Callable functions para la creación de tenants y operaciones privilegiadas; función programada para la tasa de cambio diaria",
-        "Un CountryConfig por tenant inyecta TaxStrategy, CurrencyStrategy, BillingStrategy e InvoiceStrategy",
-        "Seguridad por reglas de Firestore con una exclusión explícita de members, ya que los match solapados se combinan con OR",
-        "Desarrollo local primero: el Emulator Suite completo (auth, firestore, functions, storage, pub/sub) en puertos propios"
+        "Modelo Firestore multi-tenant: platform/ para configuración global y planes del SaaS; tenants/{tenantId}/ para miembros, catálogo, inventario, ventas, cajas, banco, cuentas por cobrar y gastos",
+        "Callable functions para la creación de tenants y operaciones privilegiadas; la configuración del tenant se siembra con MXN e IVA 16%",
+        "Seguridad por reglas de Firestore con exclusiones explícitas para members e invites, ya que los match solapados se combinan con OR",
+        "El timbrado de CFDI 4.0 vía PAC es una fase propia previa al lanzamiento; Stripe cobra el SaaS en MXN",
+        "Desarrollo local primero: el Emulator Suite completo (auth, firestore, functions, storage, pub/sub, tasks) en puertos propios"
       ]
     },
     "demo": "",
