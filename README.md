@@ -1,104 +1,38 @@
-# Juan Pablo Valenzuela Castro – Software Engineer Portfolio
+# portfolio-itztorero
 
-Personal portfolio website showcasing my professional experience, selected projects, and technical background as a Software Engineer focused on backend systems, cloud architectures, and data-driven platforms.
+Sitio personal de portafolio de Juan Pablo Valenzuela Castro, en producción en [itztorero.dev](https://itztorero.dev).
 
-🌐 **Live site:** [itztorero.dev](https://itztorero.dev)
+## Stack
 
----
+- **Angular 17** (standalone components + signals)
+- **Transloco** para i18n EN/ES — el español vive bajo el prefijo `/es/*` y se prerenderiza igual que el inglés (hreflang en el `<head>` vía `SeoService`)
+- **Prerender estático (SSG)**: las rutas se generan desde `src/assets/projects.json` con `scripts/gen-prerender.mjs` (corre solo en el `prebuild`)
+- **Firebase Hosting** sirve `dist/portfolio-itztorero/browser`
 
-## 👨‍💻 About Me
-
-I am a Software Engineer with experience building and operating production-grade systems on Google Cloud Platform. My background combines backend engineering, cloud-native architectures, and data pipelines, with hands-on experience in Angular, Node.js, Python, and event-driven systems.
-
-I have worked on **professional SaaS platforms and internal data systems**, contributing as a collaborator and engineer — not as a product owner — as well as on **personal projects** exploring precision agriculture, machine learning, and cloud automation.
-
-This portfolio focuses on:
-
-- My **technical contributions**
-- Architectural decisions
-- The tools and technologies I’ve worked with
-
----
-
-## 🧠 What You’ll Find Here
-
-- **Experience**  
-  A summary of my professional roles and responsibilities.
-
-- **Projects**  
-  Selected professional and personal projects, clearly labeled to distinguish:
-  - Professional work (collaborator / contributor)
-  - Personal projects
-
-- **Contact**  
-  Direct ways to reach me for professional opportunities or collaboration.
-
----
-
-## 🧩 Projects Disclaimer
-
-Some projects presented here (e.g. SaaS platforms, ETL systems) are **professional work** developed as part of a team or organization.
-
-- I am **not the owner** of those products.
-- Descriptions focus strictly on **my role, responsibilities, and technical contributions**.
-- No proprietary or confidential information is shared.
-
----
-
-## 🛠 Tech Stack
-
-This portfolio is built with:
-
-- **Angular** (standalone components)
-- **TypeScript**
-- **SCSS**
-- **Vite**
-- **Responsive, minimal UI**
-
-And it reflects experience with technologies such as:
-
-- Node.js / Python
-- Google Cloud Platform (Cloud Run, Pub/Sub, Firestore)
-- Event-driven architectures
-- REST APIs & data pipelines
-- SaaS platforms
-
----
-
-## 🚀 Local Development
+## Desarrollo
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
-npm run dev
+npm start          # ng serve → http://localhost:4200
 ```
 
-The application will be available at:
+## Build y deploy
 
 ```bash
-http://localhost:5173
+npm run build      # prebuild regenera prerender-routes.txt y src/sitemap.xml, luego ng build (prerender)
+npm run deploy     # firebase deploy --only hosting (manual, sin CI)
 ```
 
-## 📦 Production Build
+## Contenido
 
-```bash
-npm run build
-```
+Todo el contenido editable vive en datos, no en componentes:
 
-Build artifacts will be generated in the dist/ folder.
+- `src/assets/projects.json` — proyectos (bilingüe, con `ownership`, `status`, `categories` y `metaDescription` ≤155 chars por proyecto)
+- `src/assets/experience.json` / `education.json` — trayectoria (bilingüe)
+- `src/assets/i18n/en.json` / `es.json` — todos los textos de la interfaz
+- `src/assets/CV_JuanPablo_Valenzuela_{EN,ES}.pdf` — CVs descargables (solo PDF; no publicar `.docx`)
 
-## 📬 Contact
+## Pendientes conocidos
 
-If you’d like to get in touch:
-
-📧 Email: valenzuelacastrojuanpablo@gmail.com
-
-💼 LinkedIn: https://www.linkedin.com/in/itztorero/
-💻 GitHub: https://github.com/iTzTorero
-
-## 📄 License
-
-This project is intended for personal portfolio use.
-Feel free to draw inspiration from the structure, but please do not copy content or branding directly.
+- `AnalyticsService` (`src/app/shared/analytics.service.ts`) es un no-op hasta pegar el Measurement ID de GA4.
+- El formulario de contacto cae a `mailto:` hasta pegar la access key de Web3Forms en `contact.component.ts`.
