@@ -14,9 +14,9 @@ type SubmitStatus = 'idle' | 'sending' | 'sent' | 'mailto' | 'error';
   styleUrl: './contact.component.scss',
 })
 export class ContactPage {
-  // Paste a free Web3Forms access key (https://web3forms.com) to receive messages
-  // directly — no email client needed. Leave empty to fall back to a mailto: link.
-  private readonly WEB3FORMS_ACCESS_KEY = '';
+  // Web3Forms access key (public by design — it only routes messages to the
+  // account owner). Empty string falls back to a mailto: link.
+  private readonly WEB3FORMS_ACCESS_KEY = '63616613-8cb8-46e6-97d2-33bee751e2b4';
 
   private analytics = inject(AnalyticsService);
 
