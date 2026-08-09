@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CV — Juan Pablo Valenzuela Castro</title>
+<style>
+  @page { size: letter; margin: 13mm 14mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font: 9.6pt/1.42 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #17191f;
+  }
+  a { color: inherit; text-decoration: none; }
+  .header { display: flex; justify-content: space-between; align-items: center; gap: 12pt; }
+  .logo { height: 38pt; width: auto; flex: 0 0 auto; }
+  .name { font-size: 19pt; font-weight: 800; letter-spacing: -0.02em; }
+  .headline { margin-top: 2pt; font-size: 10.6pt; font-weight: 600; color: #2743c9; }
+  .contact { margin-top: 3pt; font-size: 8.6pt; color: #4a4f5c; }
+  .contact b { color: #17191f; font-weight: 600; }
+  h2 {
+    margin: 11pt 0 4pt; padding-bottom: 2pt;
+    font-size: 8.4pt; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #2743c9; border-bottom: 0.7pt solid #d7dae3;
+  }
+  .summary { text-align: justify; }
+  .skills p { margin-bottom: 1.6pt; }
+  .skills b { font-weight: 700; }
+  .job { margin-bottom: 6pt; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-size: 10pt; font-weight: 700; }
+  .job-title .co { font-weight: 600; color: #2743c9; }
+  .dates { font-size: 8.6pt; color: #4a4f5c; white-space: nowrap; }
+  ul { margin: 2pt 0 0 11pt; }
+  li { margin-bottom: 1.4pt; }
+  .proj { margin-bottom: 4.6pt; }
+  .proj-head { font-size: 9.6pt; font-weight: 700; }
+  .proj-head .st { font-weight: 400; font-size: 8.4pt; color: #4a4f5c; }
+  .badge { font-weight: 600; color: #2743c9; }
+  .edu { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2.4pt; }
+  .edu-title { font-weight: 700; }
+  .edu-sub { font-size: 8.8pt; color: #4a4f5c; }
+</style>
+</head>
+<body>
+
+<div class="header">
+<div>
+<div class="name">Juan Pablo Valenzuela Castro</div>
+<div class="headline">Ingeniero de Software — Backend, Cloud e IA sobre GCP · Construye y opera SaaS en producción de punta a punta (VALC Tech)</div>
+<div class="contact"><b>valenzuelacastrojuanpablo@gmail.com</b> · <b>+52 687 174 8530</b> · itztorero.dev · linkedin.com/in/itztorero · github.com/iTzTorero · Guasave, Sinaloa, México</div>
+</div>
+<img class="logo" src="data:image/png;base64,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" alt="JP logo">
+</div>
+
+<h2>Resumen profesional</h2>
+<p class="summary">Ingeniero de software con más de 3 años construyendo sistemas cloud sobre Google Cloud Platform y Firebase. Desde VALC Tech, mi práctica independiente, diseño, construyo y opero SaaS en producción de punta a punta — agentes de IA con GPT function calling, cobros recurrentes con Stripe, facturación CFDI 4.0 y PWAs offline-first — al servicio de negocios reales en México, en paralelo a mi puesto de tiempo completo construyendo plataformas de datos en Monteli LLC. En mi maestría apliqué machine learning a imágenes geoespaciales y multiespectrales. Abierto a roles remotos de backend, cloud e IA.</p>
+
+<h2>Habilidades técnicas</h2>
+<div class="skills">
+  <p><b>IA y LLMs:</b> OpenAI API · GPT function calling / tool use · guardrails de agentes · diseño RAG · prompt engineering · orquestación de flujos con IA</p>
+  <p><b>Backend y APIs:</b> Node.js · Python · FastAPI · APIs REST · microservicios · arquitectura event-driven · Docker · CI/CD</p>
+  <p><b>Cloud (GCP y Firebase):</b> Cloud Run · Pub/Sub · BigQuery · Cloud Functions · Firestore · Cloud Storage · IAM · Firebase Auth/Hosting</p>
+  <p><b>Producto y pagos:</b> Stripe (suscripciones, webhooks, cobro por uso) · facturación CFDI 4.0 · WhatsApp Cloud API · SaaS multi-tenant</p>
+  <p><b>Frontend:</b> TypeScript · Angular (signals, PWA offline-first) · Vue 3 · Ionic / Capacitor · SCSS</p>
+  <p><b>ML y datos:</b> scikit-learn · MLP · SVM · visión por computadora · imágenes multiespectrales · pipelines ETL · Redis · Linux · Git</p>
+</div>
+
+<h2>Experiencia</h2>
+<div class="job">
+  <div class="job-head">
+    <span class="job-title">Fundador e Ingeniero de Software · <span class="co">VALC Tech (práctica independiente)</span></span>
+    <span class="dates">Ene 2026 – Presente</span>
+  </div>
+  <ul>
+    <li>Práctica independiente de software en paralelo a mi empleo de tiempo completo: sistemas a medida para clientes y productos SaaS propios, en producción sobre GCP/Firebase.</li>
+    <li>AgendaBot Pro: agente LLM en producción agendando citas reales por WhatsApp — GPT function calling donde toda tool se ejecuta en el backend y el modelo nunca escribe en la base de datos.</li>
+    <li>JBP (cliente, bajo contrato): control de costos de acopio agrícola en producción — costeo por viaje, margen estimado vs. real, anticipos a proveedores y conciliación bancaria entre dos razones sociales.</li>
+    <li>Responsabilidad de punta a punta: arquitectura, backend, cobros con Stripe, facturación CFDI 4.0 y operación en la nube.</li>
+  </ul>
+</div>
+<div class="job">
+  <div class="job-head">
+    <span class="job-title">Ingeniero de Software (Full Stack) · <span class="co">Monteli LLC</span></span>
+    <span class="dates">Ene 2023 – Presente</span>
+  </div>
+  <ul>
+    <li>Diseñé y desplegué pipelines escalables de ingesta y transformación de datos en GCP (Cloud Run, Pub/Sub, Python, Node.js) que sirven a múltiples productos SaaS y clientes enterprise.</li>
+    <li>Construí microservicios event-driven que soportan flujos con LLMs y procesamiento automatizado de datos a gran escala.</li>
+    <li>Construí y mantengo APIs REST en producción para servicios de inferencia de IA/ML, con procesamiento en tiempo real e integración con sistemas externos.</li>
+    <li>Integré la API de OpenAI en flujos productivos: salidas estructuradas, tool use y orquestación de pipelines de automatización multi-paso.</li>
+    <li>Responsable del ciclo completo del backend: diseño de APIs, dockerización, CI/CD, monitoreo y soporte en producción.</li>
+  </ul>
+</div>
+
+<h2>Proyectos destacados</h2>
+<div class="proj">
+  <div class="proj-head">AgendaBot Pro — SaaS de citas por WhatsApp <span class="badge">(en producción)</span> <span class="st">| GPT function calling · WhatsApp Cloud API · Stripe · CFDI · Firebase</span></div>
+  <ul><li>SaaS multi-tenant para México/LATAM donde los pacientes agendan, reagendan y cancelan desde WhatsApp; agente de IA con guardrails deterministas, construido y operado en solitario.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">JBP — control de costos para acopio agrícola <span class="badge">(cliente, en producción)</span> <span class="st">| Angular · Firebase · PWA offline-first · Cloud Functions</span></div>
+  <ul><li>Costea cada viaje contra su orden de compra y explica las fugas de margen (merma vs. castigo de calidad); dinero en centavos enteros, captura en campo sin señal y operaciones de dinero idempotentes.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">Balltics — la plataforma que opera una liga real de béisbol <span class="badge">(en producción)</span> <span class="st">| Angular · Firebase · IndexedDB · Stripe</span></div>
+  <ul><li>Plataforma multi-tenant de ligas que opera la temporada completa de una liga real: anotación en vivo lanzamiento a lanzamiento, standings públicos, captura offline-first y cobro recurrente.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">Numa — punto de venta con facturación CFDI 4.0 integrada <span class="badge">(en desarrollo)</span> <span class="st">| Angular · Firebase · Stripe</span></div>
+  <ul><li>POS multi-tenant offline-first para pymes mexicanas; la facturación CFDI 4.0 vive dentro del producto, no como complemento aparte.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">Sociko — CRM e ingresos para gimnasios <span class="badge">(pre-lanzamiento, en producción)</span> <span class="st">| Angular · Firebase · Stripe</span></div>
+  <ul><li>La lista de cobranza marca a cada socio vencido con su teléfono al lado — con recuperar a uno solo, la suscripción ya se pagó.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">Nauti Test Pro — preparación de exámenes náuticos <span class="badge">(en producción)</span> <span class="st">| Vue 3 · Ionic · Capacitor · Firebase · Stripe</span></div>
+  <ul><li>iOS/Android + PWA con economía de tokens: las compras con Stripe desbloquean bancos de preguntas cifrados con AES servidos desde el backend.</li></ul>
+</div>
+<div class="proj">
+  <div class="proj-head">AgriLumens — plataforma de ML para agricultura de precisión <span class="badge">(tesis de maestría)</span> <span class="st">| FastAPI · Python · OpenDroneMap · visión por computadora</span></div>
+  <ul><li>Inferencia de ML sobre imágenes multiespectrales de dron para estimar nitrógeno inorgánico y materia orgánica del suelo (MLP/SVM, validado contra el método de laboratorio Walkley y Black).</li></ul>
+</div>
+
+<h2>Educación</h2>
+<div class="edu">
+  <span class="edu-title">Maestría en Ciencias en Manejo de Recursos Naturales y Medio Ambiente · IPN</span>
+  <span class="dates">Ene 2024 – Ene 2026</span>
+</div>
+<div class="edu-sub">Tesis: estimación de nitrógeno inorgánico y materia orgánica en suelos agrícolas mediante imágenes multiespectrales y modelos de machine learning.</div>
+<div class="edu" style="margin-top:3pt">
+  <span class="edu-title">Ingeniería en Software · ITSON — Instituto Tecnológico de Sonora</span>
+  <span class="dates">Ago 2019 – May 2023</span>
+</div>
+
+</body>
+</html>
