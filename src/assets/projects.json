@@ -439,8 +439,8 @@
       "es": "JBP — Acopio, costeo por viaje y control del dinero"
     },
     "summary": {
-      "en": "Custom system for an agro-industrial sourcing company in northwestern Mexico that buys tomato and chili and delivers it to industrial plants. It costs every truckload against the purchase order, separates estimated margin from real margin, and explains the gap by its two causes — weight shrinkage and quality penalty — money that used to leak without anyone measuring it. Built and shipped solo; in production.",
-      "es": "Sistema a medida para una empresa agroindustrial de acopio en el noroeste de México que compra tomate y chile y lo entrega en plantas industriales. Costea cada viaje contra la orden de compra, separa el margen estimado del real y explica la diferencia por sus dos causas —merma de peso y castigo por calidad—, dinero que antes se fugaba sin que nadie lo midiera. Construido y entregado en solitario; en producción."
+      "en": "Custom system for Agrícola Industrial JBP, an agro-industrial sourcing company in northwestern Mexico that buys tomato and chili and delivers it to industrial plants. It costs every truckload against the purchase order, separates estimated margin from real margin, and explains the gap by its two causes — weight shrinkage and quality penalty — money that used to leak without anyone measuring it. Built and shipped solo; in production.",
+      "es": "Sistema a medida para Agrícola Industrial JBP, empresa agroindustrial de acopio en el noroeste de México que compra tomate y chile y lo entrega en plantas industriales. Costea cada viaje contra la orden de compra, separa el margen estimado del real y explica la diferencia por sus dos causas —merma de peso y castigo por calidad—, dinero que antes se fugaba sin que nadie lo midiera. Construido y entregado en solitario; en producción."
     },
     "ownership": "personal",
     "role": {
@@ -452,8 +452,8 @@
       "es": "Repositorio privado — operado por el cliente"
     },
     "disclaimer": {
-      "en": "Custom software designed, built and deployed solo under contract, and operated by the client. The repository and all business data are private; the description covers architecture and engineering decisions only.",
-      "es": "Software a medida diseñado, construido y desplegado en solitario bajo contrato, y operado por el cliente. El repositorio y todos los datos de negocio son privados; la descripción cubre únicamente arquitectura y decisiones de ingeniería."
+      "en": "Custom software designed, built and deployed solo under contract for Agrícola Industrial JBP SPR de RI, and operated by the client. Published with their permission. The repository and all business data are private; the description covers architecture and engineering decisions only.",
+      "es": "Software a medida diseñado, construido y desplegado en solitario bajo contrato para Agrícola Industrial JBP SPR de RI, y operado por el cliente. Publicado con su autorización. El repositorio y todos los datos de negocio son privados; la descripción cubre únicamente arquitectura y decisiones de ingeniería."
     },
     "stack": [
       "Angular 21",
@@ -477,10 +477,7 @@
       "Offline-first",
       "PWA",
       "Firebase",
-      "Fintech-adjacent",
-      "Multi-entity",
-      "Full Stack",
-      "In Production"
+      "Full Stack"
     ],
     "impact": {
       "en": [
@@ -592,8 +589,7 @@
       "Firebase",
       "Multi-currency",
       "LATAM",
-      "Full Stack",
-      "In Development"
+      "Full Stack"
     ],
     "impact": {
       "en": [
@@ -684,6 +680,14 @@
       "Docker",
       "Firestore",
       "Cloud Storage"
+    ],
+    "tags": [
+      "ETL",
+      "Data Pipelines",
+      "Event-driven",
+      "Microservices",
+      "SaaS",
+      "GCP"
     ],
     "products": [
       {
@@ -804,9 +808,7 @@
       "Microservices",
       "Computer Vision",
       "Geospatial",
-      "Precision Agriculture",
       "Research",
-      "Docker",
       "FastAPI"
     ],
     "impact": {
@@ -900,14 +902,12 @@
       "GCP"
     ],
     "tags": [
-      "Agents",
+      "AI Agents",
       "A2A",
       "RAG",
       "LLMs",
       "FastAPI",
-      "FinOps",
-      "Architecture",
-      "Cloud"
+      "FinOps"
     ],
     "impact": {
       "en": [
@@ -937,8 +937,6 @@
         "Construí y desplegué la UI en Angular sobre Firebase Hosting, con un chat de demostración que dibuja la traza de agentes."
       ]
     },
-    "demo": "https://fin-ops-ai-itztorero.web.app",
-    "github": "https://github.com/iTzTorero/FinOps-AI",
     "architecture": {
       "en": [
         "User → Router Agent → task agents → tool layer → aggregated response",
@@ -954,6 +952,8 @@
         "Hoy el enrutamiento por intención es determinista (clasificación por palabras clave) y es justo la costura donde entra el clasificador con LLM",
         "Planeado: vector store Chroma para el agente RAG, capa acotada de ejecución de herramientas, imagen Docker y despliegue en Cloud Run"
       ]
-    }
+    },
+    "demo": "https://fin-ops-ai-itztorero.web.app",
+    "github": "https://github.com/iTzTorero/FinOps-AI"
   }
 ]
