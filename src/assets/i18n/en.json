@@ -2,9 +2,11 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "services": "Services",
     "experience": "Experience",
     "contact": "Contact",
     "education": "Education",
+    "menu": "Menu",
     "aria": {
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
@@ -16,18 +18,19 @@
   "home": {
     "hero": {
       "kicker": "Software Engineer",
-      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservices | Applied Machine Learning",
+      "headline": "Software Engineer — Backend, Cloud & AI on GCP | I build and operate production SaaS end-to-end",
+      "viewProjects": "View projects",
       "downloadCV": "Download CV"
     },
     "about": {
       "title": "About",
-      "text": "Software Engineer with 3+ years building cloud-native systems on GCP, microservices, and data-oriented pipelines. Experienced integrating machine learning models into production environments and working with geospatial and image-based datasets. Seeking backend, cloud, and AI systems roles."
+      "text": "Software engineer with 3+ years shipping cloud-native systems on GCP and Firebase. Through VALC Tech, my independent practice, I design, build and operate production SaaS end-to-end: AI agents with GPT function calling, Stripe billing, Mexican CFDI 4.0 e-invoicing and offline-first PWAs, serving real businesses in Mexico. My graduate research applied machine learning to geospatial and multispectral imagery. Open to remote backend, cloud and AI roles — and to a select number of client projects."
     },
     "quick": {
       "cta": "Explore",
       "projects": {
         "title": "Projects",
-        "desc": "Cloud-native systems, data platforms, and ML-driven applications built for real-world production."
+        "desc": "SaaS products in production, client systems, and applied ML — built and operated end-to-end."
       },
       "experience": {
         "title": "Experience",
@@ -35,30 +38,41 @@
       },
       "contact": {
         "title": "Contact",
-        "desc": "Let’s connect about backend, cloud, or AI system opportunities."
+        "desc": "Hiring for a backend, cloud or AI role — or need software built for your business? Let's talk."
       },
       "education": {
         "title": "Education",
         "desc": "Graduate research in applied ML and precision agriculture."
       }
     },
+    "business": {
+      "kicker": "For businesses",
+      "title": "VALC Tech",
+      "text": "Through my independent practice I build and run custom software and SaaS for real companies: WhatsApp appointment booking, POS with CFDI invoicing, produce-sourcing cost control, sports league management. If your business needs software that pays for itself, let's talk.",
+      "cta": "How I work with businesses"
+    },
     "skills": {
       "title": "Top Skills",
-      "backend": "Backend",
-      "cloud": "Cloud & Infra",
-      "ml": "ML & Data",
+      "backendCloud": "Backend & Cloud",
+      "ai": "AI & LLMs",
+      "product": "Product & Payments",
       "frontend": "Frontend"
     }
   },
   "projects": {
     "kicker": "Work",
     "title": "Projects",
-    "subtitle": "Selected projects focused on cloud-native systems, data pipelines, and applied ML.",
+    "subtitle": "SaaS products I build and operate in production, client systems, and applied ML — on GCP and Firebase.",
     "searchPlaceholder": "Search projects (name, tags, stack)…",
     "searchAria": "Search projects",
     "clear": "Clear",
     "filters": {
-      "all": "All"
+      "all": "All",
+      "saas": "SaaS products",
+      "ai": "AI / LLM",
+      "data": "Data & ML",
+      "mobile": "Mobile",
+      "custom": "Custom software"
     },
     "links": {
       "github": "GitHub",
@@ -69,8 +83,11 @@
     "backToProjects": "Back to projects",
     "kicker": "Project",
     "badges": {
-      "professional": "Professional work",
-      "personal": "Personal project"
+      "client": "Client work — built under contract (VALC Tech)",
+      "employer": "Employer work (Monteli LLC)",
+      "productLive": "Own product — live in production",
+      "productDev": "Own product — in development",
+      "research": "Research platform — M.S. thesis"
     },
     "actions": {
       "liveDemo": "Live / Demo",
@@ -86,7 +103,7 @@
     },
     "notFound": {
       "title": "Project not found",
-      "subtitle": "That project slug does not exist in assets/projects.json"
+      "subtitle": "This project doesn't exist or was moved — the full list is one click away."
     }
   },
   "experience": {
@@ -100,7 +117,7 @@
   "contact": {
     "kicker": "Contact",
     "title": "Get in touch",
-    "subtitle": "Interested in working together or have a question? Send me a message and I’ll get back to you.",
+    "subtitle": "Have a role to fill or a project in mind? Send me a message — I reply within 24 hours.",
     "form": {
       "name": {
         "label": "Name",
@@ -123,6 +140,9 @@
     "success": "Thanks! Your message was sent.",
     "mailtoOpening": "Your email client should open shortly",
     "error": "Something went wrong. Please email me directly.",
+    "or": "or",
+    "whatsapp": "Message me on WhatsApp",
+    "whatsappText": "Hi Juan Pablo, I found you through itztorero.dev and I'd like to talk.",
     "mail": {
       "subject": "Portfolio contact — {{name}}",
       "body": "Name: {{name}}\nEmail: {{email}}\n\n{{message}}"
@@ -135,5 +155,45 @@
     "more": "More",
     "less": "Less",
     "present": "Present"
+  },
+  "services": {
+    "kicker": "For businesses",
+    "title": "Custom Software & SaaS for Businesses in Mexico",
+    "intro": "Through VALC Tech, my independent practice, I design, build and operate complete systems end-to-end: WhatsApp appointment booking (AgendaBot Pro), gym management (Sociko), point of sale with CFDI 4.0 invoicing (Numa), and produce trip-costing and cash control (JBP). Real products, in production, with real businesses behind them.",
+    "verticalsTitle": "What I build",
+    "verticals": {
+      "agendabot": {
+        "title": "WhatsApp appointment booking",
+        "desc": "Your patients or clients book, reschedule and cancel from WhatsApp — no extra app. An AI agent handles the conversation; your calendar stays in control."
+      },
+      "sociko": {
+        "title": "Gym & membership management",
+        "desc": "Members, plans, payments due and a collections list that flags every lapsed member with their phone number next to them."
+      },
+      "numa": {
+        "title": "Point of sale with CFDI invoicing",
+        "desc": "Sales, inventory and Mexican CFDI 4.0 e-invoicing built into one product — offline-first, so a bad connection never stops the register."
+      },
+      "jbp": {
+        "title": "Custom systems for your operation",
+        "desc": "Like the produce-sourcing platform running in production for Agrícola Industrial JBP: per-trip costing, real margin and cash control."
+      }
+    },
+    "seeProject": "See the project",
+    "processTitle": "How we work together",
+    "process": {
+      "step1": "Tell me about your operation — a short message is enough.",
+      "step2": "You get a proposal with a closed scope and price.",
+      "step3": "I deliver in phases you can use from the first weeks."
+    },
+    "proof": "One engineer, end to end, production-grade: the same stack that runs AgendaBot Pro, Nauti Test Pro and a real baseball league on Balltics.",
+    "cta": "Tell me about your project",
+    "whatsapp": "Message me on WhatsApp",
+    "whatsappText": "Hi Juan Pablo, I run a business and I'm interested in a custom system."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The page you're looking for doesn't exist or was moved.",
+    "back": "Back to home"
   }
 }

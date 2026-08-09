@@ -2,9 +2,11 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
+    "services": "Servicios",
     "experience": "Experiencia",
     "contact": "Contacto",
     "education": "Educación",
+    "menu": "Menú",
     "aria": {
       "openMenu": "Abrir menú",
       "closeMenu": "Cerrar menú",
@@ -16,18 +18,19 @@
   "home": {
     "hero": {
       "kicker": "Ingeniero de Software",
-      "headline": "Software Engineer | Backend & Cloud Systems | GCP | Microservicios | Aprendizaje automático aplicado",
+      "headline": "Ingeniero de Software — Backend, Cloud e IA sobre GCP | Construyo y opero SaaS en producción, de punta a punta",
+      "viewProjects": "Ver proyectos",
       "downloadCV": "Descargar CV"
     },
     "about": {
       "title": "Sobre mí",
-      "text": "Ingeniero de Software con más de 3 años desarrollando sistemas cloud-native en GCP, arquitecturas de microservicios y pipelines orientados a datos. Experiencia integrando modelos de aprendizaje automático en entornos productivos y trabajando con datos geoespaciales e imágenes multiespectrales. Buscando oportunidades en backend, cloud y sistemas de IA."
+      "text": "Ingeniero de software con más de 3 años construyendo sistemas cloud sobre GCP y Firebase. Desde VALC Tech, mi práctica independiente, diseño, construyo y opero SaaS en producción de punta a punta: agentes de IA con function calling, cobros con Stripe, facturación CFDI 4.0 y PWAs offline-first, al servicio de negocios reales en México. En mi maestría apliqué machine learning a imágenes geoespaciales y multiespectrales. Abierto a roles remotos de backend, cloud e IA — y a un número selecto de proyectos de clientes."
     },
     "quick": {
       "cta": "Explorar",
       "projects": {
         "title": "Proyectos",
-        "desc": "Sistemas cloud-native, plataformas de datos y aplicaciones con ML construidas para entornos reales de producción."
+        "desc": "Productos SaaS en producción, sistemas para clientes y ML aplicado — construidos y operados de punta a punta."
       },
       "experience": {
         "title": "Experiencia",
@@ -35,30 +38,41 @@
       },
       "contact": {
         "title": "Contacto",
-        "desc": "Conectemos sobre oportunidades en backend, cloud o sistemas de IA."
+        "desc": "¿Buscas cubrir una vacante de backend, cloud o IA, o necesitas software para tu negocio? Hablemos."
       },
       "education": {
         "title": "Educación",
-        "desc": "Formación de posgrado en ML aplicado y agricultura de precisión."
+        "desc": "Posgrado en ML aplicado y agricultura de precisión."
       }
+    },
+    "business": {
+      "kicker": "Para negocios",
+      "title": "VALC Tech",
+      "text": "Desde mi práctica independiente construyo y opero software a medida y SaaS para empresas reales: citas por WhatsApp, punto de venta con facturación CFDI, control de costos de acopio agrícola y gestión de ligas deportivas. Si tu negocio necesita software que se pague solo, hablemos.",
+      "cta": "Así trabajo con negocios"
     },
     "skills": {
       "title": "Habilidades principales",
-      "backend": "Backend",
-      "cloud": "Cloud & Infra",
-      "ml": "ML & Datos",
+      "backendCloud": "Backend y Cloud",
+      "ai": "IA y LLMs",
+      "product": "Producto y Pagos",
       "frontend": "Frontend"
     }
   },
   "projects": {
     "kicker": "Trabajo",
     "title": "Proyectos",
-    "subtitle": "Proyectos seleccionados enfocados en sistemas cloud-native, pipelines de datos y ML aplicado.",
+    "subtitle": "Productos SaaS que construyo y opero en producción, sistemas para clientes y ML aplicado — sobre GCP y Firebase.",
     "searchPlaceholder": "Buscar proyectos (nombre, etiquetas, stack)…",
     "searchAria": "Buscar proyectos",
     "clear": "Limpiar",
     "filters": {
-      "all": "Todos"
+      "all": "Todos",
+      "saas": "Productos SaaS",
+      "ai": "IA / LLM",
+      "data": "Datos y ML",
+      "mobile": "Móvil",
+      "custom": "Software a medida"
     },
     "links": {
       "github": "GitHub",
@@ -69,8 +83,11 @@
     "backToProjects": "Volver a proyectos",
     "kicker": "Proyecto",
     "badges": {
-      "professional": "Trabajo profesional",
-      "personal": "Proyecto personal"
+      "client": "Trabajo para cliente — bajo contrato (VALC Tech)",
+      "employer": "Trabajo como empleado (Monteli LLC)",
+      "productLive": "Producto propio — en producción",
+      "productDev": "Producto propio — en desarrollo",
+      "research": "Plataforma de investigación — tesis de maestría"
     },
     "actions": {
       "liveDemo": "Ver / Demo",
@@ -86,14 +103,14 @@
     },
     "notFound": {
       "title": "Proyecto no encontrado",
-      "subtitle": "Ese slug de proyecto no existe en assets/projects.json"
+      "subtitle": "Este proyecto no existe o cambió de lugar — la lista completa está a un clic."
     }
   },
 
   "experience": {
     "kicker": "Carrera",
     "title": "Experiencia",
-    "subtitle": "Trabajo backend y de plataforma de datos en producción sobre GCP, además de investigación de ML aplicado en agricultura de precisión.",
+    "subtitle": "Ingeniería backend y de plataformas de datos en producción sobre GCP, más investigación de ML aplicado a datos geoespaciales.",
     "more": "Más",
     "less": "Menos",
     "present": "Actual"
@@ -101,7 +118,7 @@
   "contact": {
     "kicker": "Contacto",
     "title": "Hablemos",
-    "subtitle": "¿Te interesa colaborar o tienes una pregunta? Envíame un mensaje y te responderé pronto.",
+    "subtitle": "¿Tienes una vacante o un proyecto en mente? Escríbeme y te respondo en menos de 24 horas.",
     "form": {
       "name": {
         "label": "Nombre",
@@ -115,26 +132,69 @@
       },
       "message": {
         "label": "Mensaje",
-        "placeholder": "Cuéntame sobre tu proyecto o idea",
+        "placeholder": "Cuéntame tu proyecto o tu idea",
         "error": "El mensaje debe tener al menos 10 caracteres."
       },
       "submit": "Enviar mensaje"
     },
     "sending": "Enviando…",
     "success": "¡Gracias! Tu mensaje fue enviado.",
-    "mailtoOpening": "Tu cliente de correo debería abrirse en un momento",
-    "error": "Algo salió mal. Escríbeme directamente por correo.",
+    "mailtoOpening": "Tu app de correo se abrirá en un momento",
+    "error": "Algo salió mal. Escríbeme directo por correo.",
+    "or": "o",
+    "whatsapp": "Escríbeme por WhatsApp",
+    "whatsappText": "Hola Juan Pablo, te encontré por itztorero.dev y me gustaría platicar contigo.",
     "mail": {
-      "subject": "Contacto desde portafolio — {{name}}",
+      "subject": "Contacto desde el portafolio — {{name}}",
       "body": "Nombre: {{name}}\nCorreo: {{email}}\n\n{{message}}"
     }
   },
   "education": {
     "kicker": "Educación",
     "title": "Educación",
-    "subtitle": "Formación académica en ingeniería de software, sistemas de datos y aplicaciones de ML.",
+    "subtitle": "Formación en ingeniería de software, sistemas de datos y ML aplicado.",
     "more": "Más",
     "less": "Menos",
     "present": "Actual"
+  },
+  "services": {
+    "kicker": "Para negocios",
+    "title": "Software a medida y SaaS para negocios en México",
+    "intro": "Bajo VALC Tech, mi práctica independiente, diseño, construyo y opero sistemas completos de punta a punta: agendamiento de citas por WhatsApp (AgendaBot Pro), administración de gimnasios (Sociko), punto de venta con facturación CFDI 4.0 (Numa) y costeo por viaje con control de caja agroindustrial (JBP). Productos reales, en producción, con negocios reales detrás.",
+    "verticalsTitle": "Qué construyo",
+    "verticals": {
+      "agendabot": {
+        "title": "Citas por WhatsApp",
+        "desc": "Tus pacientes o clientes agendan, reagendan y cancelan desde WhatsApp — sin apps extra. Un agente de IA lleva la conversación; tu agenda manda."
+      },
+      "sociko": {
+        "title": "Gimnasios y membresías",
+        "desc": "Socios, planes, pagos por vencer y una lista de cobranza que marca a cada socio vencido con su teléfono al lado."
+      },
+      "numa": {
+        "title": "Punto de venta con factura CFDI",
+        "desc": "Ventas, inventario y facturación CFDI 4.0 integradas en un solo producto — offline-first, para que una mala conexión nunca detenga la caja."
+      },
+      "jbp": {
+        "title": "Sistemas a la medida de tu operación",
+        "desc": "Como la plataforma de acopio que opera en producción para Agrícola Industrial JBP: costeo por viaje, margen real y control de caja."
+      }
+    },
+    "seeProject": "Ver el proyecto",
+    "processTitle": "Así trabajamos",
+    "process": {
+      "step1": "Cuéntame tu operación — con un mensaje corto basta.",
+      "step2": "Recibes una propuesta con alcance y precio cerrado.",
+      "step3": "Entrego por fases que puedes usar desde las primeras semanas."
+    },
+    "proof": "Un solo ingeniero, de punta a punta, con calidad de producción: el mismo stack que corre AgendaBot Pro, Nauti Test Pro y una liga real de béisbol sobre Balltics.",
+    "cta": "Cuéntame tu proyecto",
+    "whatsapp": "Escríbeme por WhatsApp",
+    "whatsappText": "Hola Juan Pablo, tengo un negocio y me interesa un sistema a la medida."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "subtitle": "La página que buscas no existe o cambió de lugar.",
+    "back": "Volver al inicio"
   }
 }
