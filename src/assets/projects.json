@@ -436,80 +436,107 @@
   {
     "slug": "agrilumens",
     "name": {
-      "en": "AgriLumens",
-      "es": "AgriLumens"
+      "en": "AgriLumens — Precision Agriculture Platform",
+      "es": "AgriLumens — Plataforma de Agricultura de Precisión"
     },
     "summary": {
-      "en": "Personal R&D platform to process multispectral drone imagery and generate soil insights using modular ML pipelines and cloud-native services.",
-      "es": "Plataforma personal de I+D para procesar imágenes multiespectrales de dron y generar insights de suelo usando pipelines modulares de ML y servicios cloud-native."
+      "en": "Microservices platform that turns multispectral drone imagery into soil chemistry estimates. It runs the full chain end to end — flight upload, photogrammetric processing, spectral feature extraction, ML regression, and geospatial reports — and was built as the research platform for my MSc thesis.",
+      "es": "Plataforma de microservicios que convierte imágenes multiespectrales de dron en estimaciones de química del suelo. Ejecuta la cadena completa —carga del vuelo, procesamiento fotogramétrico, extracción de variables espectrales, regresión con ML y reportes geoespaciales— y fue construida como la plataforma de investigación de mi tesis de maestría."
     },
     "ownership": "personal",
     "role": {
-      "en": "Founder & Engineer (Architecture + Backend + ML)",
-      "es": "Fundador e Ingeniero (Arquitectura + Backend + ML)"
+      "en": "Founder & Engineer (Architecture, Backend, ML)",
+      "es": "Fundador e Ingeniero (Arquitectura, Backend, ML)"
     },
     "confidentiality": {
-      "en": "Public summary",
-      "es": "Resumen público"
+      "en": "Private repository — academic research",
+      "es": "Repositorio privado — investigación académica"
     },
     "disclaimer": {
-      "en": "Personal R&D project. Implementation details are summarized at a high level.",
-      "es": "Proyecto personal de I+D. Los detalles de implementación están resumidos a alto nivel."
+      "en": "Personal R&D project and MSc research platform. The repository is private; implementation details are summarized at a high level.",
+      "es": "Proyecto personal de I+D y plataforma de investigación de maestría. El repositorio es privado; los detalles de implementación se resumen a alto nivel."
     },
     "stack": [
-      "FastAPI",
       "Python",
-      "GCP",
+      "FastAPI",
+      "Angular",
+      "TypeScript",
+      "Redis",
+      "MinIO",
+      "NodeODM (OpenDroneMap)",
       "Docker",
-      "NodeODM",
+      "Docker Compose",
       "Machine Learning",
-      "OpenDroneMap"
+      "Jupyter",
+      "Linux",
+      "GCP"
     ],
     "tags": [
       "ML",
-      "GCP",
-      "Computer Vision",
       "Microservices",
-      "Geospatial"
+      "Computer Vision",
+      "Geospatial",
+      "Precision Agriculture",
+      "Research",
+      "Docker",
+      "FastAPI"
     ],
     "impact": {
       "en": [
-        "Automates the workflow from drone capture → processing → inference → structured outputs.",
-        "Designed modular services to support multiple models and datasets over time.",
-        "Built traceable pipelines with metadata tracking for reproducibility."
+        "Estimates inorganic nitrogen and organic matter from aerial imagery, cutting the dependency on slow, per-sample laboratory analysis.",
+        "Turns a manual research workflow into a repeatable pipeline: the same flight can be reprocessed with a different model without re-flying the field.",
+        "Supported the comparative study of spatial resolutions (GSD) by processing flights at different altitudes through an identical pipeline.",
+        "Designed for reproducibility so later academic work can extend or reuse individual services without redesigning the system."
       ],
       "es": [
-        "Automatiza el flujo desde captura con dron → procesamiento → inferencia → salidas estructuradas.",
-        "Diseñé servicios modulares para soportar múltiples modelos y datasets con el tiempo.",
-        "Construí pipelines trazables con seguimiento de metadata para reproducibilidad."
+        "Estima nitrógeno inorgánico y materia orgánica a partir de imágenes aéreas, reduciendo la dependencia del análisis de laboratorio muestra por muestra.",
+        "Convierte un flujo de investigación manual en un pipeline repetible: el mismo vuelo se reprocesa con otro modelo sin volver a volar el terreno.",
+        "Permitió el estudio comparativo de resoluciones espaciales (GSD) procesando vuelos a distintas alturas por un pipeline idéntico.",
+        "Diseñada para la reproducibilidad, de modo que trabajos académicos posteriores puedan extender o reutilizar servicios sueltos sin rediseñar el sistema."
       ]
     },
     "highlights": {
       "en": [
-        "Designed cloud-native architecture for imagery ingestion, processing, and inference.",
-        "Integrated photogrammetry processing (ODM/NodeODM) into an automated backend workflow.",
-        "Defined service boundaries to support scaling and long-running jobs."
+        "Split the system into independent domain services — gateway, users, processing, models, reports, status — each with its own responsibility and lifecycle.",
+        "Integrated OpenDroneMap (NodeODM) as an external photogrammetry engine to generate orthomosaics and digital elevation models from raw flights.",
+        "Built the ML module as a comparison harness: MLP, SVR and ensemble regressors evaluated with cross-validation on R², RMSE and MAE.",
+        "Modeled the storage layer to keep raw data, processed products and analytical results separate, so experiments can be repeated without losing the originals.",
+        "Made every run traceable — processing date, flight configuration, GSD, model used and code version are recorded alongside the result.",
+        "Containerized the whole platform with Docker Compose and multi-architecture builds so it runs on a laptop or on a Linux server unchanged.",
+        "Wrote the technical documentation set (architecture, data flow, ML, storage, deployment, limitations, reproducibility) that accompanies the research."
       ],
       "es": [
-        "Diseñé arquitectura cloud-native para ingesta, procesamiento e inferencia de imágenes.",
-        "Integré fotogrametría (ODM/NodeODM) en un flujo backend automatizado.",
-        "Definí límites de servicio para soportar escalabilidad y jobs de larga duración."
+        "Separé el sistema en servicios de dominio independientes —gateway, usuarios, procesamiento, modelos, reportes, estado— cada uno con su responsabilidad y ciclo de vida.",
+        "Integré OpenDroneMap (NodeODM) como motor externo de fotogrametría para generar ortomosaicos y modelos digitales de elevación a partir de los vuelos crudos.",
+        "Construí el módulo de ML como banco de comparación: regresores MLP, SVR y ensamblados evaluados con validación cruzada sobre R², RMSE y MAE.",
+        "Modelé el almacenamiento separando datos crudos, productos procesados y resultados analíticos, para repetir experimentos sin perder los originales.",
+        "Hice trazable cada ejecución: fecha de procesamiento, configuración de vuelo, GSD, modelo utilizado y versión del código quedan junto al resultado.",
+        "Contenericé la plataforma completa con Docker Compose y builds multiarquitectura, para correrla igual en una laptop que en un servidor Linux.",
+        "Escribí el conjunto de documentación técnica (arquitectura, flujo de datos, ML, almacenamiento, despliegue, limitaciones, reproducibilidad) que acompaña a la investigación."
       ]
     },
     "architecture": {
       "en": [
-        "Job creation → processing service (ODM/NodeODM) → inference service",
-        "Artifacts stored in Cloud Storage with metadata tracking",
-        "Optional event-driven orchestration for long-running tasks"
+        "Angular web client → Gateway API (single entry point, request routing)",
+        "Domain APIs on FastAPI: users, processing, models, reports, status",
+        "NodeODM (OpenDroneMap) as the external photogrammetry engine",
+        "Redis for job messaging and execution state across long-running processing",
+        "MinIO as object storage for raw imagery, orthomosaics and derived products",
+        "Pipeline: drone capture → upload → photogrammetry → spectral features → ML inference → report",
+        "Docker Compose orchestrates every service; multi-arch images for local and server deployment"
       ],
       "es": [
-        "Creación de job → servicio de procesamiento (ODM/NodeODM) → servicio de inferencia",
-        "Artefactos almacenados en Cloud Storage con seguimiento de metadata",
-        "Orquestación opcional orientada a eventos para tareas largas"
+        "Cliente web Angular → Gateway API (punto único de entrada y enrutamiento)",
+        "APIs de dominio en FastAPI: usuarios, procesamiento, modelos, reportes, estado",
+        "NodeODM (OpenDroneMap) como motor externo de fotogrametría",
+        "Redis para mensajería de trabajos y estado de ejecución en procesos largos",
+        "MinIO como almacenamiento de objetos para imágenes crudas, ortomosaicos y productos derivados",
+        "Pipeline: captura con dron → carga → fotogrametría → variables espectrales → inferencia ML → reporte",
+        "Docker Compose orquesta todos los servicios; imágenes multiarquitectura para local y servidor"
       ]
     },
-    "github": "https://github.com/iTzTorero",
-    "demo": ""
+    "demo": "",
+    "github": ""
   },
   {
     "slug": "finops-ai",
@@ -518,24 +545,28 @@
       "es": "FinOps Multi-Agent Assistant"
     },
     "summary": {
-      "en": "Frontend demo and architecture blueprint for a production-oriented multi-agent system for finance workflows — covering A2A orchestration, RAG-ready design, and a deployed Angular UI.",
-      "es": "Demo de frontend y blueprint de arquitectura para un sistema multi-agente orientado a producción en flujos financieros — con orquestación A2A, diseño listo para RAG y UI en Angular desplegada."
+      "en": "Reference architecture for a multi-agent assistant over finance workflows: a router that classifies intent and dispatches to specialized agents, with typed request/response contracts, trace IDs and per-step latency events. The Angular UI is deployed and the FastAPI backend implements the routing and observability skeleton; the LLM, RAG and tool layers are designed but not yet wired.",
+      "es": "Arquitectura de referencia para un asistente multi-agente sobre flujos financieros: un router que clasifica la intención y despacha a agentes especializados, con contratos tipados de request/response, trace IDs y eventos de latencia por paso. La UI en Angular está desplegada y el backend en FastAPI implementa el esqueleto de enrutamiento y observabilidad; las capas de LLM, RAG y herramientas están diseñadas pero aún no conectadas."
     },
     "ownership": "personal",
     "role": {
-      "en": "Engineer (Frontend + Architecture Design)",
-      "es": "Ingeniero (Frontend + Diseño de Arquitectura)"
+      "en": "Engineer (Architecture, Frontend, Backend Scaffold)",
+      "es": "Ingeniero (Arquitectura, Frontend, Esqueleto de Backend)"
     },
     "confidentiality": {
       "en": "Public",
       "es": "Público"
     },
     "disclaimer": {
-      "en": "Frontend demo. Focuses on architecture design and UI implementation — backend not implemented.",
-      "es": "Demo de frontend. Enfocado en diseño de arquitectura e implementación de UI — backend no implementado."
+      "en": "Personal project built as an architecture study, not a production system. The router, API contracts and observability events are implemented; agent responses are still stubs pending LLM, RAG and tool integration.",
+      "es": "Proyecto personal construido como estudio de arquitectura, no un sistema en producción. El router, los contratos de API y los eventos de observabilidad están implementados; las respuestas de los agentes siguen siendo stubs a la espera de integrar LLM, RAG y herramientas."
     },
     "stack": [
+      "Python",
+      "FastAPI",
+      "Pydantic",
       "Angular",
+      "TypeScript",
       "SCSS",
       "Firebase Hosting",
       "GCP"
@@ -545,7 +576,9 @@
       "A2A",
       "RAG",
       "LLMs",
+      "FastAPI",
       "FinOps",
+      "Architecture",
       "Cloud"
     ],
     "impact": {
@@ -562,18 +595,38 @@
     },
     "highlights": {
       "en": [
-        "Angular UI components: navbar, hero, architecture, coordination, tech stack, demo chat, footer.",
-        "SPA-ready deployment configuration (rewrites) for stable routing on Hosting.",
-        "Repo structure aligned for future backend integration via /v1/chat."
+        "Designed the agent topology — Router, Finance Analyst, RAG Policy and Tool agents — with explicit orchestration instead of hidden chains.",
+        "Implemented the FastAPI surface with typed Pydantic contracts, a stateless /v1/chat endpoint and health checks.",
+        "Every response carries a trace ID and an ordered event list with per-step latency, so the routing path is observable from the UI.",
+        "Layered the backend by concern (domain / services / infra / api) so each agent and its infrastructure can be replaced independently.",
+        "Built and deployed the Angular UI to Firebase Hosting, including a demo chat that renders the agent trace."
       ],
       "es": [
-        "Componentes UI en Angular: navbar, hero, architecture, coordination, tech stack, demo chat, footer.",
-        "Configuración de despliegue SPA (rewrites) para routing estable en Hosting.",
-        "Estructura del repo alineada para integración futura con backend vía /v1/chat."
+        "Diseñé la topología de agentes —Router, Analista Financiero, RAG de Políticas y Herramientas— con orquestación explícita en lugar de cadenas ocultas.",
+        "Implementé la superficie FastAPI con contratos tipados en Pydantic, un endpoint /v1/chat sin estado y health checks.",
+        "Cada respuesta lleva un trace ID y una lista ordenada de eventos con latencia por paso, de modo que la ruta de enrutamiento es observable desde la UI.",
+        "Estratifiqué el backend por responsabilidad (dominio / servicios / infraestructura / api) para poder reemplazar cada agente y su infraestructura por separado.",
+        "Construí y desplegué la UI en Angular sobre Firebase Hosting, con un chat de demostración que dibuja la traza de agentes."
       ]
     },
     "demo": "https://fin-ops-ai-itztorero.web.app",
-    "github": "https://github.com/iTzTorero/FinOps-AI"
+    "github": "https://github.com/iTzTorero/FinOps-AI",
+    "architecture": {
+      "en": [
+        "User → Router Agent → task agents → tool layer → aggregated response",
+        "FastAPI app split into api/v1 (routes), domain (schemas), services (agents) and core (config, logging)",
+        "Stateless chat endpoint: session ID in, answer plus events/steps/tool_calls/citations out",
+        "Intent routing is deterministic today (keyword classification) and is the seam where the LLM classifier plugs in",
+        "Planned: Chroma vector store for the RAG agent, a bounded tool-execution layer, Docker image and Cloud Run deployment"
+      ],
+      "es": [
+        "Usuario → Router Agent → agentes de tarea → capa de herramientas → respuesta agregada",
+        "App FastAPI separada en api/v1 (rutas), domain (esquemas), services (agentes) y core (configuración, logging)",
+        "Endpoint de chat sin estado: entra el session ID, sale la respuesta más events/steps/tool_calls/citations",
+        "Hoy el enrutamiento por intención es determinista (clasificación por palabras clave) y es justo la costura donde entra el clasificador con LLM",
+        "Planeado: vector store Chroma para el agente RAG, capa acotada de ejecución de herramientas, imagen Docker y despliegue en Cloud Run"
+      ]
+    }
   },
   {
     "slug": "nauti-test-pro",
