@@ -14,7 +14,6 @@
       "language": "Cambiar idioma"
     }
   },
-
   "home": {
     "hero": {
       "kicker": "Ingeniero de Software",
@@ -106,7 +105,6 @@
       "subtitle": "Este proyecto no existe o cambió de lugar — la lista completa está a un clic."
     }
   },
-
   "experience": {
     "kicker": "Carrera",
     "title": "Experiencia",
@@ -190,7 +188,10 @@
     "proof": "Un solo ingeniero, de punta a punta, con calidad de producción: el mismo stack que corre AgendaBot Pro, Nauti Test Pro y una liga real de béisbol sobre Balltics.",
     "cta": "Cuéntame tu proyecto",
     "whatsapp": "Escríbeme por WhatsApp",
-    "whatsappText": "Hola Juan Pablo, tengo un negocio y me interesa un sistema a la medida."
+    "whatsappText": "Hola Juan Pablo, tengo un negocio y me interesa un sistema a la medida.",
+    "bridgeTitle": "VALC Tech tiene sitio propio",
+    "bridgeText": "Todo este trabajo —los servicios, los casos y cómo cobro— vive con detalle en valc.tech, el sitio de mi práctica. Este portafolio es mi identidad como ingeniero; aquel es donde atiendo a empresas.",
+    "bridgeCta": "Ir a valc.tech"
   },
   "notFound": {
     "title": "Página no encontrada",

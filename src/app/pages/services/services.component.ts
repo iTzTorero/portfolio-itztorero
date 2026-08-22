@@ -47,6 +47,8 @@ export class ServicesPage {
         ? 'Desarrollo software a medida y SaaS en México: citas por WhatsApp, sistemas para gimnasios, POS con CFDI 4.0 y plataformas cloud sobre GCP. En producción con clientes reales.'
         : 'I build custom software and SaaS on GCP: WhatsApp appointment booking, gym management, POS with Mexican e-invoicing (CFDI 4.0). Live in production with real clients.',
       path: '/services',
+      // Este contenido vive de verdad en valc.tech; aquí es un puente.
+      canonicalExterno: 'https://valc.tech',
     });
   }
 }

@@ -14,7 +14,6 @@
       "language": "Switch language"
     }
   },
-
   "home": {
     "hero": {
       "kicker": "Software Engineer",
@@ -189,7 +188,10 @@
     "proof": "One engineer, end to end, production-grade: the same stack that runs AgendaBot Pro, Nauti Test Pro and a real baseball league on Balltics.",
     "cta": "Tell me about your project",
     "whatsapp": "Message me on WhatsApp",
-    "whatsappText": "Hi Juan Pablo, I run a business and I'm interested in a custom system."
+    "whatsappText": "Hi Juan Pablo, I run a business and I'm interested in a custom system.",
+    "bridgeTitle": "VALC Tech has its own site",
+    "bridgeText": "All of this work — the services, the case studies and how I charge — lives in detail at valc.tech, my practice’s site. This portfolio is my identity as an engineer; that one is where I work with companies.",
+    "bridgeCta": "Go to valc.tech"
   },
   "notFound": {
     "title": "Page not found",

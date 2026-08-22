@@ -28,6 +28,15 @@ export class SeoService {
     noindex?: boolean;
     /** Título completo sin el sufijo "| Autor" (para la home). */
     titleAbsolute?: boolean;
+    /**
+     * Canonical hacia otro dominio.
+     *
+     * Se usa cuando una página de aquí dice lo mismo que una de valc.tech: sin
+     * esto las dos compiten por la misma búsqueda y Google elige una, que suele
+     * ser la más antigua. Apuntar el canonical al sitio nuevo consolida la
+     * señal allá en vez de repartirla.
+     */
+    canonicalExterno?: string;
   }) {
     const lang = this.transloco.getActiveLang() === 'es' ? 'es' : 'en';
     const fullTitle = opts.titleAbsolute ? opts.title : `${opts.title} | ${AUTHOR}`;
@@ -57,8 +66,14 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: description });
     this.meta.updateTag({ name: 'twitter:image', content: OG_IMAGE });
 
-    this.setCanonical(url);
-    this.setHreflang(basePath, opts.noindex ?? false);
+    this.setCanonical(opts.canonicalExterno ?? url);
+
+    // Con el canonical apuntando fuera, declarar aquí las versiones de idioma
+    // mandaría señales contradictorias: la página canónica es la de allá y es
+    // ella la que declara sus propios idiomas.
+    if (!opts.canonicalExterno) {
+      this.setHreflang(basePath, opts.noindex ?? false);
+    }
   }
 
   /** Inserta (o reemplaza) un bloque JSON-LD identificado por `id`. */
